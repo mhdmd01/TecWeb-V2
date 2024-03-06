@@ -29,7 +29,6 @@
 					
 					if($user_data['password'] === $password){
                         session_start();
-						$_SESSION['user_id'] = $user_data['id'];
 						$_SESSION['user_name'] = $user_data['user_name'];
 
 						//header("Location: dashboard.php");
