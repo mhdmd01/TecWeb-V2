@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{ /*QUI BISOGNA TROVARE UNA GIUSTA COMBINAZIONE DI COLORI AL MOMENTO NE METTO UNA A CAZZO*/
+    --headerBgColor: green;
+    --headerTxtColor: white;
+    --BgColor: purple;
+    --BgTxtColor: white;
+    --footerBgColor: black;
+    --footerTxtColor: white;
+    --linkColor: blue;
+    --visitedLinkColor: brown;
+}
+
+html{
+    font-size: 100%;
+    line-height: 1.5em;
+    margin: auto;
+}
+
+.aiutoNavigazione{
+    position: absolute;
+    text-indent: -999em;
+    display: none;
+}
