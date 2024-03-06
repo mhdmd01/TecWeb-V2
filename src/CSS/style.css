@@ -6,8 +6,8 @@
 :root{ /*QUI BISOGNA TROVARE UNA GIUSTA COMBINAZIONE DI COLORI AL MOMENTO NE METTO UNA A CAZZO*/
     --headerBgColor: green;
     --headerTxtColor: white;
-    --BgColor: purple;
-    --BgTxtColor: white;
+    --BgColor: #F4F2F3;
+    --BgTxtColor: #2;
     --footerBgColor: black;
     --footerTxtColor: white;
     --linkColor: blue;
