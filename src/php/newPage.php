@@ -1,8 +1,8 @@
 <?php
 
-use functions\functions;
+//use functions\functions;
 
-class pagina{
+class newPage{
     private $strutturaHTML = "";
     public $testoFooter = "Saudade corporation - 2024";
 
@@ -23,7 +23,7 @@ class pagina{
         $this->strutturaHTML = str_replace("{contenutoMain}", $paginaTemplate, $this->strutturaHTML);
     }
 
-    public function modificaStruttura($segnaposto, $dati){
+    public function modificaHTML($segnaposto, $dati){
         $this->strutturaHTML = str_replace($segnaposto, $dati, $this->strutturaHTML);
     }
 
@@ -52,7 +52,36 @@ class pagina{
             $navBar = str_replace("{contattaLink}", "<li>Contatta</li>", $navBar);
             $navBar = str_replace("{breadcrumb}", "Contatta", $navBar);
 
+        }else if($currentPage == "../html/signup.html"){
+            $navBar = str_replace("{signupLink}", "<li>Registrati</li>", $navBar);
+            $navBar = str_replace("{breadcrumb}", "Registrati", $navBar);
+
+            $navBar = str_replace("{loginLink}", "<li><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
+
+
+        }else if($currentPage == "../html/login.html"){
+            $navBar = str_replace("{loginLink}", "<li>Accedi</li>", $navBar);
+            $navBar = str_replace("{breadcrumb}", "Accedi", $navBar);
+
+            $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
+            
         }
+
+        // Controlla se la variabile di sessione user_id è impostata
+        session_start();
+        if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
+            $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
+            $navBar = str_replace("{signupLink}", "", $navBar);
+
+            $navBar = str_replace("{logoutLink}", "<li><a href=\"../php/logout.php\">Logout</a></li>", $navBar);
+        }else{
+            $navBar = str_replace("{logoutLink}", "", $navBar);
+            $navBar = str_replace("{loginLink}", "<li><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
+            $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
+
+            session_destroy();
+        }
+
 
         $navBar = str_replace("{homeLink}", "<li><a href=\"index.php\">Home</a></li>", $navBar);
         $navBar = str_replace("{serviziLink}", "<li><a href=\"servizi.php\">Servizi</a></li>", $navBar);
@@ -60,7 +89,7 @@ class pagina{
         $navBar = str_replace("{storiaLink}", "<li><a href=\"storia.php\"><span lang=\"en\">About</span></a></li>", $navBar);
         $navBar = str_replace("{contattaLink}", "<li><a href=\"contatta.php\">Contattaci</a></li>", $navBar);
 
-        $this->modificaStruttura("{navBar}", $navBar);
+        $this->modificaHTML("{navBar}", $navBar);
     }
 
     public function printPage(){
