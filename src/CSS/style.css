@@ -25,3 +25,28 @@ html{
     text-indent: -999em;
     display: none;
 }
+
+main{
+    max-width:1000px;
+    margin-right:auto;
+    margin-left:auto;
+    
+}
+
+article{
+    padding-bottom:3em;
+}
+
+article h1{
+    padding-bottom:1em;
+    padding-top:1em;
+}
+
+article h2{
+    padding-bottom:0.5em;
+    padding-top:0.5em;
+}
+
+article li{
+    margin-left:2em;
+}
