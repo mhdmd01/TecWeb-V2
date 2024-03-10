@@ -42,10 +42,12 @@ class functions{
     }
 
     public function executeQuery($query){
-        $this->openDBConnection();
-        $risultato = mysqli_query($this -> connection, $query) or die("Errore di connessione" .mysqli_error($this->connection));
-        $this->closeConnection();
+        if($this->openDBConnection())
+            $risultato = mysqli_query($this -> connection, $query) or die("Errore di connessione" .mysqli_error($this->connection));
+        else
+            echo "Errore di connesione al database, riprovare più tardi";
 
+        $this->closeConnection();
         return $risultato;
     }
 }
