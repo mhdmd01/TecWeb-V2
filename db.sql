@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS utenti;
-DROP TABLE IF EXISTS recnsioni;
+DROP TABLE IF EXISTS recensioni;
 DROP TABLE IF EXISTS sogni;
 DROP TABLE IF EXISTS acquisti;
 DROP TABLE IF EXISTS chipOrders;
@@ -33,7 +33,7 @@ INSERT INTO utenti(user_name, password) VALUES
     ('admin', 'admin'),
     ('user', 'user');
 
-CREATE TABLE recnsioni (
+CREATE TABLE recensioni (
   id BIGINT(20) AUTO_INCREMENT PRIMARY KEY 
   user VARCHAR(20) NOT NULL,
   testo VARCHAR(256) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE chipOrders(
   user VARCHAR(20) PRIMARY KEY,
   nome VARCHAR(20) NOT NULL,
   cognome VARCHAR(20) NOT NULL,
-  età INT NOT NULL,
+  eta INT NOT NULL,
   mail VARCHAR(20) NOT NULL,
   telefono VARCHAR(20),
   messaggio VARCHAR(256),
@@ -78,7 +78,6 @@ CREATE TABLE scissionOrders(
   user VARCHAR(20) PRIMARY KEY,
   nome VARCHAR(20) NOT NULL,
   cognome VARCHAR(20) NOT NULL,
-  età INT NOT NULL,
   mail VARCHAR(20) NOT NULL,
   telefono VARCHAR(20),
   nome_azienda VARCHAR(32),
