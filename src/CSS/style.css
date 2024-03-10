@@ -18,6 +18,7 @@ html{
     font-size: 100%;
     line-height: 1.5em;
     margin: auto;
+    background-color:gray;
 }
 
 .aiutoNavigazione{
@@ -30,8 +31,59 @@ main{
     max-width:1000px;
     margin-right:auto;
     margin-left:auto;
+    padding-top:180px;
+    padding-right:5%;
+    padding-left:5%;
+    background-color:white;
+    min-height:100vh;
     
 }
+
+header{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding:20px;
+    background-color:black;
+    width:100%;
+    position:fixed;
+}
+
+header ul{
+    display:flex;
+    flex-direction:row;
+}
+
+header li {
+    margin-left:4%;
+    margin-right:4%;
+    color:white;
+}
+
+#logo{
+    border-radius:50%;
+    max-width:100px;
+}
+
+#breadcrump{
+    color:white;
+    margin:30px;
+}
+
+footer{
+    background-color:black;
+    color:white;
+    width:100%;
+    /* position:fixed; */
+    bottom:0;
+    text-align:center;
+}
+
+/********************** 
+
+    SERVIZI
+
+***********************/
 
 article{
     padding-bottom:3em;
@@ -45,6 +97,7 @@ article h1{
 article h2{
     padding-bottom:0.5em;
     padding-top:0.5em;
+    font-size:14pt;
 }
 
 article li{
