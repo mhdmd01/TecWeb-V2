@@ -65,6 +65,9 @@ class newPage{
 
             $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
             
+        }else if($currentPage == "../html/sognoSingolo.html"){
+            $navBar = str_replace("{sogniLink}", "<li>Sogni</li>", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
         }
 
         // Controlla se la variabile di sessione user_id è impostata
