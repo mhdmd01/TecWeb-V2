@@ -12,9 +12,9 @@
     $annuncio = "";
 
     foreach( $sogni as $row){
-        $annuncio .= file_get_contents("../html/sognoLista.html");
+        $annuncio .= file_get_contents("../html/annuncioSogno.html");
 
-        $annuncio = str_replace("{linkSogno}", "link".urlencode($row['titolo']), $annuncio);
+        $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
         $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
         $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
         $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);

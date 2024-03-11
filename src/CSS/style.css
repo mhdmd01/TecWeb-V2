@@ -3,15 +3,15 @@
     margin: 0;
 }
 
-:root{ /*QUI BISOGNA TROVARE UNA GIUSTA COMBINAZIONE DI COLORI AL MOMENTO NE METTO UNA A CAZZO*/
-    --headerBgColor: green;
-    --headerTxtColor: white;
-    --BgColor: purple;
-    --BgTxtColor: white;
-    --footerBgColor: black;
-    --footerTxtColor: white;
-    --linkColor: blue;
-    --visitedLinkColor: brown;
+:root{
+    --headerBgColor: #483d8b;
+    --headerTxtColor: #FFFFFF;
+    --BgColor: #F4F2F3;
+    --BgTxtColor: #FFFFFF;
+    --footerBgColor: #483d8b;
+    --footerTxtColor: #FFFFFF;
+    --linkColor: #F1F227;
+    --visitedLinkColor: #D4B300;
 }
 
 html{
@@ -21,11 +21,62 @@ html{
     background-color:gray;
 }
 
+a{
+    color:var(--linkColor)
+}
+
+a:visited{
+    color: var(--visitedLinkColor);
+}
+
+a:hover{
+    opacity: 0.3;
+}
+
+
+/* NAVBAR */
+header{
+    display: flex; /*PRIMO FLEX*/
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--headerBgColor);
+    color: var(--headerTxtColor);
+}
+
+header > img{
+    width: 4em;
+    height: auto;
+    margin-top: 0.5em;
+}
+
 .aiutoNavigazione{
     position: absolute;
     text-indent: -999em;
     display: none;
 }
+
+ul.listaNavBar{
+    display: flex; /*Secondo flex*/
+    flex-direction: row;
+    list-style: none;
+    gap: 1em;
+}
+
+.menu a{
+    margin: auto;
+    color: var(--linkColor);
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 0.5em;
+    transition: all -50s ease-in-out;
+}
+
+
+
+/*FINE Navbar*/
 
 main{
     max-width:1000px;
@@ -39,45 +90,6 @@ main{
     
 }
 
-header{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    padding:20px;
-    background-color:black;
-    width:100%;
-    position:fixed;
-}
-
-header ul{
-    display:flex;
-    flex-direction:row;
-}
-
-header li {
-    margin-left:4%;
-    margin-right:4%;
-    color:white;
-}
-
-#logo{
-    border-radius:50%;
-    max-width:100px;
-}
-
-#breadcrump{
-    color:white;
-    margin:30px;
-}
-
-footer{
-    background-color:black;
-    color:white;
-    width:100%;
-    /* position:fixed; */
-    bottom:0;
-    text-align:center;
-}
 
 /********************** 
 
@@ -102,4 +114,21 @@ article h2{
 
 article li{
     margin-left:2em;
+}
+
+/********************** 
+
+    FINE SERVIZI
+
+***********************/
+
+
+/*Inizio Footer*/
+footer{
+    background-color: var(--footerBgColor);
+    color:var(--footerTxtColor);
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    padding: 1em 0em 1em 0em;
 }
