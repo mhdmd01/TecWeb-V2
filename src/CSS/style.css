@@ -6,7 +6,7 @@
 :root{
     --headerBgColor: #483d8b;
     --headerTxtColor: #FFFFFF;
-    --BgColor: #F4F2F3;
+    --BgColor: #483d8b; /*STO ANCORA CERCANDO UNA BUONA PALETTE*/
     --BgTxtColor: #FFFFFF;
     --footerBgColor: #483d8b;
     --footerTxtColor: #FFFFFF;
@@ -33,14 +33,15 @@ a:hover{
     opacity: 0.3;
 }
 
+body{
+    display: flex; /*Primo flex*/
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 /* NAVBAR */
 header{
-    display: flex; /*PRIMO FLEX*/
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    text-align: center;
     width: 100%;
     background-color: var(--headerBgColor);
     color: var(--headerTxtColor);
@@ -58,11 +59,23 @@ header > img{
     display: none;
 }
 
+.menu{
+    text-align: center;
+    line-height: 1.5em;
+    margin:auto;
+}
+
 ul.listaNavBar{
-    display: flex; /*Secondo flex*/
-    flex-direction: row;
+    padding: 0;
+    margin: 1em;
+    text-align: center;
     list-style: none;
-    gap: 1em;
+}
+
+ul.listaNavBar > li{
+    display: inline-block;
+    width: 10%;
+    margin: 0 0.5em;
 }
 
 .menu a{
@@ -70,7 +83,6 @@ ul.listaNavBar{
     color: var(--linkColor);
     font-size: 1.5em;
     font-weight: 500;
-    padding: 0.5em;
     transition: all -50s ease-in-out;
 }
 
@@ -78,6 +90,7 @@ ul.listaNavBar{
 
 /*FINE Navbar*/
 
+<<<<<<< Updated upstream
 main{
     max-width:1000px;
     margin-right:auto;
@@ -121,6 +134,8 @@ article li{
     FINE SERVIZI
 
 ***********************/
+=======
+>>>>>>> Stashed changes
 
 
 /*Inizio Footer*/
