@@ -89,12 +89,12 @@ ul.listaNavBar > li{
 
 
 /*FINE Navbar*/
-/*
+
 main{
-    max-width:1000px;
+    width:80%;
     margin-right:auto;
     margin-left:auto;
-    padding-top:180px;
+    padding-top:3%;
     padding-right:5%;
     padding-left:5%;
     background-color:white;
@@ -105,12 +105,12 @@ main{
 
 /********************** 
 
-    SERVIZI
+    SERVIZI e ABOUT
 
-**********************
+**********************/
 
 article{
-    padding-bottom:3em;
+    padding-bottom:8em;
 }
 
 article h1{
@@ -128,9 +128,10 @@ article li{
     margin-left:2em;
 }
 */
+    
 /********************** 
 
-    FINE SERVIZI
+    FINE SERVIZI e ABOUT
 
 ***********************/
 
