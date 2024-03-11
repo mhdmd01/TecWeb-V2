@@ -65,6 +65,11 @@ class newPage{
 
             $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
             
+        }else if($currentPage == "../html/sognoSingolo.html"){
+            $navBar = str_replace("{sogniLink}", "<li>Sogni</li>", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
+        }else if($currentPage == "paginaErrore"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> sogno non trovato", $navBar);
         }
 
         // Controlla se la variabile di sessione user_id è impostata
@@ -90,6 +95,20 @@ class newPage{
         $navBar = str_replace("{contattaLink}", "<li><a href=\"contatta.php\">Contattaci</a></li>", $navBar);
 
         $this->modificaHTML("{navBar}", $navBar);
+    }
+
+    public function printErrorPage($errorMsg){
+        $this->strutturaHTML = file_get_contents("../html/generalTemplate.html"); //strutturaHTML ora contiene l'HTML di generalTemplate (il template generale)
+
+        $this->strutturaHTML = str_replace("{titoloPagina}", "Errore" , $this->strutturaHTML);                 //Sostituisce segnaposto titolo
+        //Aggiungere keyword comuni per tutte le pagine
+        $this->strutturaHTML = str_replace("{metaKeywords}", "Saudade, error" , $this->strutturaHTML);         //Sostituisce segnaposto keywords 
+        $this->strutturaHTML = str_replace("{metaDescription}", "Pagina di errore Saudade" , $this->strutturaHTML);               //Sostituisce segnaposto description
+	    $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter, $this->strutturaHTML);              //Sostituzione segnaposto testoFooter
+        $this->printNavBar("paginaErrore");
+        
+        //Sostituzione contenuto principale con il segnaposto main
+        $this->strutturaHTML = str_replace("{contenutoMain}", $errorMsg, $this->strutturaHTML);
     }
 
     public function printPage(){
