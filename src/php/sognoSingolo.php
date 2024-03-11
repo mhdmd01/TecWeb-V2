@@ -25,6 +25,8 @@
             $pagina->modificaHTML("{prezzo}", $row['prezzo']);
             $pagina->modificaHTML("{pathImg}", $row['pathImg']);
         }
-
-        $pagina->printPage();
+    }else{
+        $pagina->printErrorPage("Sogno non trovato, tornare alla pagina <a href=\"sogni.php\">Sogni</a> provare a riselezionare il sogno desiderato");
     }
+
+    $pagina->printPage();
