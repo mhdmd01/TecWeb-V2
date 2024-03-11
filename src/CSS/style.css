@@ -3,15 +3,15 @@
     margin: 0;
 }
 
-:root{ /*QUI BISOGNA TROVARE UNA GIUSTA COMBINAZIONE DI COLORI AL MOMENTO NE METTO UNA A CAZZO*/
-    --headerBgColor: green;
-    --headerTxtColor: white;
+:root{
+    --headerBgColor: #483d8b;
+    --headerTxtColor: #FFFFFF;
     --BgColor: #F4F2F3;
-    --BgTxtColor: #2;
-    --footerBgColor: black;
-    --footerTxtColor: white;
-    --linkColor: blue;
-    --visitedLinkColor: brown;
+    --BgTxtColor: #FFFFFF;
+    --footerBgColor: #483d8b;
+    --footerTxtColor: #FFFFFF;
+    --linkColor: #F1F227;
+    --visitedLinkColor: #D4B300;
 }
 
 html{
@@ -20,8 +20,67 @@ html{
     margin: auto;
 }
 
+a{
+    color:var(--linkColor)
+}
+
+a:visited{
+    color: var(--visitedLinkColor);
+}
+
+a:hover{
+    opacity: 0.3;
+}
+
+
+/* NAVBAR */
+header{
+    display: flex; /*PRIMO FLEX*/
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--headerBgColor);
+    color: var(--headerTxtColor);
+}
+
+header > img{
+    width: 4em;
+    height: auto;
+    margin-top: 0.5em;
+}
+
 .aiutoNavigazione{
     position: absolute;
     text-indent: -999em;
     display: none;
+}
+
+ul.listaNavBar{
+    display: flex; /*Secondo flex*/
+    flex-direction: row;
+    list-style: none;
+    gap: 1em;
+}
+
+.menu a{
+    margin: auto;
+    color: var(--linkColor);
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 0.5em;
+    transition: all -50s ease-in-out;
+}
+
+/*FINE Navbar*/
+
+/*Inizio Footer*/
+footer{
+    background-color: var(--footerBgColor);
+    color:var(--footerTxtColor);
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    padding: 1em 0em 1em 0em;
 }
