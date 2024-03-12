@@ -44,9 +44,9 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Sogni", $navBar);
 
 
-        }else if($currentPage == "../html/about.html"){
-            $navBar = str_replace("{aboutLink}", "<li>About</li>", $navBar);
-            $navBar = str_replace("{breadcrumb}", "About", $navBar);
+        }else if($currentPage == "../html/storia.html"){
+            $navBar = str_replace("{storiaLink}", "<li>Storia</li>", $navBar);
+            $navBar = str_replace("{breadcrumb}", "Storia", $navBar);
 
         }else if($currentPage == "../html/contatta.html"){
             $navBar = str_replace("{contattaLink}", "<li>Contattaci</li>", $navBar);
@@ -91,7 +91,7 @@ class newPage{
         $navBar = str_replace("{homeLink}", "<li><a href=\"index.php\">Home</a></li>", $navBar);
         $navBar = str_replace("{serviziLink}", "<li><a href=\"servizi.php\">Servizi</a></li>", $navBar);
         $navBar = str_replace("{sogniLink}", "<li><a href=\"sogni.php\">Sogni</a></li>", $navBar);
-        $navBar = str_replace("{aboutLink}", "<li><a href=\"about.php\"><span lang=\"en\">About</span></a></li>", $navBar);
+        $navBar = str_replace("{storiaLink}", "<li><a href=\"storia.php\">Storia</a></li>", $navBar);
         $navBar = str_replace("{contattaLink}", "<li><a href=\"contatta.php\">Contattaci</a></li>", $navBar);
 
         $this->modificaHTML("{navBar}", $navBar);
