@@ -9,20 +9,23 @@
     $functions = new functions();
     $sogni = $functions->executeQuery("SELECT * FROM sogni;");
 
-    $annuncio = "";
+    if($sogni == null)
+        $pagina->printErrorPage("Non ci sono sogni disponibili al momento, riprovare più tardi o tornare alla pagina <a href=\"index.php\">home</a>");
+    else{
+        $annuncio = "";
 
-    foreach( $sogni as $row){
-        $annuncio .= file_get_contents("../html/annuncioSogno.html");
+        foreach( $sogni as $row){
+            $annuncio .= file_get_contents("../html/annuncioSogno.html");
 
-        $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
-        $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
-        $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
-        $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
-        $annuncio = str_replace("{pathImg}", $row['pathImg'], $annuncio);
+            $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
+            $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
+            $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
+            $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
+            $annuncio = str_replace("{pathImg}", $row['pathImg'], $annuncio);
+        }
+
+        $pagina->modificaHTML("{elencoSogni}", $annuncio);
     }
 
-    if($annuncio == "")
-        $annuncio = "Non ci sono sogni disponibili al momento, riprovare più tardi";
-
-    $pagina->modificaHTML("{elencoSogni}", $annuncio);
+    
     $pagina->printPage();
