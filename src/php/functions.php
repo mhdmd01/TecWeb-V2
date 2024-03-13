@@ -19,9 +19,9 @@
 namespace functions;
 class functions{
     private const HOST_DB = "localhost";
-    private const USERNAME = "root";
-    private const PASSWORD = "";
-    private const DATABASE_NAME = "saudade";
+    private const USERNAME = "egreggio";
+    private const PASSWORD = "OoWahsoiyai4hoiK";
+    private const DATABASE_NAME = "egreggio";
 
     private $connection;
 
