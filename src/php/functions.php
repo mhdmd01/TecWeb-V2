@@ -21,7 +21,7 @@ class functions{
     private const HOST_DB = "localhost";
     private const USERNAME = "root";
     private const PASSWORD = "";
-    private const DATABASE_NAME = "saudade";
+    private const DATABASE_NAME = "Saudade";
 
     private $connection;
 

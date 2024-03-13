@@ -32,7 +32,7 @@ class newPage{
 
         if($currentPage == "../html/index.html"){
             $navBar = str_replace("{homeLink}", "<li>Home</li>", $navBar);
-            $navBar = str_replace("{breadcrumb}", "Home", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<span lang=\"en\">Home</span>", $navBar);
 
         }else if($currentPage == "../html/servizi.html"){
             $navBar = str_replace("{serviziLink}", "<li>Servizi</li>", $navBar);
