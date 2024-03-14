@@ -6,19 +6,20 @@
 :root{
     --headerBgColor: #483d8b;
     --headerTxtColor: #FFFFFF;
-    --BgColor: #483d8b; /*STO ANCORA CERCANDO UNA BUONA PALETTE*/
-    --BgTxtColor: #FFFFFF;
+    --BgColor: #FFFFFF; /*STO ANCORA CERCANDO UNA BUONA PALETTE*/
+    --BgTxtColor: black;
     --footerBgColor: #483d8b;
     --footerTxtColor: #FFFFFF;
     --linkColor: #F1F227;
     --visitedLinkColor: #D4B300;
+    --BgAll: gray;
 }
 
 html{
     font-size: 100%;
     line-height: 1.5em;
     margin: auto;
-    background-color:gray;
+    background-color:var(--BgAll); 
 }
 
 a{
@@ -97,7 +98,8 @@ main{
     padding-top:3%;
     padding-right:5%;
     padding-left:5%;
-    background-color:white;
+    padding-bottom: 3%;
+    background-color: var(--BgColor);
 }
 
 /********************** 
@@ -107,7 +109,7 @@ main{
 **********************/
 
 article{
-    padding-bottom:8em;
+    text-align: center;
 }
 
 article h1{
@@ -131,6 +133,12 @@ article li{
 
 ***********************/
 
+/*Pagina Contatti*/
+.contatti{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*Inizio Footer*/
 footer{
