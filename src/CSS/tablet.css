@@ -1,0 +1,39 @@
+#logo{
+    float: left;
+    margin: 1em;
+    padding: 1em;
+}
+
+.listaNavBar{
+    display: none;
+}
+
+.hideOnDesktop{
+    display: block;
+    float: right;
+}
+/*stile sidebar*/
+.sideBar{
+    display: flex; /*temporaneo  3 flex*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    background: var(--headerBgColor); /*TEMPORANEO*/
+    backdrop-filter: blur(1em); /*effetto blur su firefox ed edge*/
+    -webkit-backdrop-filter: blur(1rem); /*effetto blur su safari altrimenti non funziona*/
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    width: 30%;
+}
+
+ul.listaSideBar > li{
+    font-size: large;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}

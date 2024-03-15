@@ -87,8 +87,20 @@ ul.listaNavBar > li{
     transition: all -50s ease-in-out;
 }
 
+.breadcrump{
+    margin: auto;
+    font-size: 1em;
+    position: fixed;
+}
 
+/*Inizio sideBar*/
+button.hideOnDesktop{
+    display: none;
+}
 
+.sideBar{
+    display: none;
+}
 /*FINE Navbar*/
 
 main{
