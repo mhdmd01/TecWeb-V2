@@ -12,15 +12,18 @@
 								"Pagina di login");
 
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
-		//something was posted
-		//$user_name = $dbFunctions->pulisciInput($_POST['user_name']);
-		//$password = $dbFunctions->pulisciInput($_POST['password']);
 
-        $user_name = ($_POST['user_name']);
-        $password = ($_POST['password']);
+        $user_name = $functions->pulisciInput($_POST['user_name']);
+        $password = $functions->pulisciInput($_POST['password']);
 
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
-			$result = $functions->executeQuery("SELECT * FROM utenti WHERE user_name = '$user_name'");
+			$functions->openDBConnection();
+			$stmt = $functions->getConnection()->prepare("SELECT * FROM utenti WHERE user_name=?");
+			$stmt->bind_param("s", $user_name);
+			$stmt->execute();
+			$result = $stmt->get_result(); // Ottieni il risultato della query
+			$stmt->close();
+			$functions->closeConnection();
 
 			if($result){
 				if(mysqli_num_rows($result) > 0){
@@ -36,13 +39,22 @@
 						exit;
 					}
 				}else{
-					$error = "Si è verificato un'errore, riprovare la procedura di login";
+					$error = "Si è verificato un'errore, ripetere la procedura di login";
 				}
 			}
 			$error = "Nome utente o password errati!";
 		}else{
-			$error = "Nome utente o password mancanti!";
+			if(empty($user_name))
+				$error = "<p>Campo 'username' vuoto, inserire dati</p>";
+			else if(is_numeric($user_name))
+				$error .= "<p>Il campo 'username' non può contentere solo numeri</p>";
+	
+			if(empty($password))
+				$error .= "<p>Campo 'password' vuoto, inserire dati</p>";
 		}
+
+		if($error != "")
+			$error = "Problemi: " . $error;
 	}
 
 $paginaObj->modificaHTML("{Error}", $error);

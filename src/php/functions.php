@@ -23,6 +23,10 @@ class Functions {
         mysqli_close($this->connection);
     }
 
+    public function getConnection(){
+        return $this->connection;
+    }
+
     public function executeQuery($query){
         if ($this->openDBConnection()) {
             $risultato = mysqli_query($this->connection, $query) or die("Errore di connessione" . mysqli_error($this->connection));
@@ -37,5 +41,12 @@ class Functions {
 
         $this->closeConnection();
         return $risultato;
+    }
+
+    function pulisciInput($value) {
+        $value = trim($value); 
+        $value = strip_tags($value); 
+        $value = htmlentities($value);
+        return $value;
     }
 }

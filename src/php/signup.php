@@ -13,30 +13,38 @@ $paginaObj = new newPage("../html/signup.html",
 
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-	//$user_name = $dbFunctions->pulisciInput($_POST['user_name']);
-	//$password = $dbFunctions->pulisciInput($_POST['password']);
 
-    $user_name = ($_POST['user_name']);
-    $password = ($_POST['password']);
+    $user_name = $functions->pulisciInput($_POST['user_name']);
+    $password = $functions->pulisciInput($_POST['password']);
 
 	if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
 		$result = $functions->executeQuery("SELECT * FROM utenti WHERE user_name='$user_name'");
 
-		if($result){
-			if(mysqli_num_rows($result) == 0){
-				$functions->executeQuery("INSERT INTO utenti (user_name, password) VALUES ('$user_name', '$password')");
+		if(is_null($result)){
+			$functions->openDBConnection();
+			$stmt = $functions->getConnection()->prepare("INSERT INTO utenti (user_name, password) VALUES (?, ?)");
+			$stmt->bind_param("ss", $user_name, $password);
+			$stmt->execute();
+			$stmt->close();
+			$functions->closeConnection();
 
-				header("Location: login.php");
-				exit;
+			header("Location: login.php");
+			exit;
 			
-			}else{
-				$error = "Username già esistente, sceglierne un altro";
-			}
-		}
-        
+		}else
+			$error = "Username già esistente, sceglierne un altro";
 	}else{
-		$error = "Inserire dati validi";
+		if(empty($user_name))
+			$error = "<p>Campo 'username' vuoto, inserire dati</p>";
+		else if(is_numeric($user_name))
+			$error .= "<p>Il campo 'username' non può contentere solo numeri</p>";
+
+		if(empty($password))
+			$error .= "<p>Campo 'password' vuoto, inserire dati</p>";
 	}
+
+	if($error != "")
+		$error = "Problemi: " . $error;
 }
 
 $paginaObj->modificaHTML("{Error}", $error);
