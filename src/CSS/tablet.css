@@ -8,22 +8,30 @@
     display: none;
 }
 
-button.hideOnDesktop{
+.hideOnDesktop{
     display: block;
     float: right;
+    filter: invert(1);
+    padding: 1em;
+    transition: all 0.2 ease-in-out;
 }
+
+.hideOnDesktop:hover{
+    opacity: 0.3;
+}
+
 /*stile sidebar*/
 .sideBar{
-    display: flex; /*temporaneo  3 flex*/
+    display: flex; /*3 flex*/
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     z-index: 999;
-    background: var(--headerBgColor); /*TEMPORANEO*/
+    background: var(--BgSidebar);
     backdrop-filter: blur(1em); /*effetto blur su firefox ed edge*/
     -webkit-backdrop-filter: blur(1rem); /*effetto blur su safari altrimenti non funziona*/
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5); /*sfondo della sidebar*/
     text-align: center;
     flex-direction: column;
     justify-content: space-around;
@@ -31,11 +39,16 @@ button.hideOnDesktop{
     width: 30%;
 }
 
-
-
 ul.listaSideBar > li{
-    font-size: large;
+    font-size: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     list-style: none;
     text-align: center;
     width: 100%;
+    font-family: var(--fontMenu);
+}
+
+ul.listaSideBar a:hover{
+    color:var(--visitedLinkColor);
 }
