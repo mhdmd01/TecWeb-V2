@@ -8,7 +8,7 @@
     display: none;
 }
 
-.hideOnDesktop{
+button.hideOnDesktop{
     display: block;
     float: right;
 }
@@ -30,6 +30,8 @@
     list-style: none;
     width: 30%;
 }
+
+
 
 ul.listaSideBar > li{
     font-size: large;
