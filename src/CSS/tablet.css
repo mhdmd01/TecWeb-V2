@@ -13,7 +13,7 @@
     float: right;
     filter: invert(1);
     padding: 1em;
-    transition: all 0.2 ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .hideOnDesktop:hover{
