@@ -70,6 +70,8 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
         }else if($currentPage == "paginaErrore"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> sogno non trovato", $navBar);
+        }else if($currentPage == "../html/error404.html"){
+            $navBar = str_replace("{breadcrumb}", "Pagina non trovata", $navBar);
         }
 
         // Controlla se la variabile di sessione user_id è impostata
