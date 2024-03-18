@@ -15,10 +15,10 @@
             {logoutLink}
         </ul>
     </nav>
-    <button class="hideOnDesktop" onclick="showSideBar()">Hamburger</button>
+    <a class="hideOnDesktop" onclick="showSideBar()" href="#"><img src="../assets/ham.png"></a>
     <nav class="nascondi">
         <ul class="listaSideBar">
-            <li><button onclick="hideSideBar()">Close</button></li>
+            <li onclick="hideSideBar()"><a class="close" href="#"><img src="../assets/close.png"></a></li>
             {homeLink}
             {serviziLink}
             {sogniLink}

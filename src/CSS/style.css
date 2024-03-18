@@ -13,6 +13,8 @@
     --linkColor: #F1F227;
     --visitedLinkColor: #D4B300;
     --BgAll: gray;
+    --BgSidebar:rgb(72,61,139, 0.5); /*#483d8b*/
+    --fontMenu: "Sans-Serif";
 }
 
 .nascondi{
@@ -75,6 +77,7 @@ ul.listaNavBar{
     margin: 1em;
     text-align: center;
     list-style: none;
+    font-family: var(--fontMenu);
 }
 
 ul.listaNavBar > li{
@@ -97,14 +100,30 @@ ul.listaNavBar > li{
     position: fixed;
 }
 
-/*Inizio sideBar*/
-button.hideOnDesktop{
+/*Inizio sideBar, molte cose sono su mobile ovviamente*/
+.hideOnDesktop{
     display: none;
 }
 
 .sideBar{
     display: none;
 }
+
+/* VOGLIO AUMENTARE LA DIMENSIONE DELLA X
+li[onclick="showSideBar()"]{
+    font-size: 6em;
+}*/
+
+.close{
+    filter: invert(1);
+    transition: all -50s ease-in-out;
+}
+
+.close:hover{
+    opacity: 0.3;
+}
+
+/*Fine sidebar*/
 /*FINE Navbar*/
 
 main{
@@ -155,6 +174,7 @@ article li{
     margin-left: auto;
     margin-right: auto;
 }
+/*Fine pagina Contatti*/
 
 /*Inizio Footer*/
 footer{
