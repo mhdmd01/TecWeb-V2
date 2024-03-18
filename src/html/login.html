@@ -1,17 +1,25 @@
 <div class="Errore">{Error}</div>
 
 <div class="box">
-    <form action="login.php" method="post"> 
-        <p class="logintitle">Accedi</p>
+    <form id="loginForm" action="login.php" method="post"> 
+        <p class="loginTitle">Accedi</p>
+        
         <p>Inserisci i tuoi dati</p>
+        
         <label for="username"><span lang="en">Username:</span></label>
-        <input id="username" class="casellaTesto" type="text" name="user_name" placeholder="Username" maxlength="50">
+        <input class="casellaTesto" placeholder="Username" id="loginUsername" type="text" name="user_name" maxlength="50">
 
         <label for="password"><span lang="en">Password:</span></label>
-        <input id="password" class="casellaTesto" type="password" name="password" placeholder="Password" maxlength="50">
+        <input class="casellaTesto" placeholder="Password" id="loginPassword" type="password" name="password" maxlength="50">
 
         <input id="button" type="submit" value="Login">
 
         <a href="signup.php">Clicca qui per registrarti</a>
     </form>
+
+    <p id="loginUsernameError"></p>
+    <p id="loginPasswordError"></p>
 </div>
+
+<script src="../js/functions.js"></script>
+<script src="../js/loginFormValidation.js"></script>
