@@ -27,7 +27,7 @@
                 $pagina->modificaHTML("{titolo}", $row['titolo']);
                 $pagina->modificaHTML("{descrizione}", $row['descrizione']);
                 $pagina->modificaHTML("{prezzo}", $row['prezzo']);
-                $pagina->modificaHTML("{pathImg}", $row['pathImg']);
+                $pagina->modificaHTML("{pathImg}",  "\"../assets/sogni/".$row['titolo'].".".$row['estensioneFile']."\"");
             }
         }
     }

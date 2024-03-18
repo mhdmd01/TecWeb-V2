@@ -41,15 +41,15 @@ CREATE TABLE sogni(
   titolo VARCHAR(20) PRIMARY KEY,
   descrizione VARCHAR(256), 
   prezzo INT NOT NULL, 
-  pathImg VARCHAR(20) NOT NULL,
+  estensioneFile VARCHAR(20) NOT NULL,
   data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
   /*categoria Categorie, */
 );
 
-INSERT INTO sogni(titolo, descrizione, prezzo, pathImg) VALUES
-  ('Sogno 1', 'Il primo sogno di prova', 23, '../assets/sogno1.jpg'),
-  ('Sogno 2', 'Il secondo sogno di prova', 123, '../assets/sogno2.jpg');
+INSERT INTO sogni(titolo, descrizione, prezzo, estensioneFile) VALUES
+  ('Sogno 1', 'Il primo sogno di prova', 23, 'jpg'),
+  ('Sogno 2', 'Il secondo sogno di prova', 123, 'png');
 
 
 -- Acquisti

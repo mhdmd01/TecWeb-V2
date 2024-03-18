@@ -34,8 +34,11 @@
                         session_start();
 						$_SESSION['user_name'] = $user_data['user_name'];
 
-						//header("Location: dashboard.php");
-                        header("Location: index.php");
+						if($user_data['user_name'] == "admin")
+							header("Location: dashboardAdmin.php");
+						else
+							header("Location: dashboardUser.php");
+
 						exit;
 					}
 				}else{

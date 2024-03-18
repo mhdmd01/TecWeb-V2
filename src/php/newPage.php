@@ -28,6 +28,7 @@ class newPage{
     }
 
     public function printNavBar($currentPage=null){
+        session_start();
         $navBar = file_get_contents("../html/navBarTemplate.html");
 
         if($currentPage == "../html/index.html"){
@@ -72,12 +73,20 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> sogno non trovato", $navBar);
         }else if($currentPage == "../html/error404.html"){
             $navBar = str_replace("{breadcrumb}", "Pagina non trovata", $navBar);
+        }else if($currentPage == "../html/dashboardUser.html" || $currentPage == "../html/dashboardAdmin.html"){
+            $navBar = str_replace("{breadcrumb}", "Area personale", $navBar);
+            $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
+        }else if($currentPage == "../html/aggiungiSogno.html"){
+            $navBar = str_replace("{breadcrumb}", "Nuovo sogno", $navBar);
         }
 
         // Controlla se la variabile di sessione user_id è impostata
-        session_start();
         if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
-            $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
+            if($_SESSION['user_name'] == "admin")
+                $navBar = str_replace("{loginLink}", "<a href=\"dashboardAdmin.php\">Ciao ".$_SESSION['user_name']."</a>", $navBar);
+            else
+                $navBar = str_replace("{loginLink}", "<a href=\"dashboardUser.php\">Ciao ".$_SESSION['user_name']."</a>", $navBar);
+
             $navBar = str_replace("{signupLink}", "", $navBar);
 
             $navBar = str_replace("{logoutLink}", "<li><a href=\"../php/logout.php\">Logout</a></li>", $navBar);
