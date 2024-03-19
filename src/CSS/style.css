@@ -44,6 +44,8 @@ body{
     display: flex; /*Primo flex*/
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.5;
+    font-size: clamp(1.125rem, 2vw, 1.25rem); /*responsive text*/
 }
 
 /* NAVBAR */
@@ -142,14 +144,61 @@ main{
     background-color: var(--BgColor);
 }
 
+/*Pagina Home*/
+.slide-1{
+    background-color: blue;
+    color: white;
+    height: 50vh; /*da cambiare in 50*/
+    text-align: center;
+}
+
+.slide-1 > h3{
+    float: right;
+    padding: 2em;
+}
+
+.slide-1 > p{
+    float: right;
+}
+
+.slide-1 > a{
+    background-color: white;
+    color: black;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+@keyframes fade{ /*crea animazione*/
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+/*FINE HOME*/
+
 /********************** 
 
     SERVIZI e ABOUT
+modificate le animazione che vanno tuttavia sistemate con lo scroll
 
 **********************/
 
 article{
     text-align: center;
+    animation: fade 3s linear both;
+    animation-timeline: scroll();
+    animation-range: entry 50% cover 50%;
+}
+article p{
+    animation: fade 3s linear both;
+    animation-timeline: scroll();
+    animation-range: entry 50% cover 50%;
 }
 
 article h1{
@@ -165,6 +214,9 @@ article h2{
 
 article li{
     margin-left:2em;
+    animation: fade 3s linear both;
+    animation-timeline: scroll();
+    animation-range: entry 50% cover 50%;
 }
     
 /********************** 
@@ -172,6 +224,7 @@ article li{
     FINE SERVIZI e ABOUT
 
 ***********************/
+
 
 /*Pagina Contatti*/
 .contatti{
