@@ -106,7 +106,7 @@ ul.listaNavBar > li{
     margin: 1em;
     width: 70px;
     height: 70px;
-    transition: all 4s ease;
+    transition: all 1.25s ease;
 }
 
 #logo:hover{
