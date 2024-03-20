@@ -102,6 +102,12 @@ ul.listaNavBar > li{
     position: fixed;
 }
 
+#logo{
+    margin: 1em;
+    width: 70px;
+    height: 70px;
+}
+
 /*Inizio sideBar, molte cose sono su mobile ovviamente*/
 .hideOnDesktop{
     display: none;
@@ -151,7 +157,7 @@ main{
     border-radius: 25px;
     background-color: blue;
     color: white;
-    height: 50vh; /*da cambiare in 50*/
+    height: 25vh; /*da cambiare in 50*/
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -162,6 +168,12 @@ main{
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    transition: transform 0.3s ease 0s;
+}
+
+.slide-link:hover{
+    transform: translateY(-5px);
+    opacity: 1;
 }
 
 /*slide 1*/
@@ -187,7 +199,7 @@ main{
     border-radius: 25px;
     background-color: red;
     color: white;
-    height: 50vh; /*da cambiare in 50*/
+    height: 25vh; /*da cambiare in 50*/
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -277,6 +289,27 @@ article li{
 /*Sogni*/
 
 /*Fine Sogni*/
+
+/*Registrati*/
+.box{
+    /*height: 100vh;*/
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.signupTitle{
+    font-size: 3em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+form > p {
+
+}
+
+
+/*Accedi*/
+
 
 /*Inizio Footer*/
 footer{
