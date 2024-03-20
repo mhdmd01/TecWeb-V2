@@ -146,11 +146,25 @@ main{
 
 /*Pagina Home*/
 .slide-1{
+    margin: 2em;
+    padding: 1em;
+    border-radius: 25px;
     background-color: blue;
     color: white;
     height: 50vh; /*da cambiare in 50*/
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.slide-link{ /*questo applica link come bottone*/
+    border-radius: 25px 15px 25px 15px;
+    padding: 1em 2em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/*slide 1*/
 
 .slide-1 > h3{
     float: right;
@@ -161,16 +175,41 @@ main{
     float: right;
 }
 
-.slide-1 > a{
+.slide-1 > a.slide-link{ /*questo modifica il bottone-link di una slide*/
     background-color: white;
     color: black;
-    padding: 1em 2em;
+
+}
+/*slide 2*/
+.slide-2{
+    margin: 2em;
+    padding: 1em;
+    border-radius: 25px;
+    background-color: red;
+    color: white;
+    height: 50vh; /*da cambiare in 50*/
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@keyframes fade{ /*crea animazione*/
+.slide-2 > h3{
+    float: left;
+    padding: 2em;
+}
+
+.slide-2 > p{
+    float: left;
+}
+
+.slide-2 > a.slide-link{
+    background-color: white;
+    color: red;
+}
+
+
+/*FINE HOME*/
+
+@keyframes fade{ /*crea animazione di comparsa*/
     from{
         opacity: 0;
     }
@@ -178,9 +217,6 @@ main{
         opacity: 1;
     }
 }
-
-
-/*FINE HOME*/
 
 /********************** 
 
@@ -191,12 +227,12 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 
 article{
     text-align: center;
-    animation: fade 3s linear both;
+    animation: fade 1s linear both;
     animation-timeline: scroll();
     animation-range: entry 50% cover 50%;
 }
 article p{
-    animation: fade 3s linear both;
+    animation: fade 1s linear both;
     animation-timeline: scroll();
     animation-range: entry 50% cover 50%;
 }
