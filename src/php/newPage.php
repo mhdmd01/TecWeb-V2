@@ -33,6 +33,7 @@ class newPage{
 
         if($currentPage == "../html/index.html"){
             $navBar = str_replace("{homeLink}", "<li>Home</li>", $navBar);
+            $navBar = str_replace("{logo}", "<img id=\"logo\" alt=\"logo dell'azienda : DESCRIZIONE?\" src=\"../assets/logo.svg\">", $navBar);
             $navBar = str_replace("{breadcrumb}", "<span lang=\"en\">Home</span>", $navBar);
 
         }else if($currentPage == "../html/servizi.html"){
@@ -98,7 +99,7 @@ class newPage{
             session_destroy();
         }
 
-
+        $navBar = str_replace("{logo}", "<a href=\"../php/index.php\"><img id=\"logo\" alt=\"logo dell'azienda : DESCRIZIONE?\" src=\"../assets/logo.svg\"></a>", $navBar);
         $navBar = str_replace("{homeLink}", "<li><a href=\"index.php\">Home</a></li>", $navBar);
         $navBar = str_replace("{serviziLink}", "<li><a href=\"servizi.php\">Servizi</a></li>", $navBar);
         $navBar = str_replace("{sogniLink}", "<li><a href=\"sogni.php\">Sogni</a></li>", $navBar);
