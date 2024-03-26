@@ -62,6 +62,7 @@ CREATE TABLE acquisti(
   FOREIGN KEY (titolo) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 
+/*
 -- Ordini dei chip
 CREATE TABLE chipOrders(
   user_name VARCHAR(20) PRIMARY KEY,
@@ -102,3 +103,4 @@ CREATE TABLE recensioni (
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
   FOREIGN KEY (sogno) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
+*/

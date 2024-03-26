@@ -18,10 +18,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $password = $functions->pulisciInput($_POST['password']);
 
 	if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
-		$result = $functions->executeQuery("SELECT * FROM utenti WHERE user_name='$user_name'");
-
+		$functions->openDBConnection();
+		$stmt = $functions->getConnection()->prepare("SELECT * FROM utenti WHERE user_name=?");
+		$stmt->bind_param("s", $user_name);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		
 		if(is_null($result)){
-			$functions->openDBConnection();
 			$stmt = $functions->getConnection()->prepare("INSERT INTO utenti (user_name, password) VALUES (?, ?)");
 			$stmt->bind_param("ss", $user_name, $password);
 			$stmt->execute();

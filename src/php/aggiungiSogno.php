@@ -25,7 +25,7 @@
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
             
             // Verifica se il file è un'immagine
-            $allowTypes = array("jpg", "jpeg", "png", "gif");
+            $allowTypes = array("jpg", "jpeg", "png");
             if (in_array($fileType, $allowTypes)) {
                 // Sposta il file nella cartella di destinazione
                 if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {
@@ -44,7 +44,7 @@
                     $errorMsg = "Si è verificato un errore durante il caricamento dell'immagine.";
                 }
             } else {
-                $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG, PNG e GIF.";
+                $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG e PNG.";
             }
         }
     }

@@ -79,6 +79,8 @@ class newPage{
             $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
         }else if($currentPage == "../html/aggiungiSogno.html"){
             $navBar = str_replace("{breadcrumb}", "Nuovo sogno", $navBar);
+        }else if($currentPage == "../html/sognoNonTrovato.html"){
+            $navBar = str_replace("{breadcrumb}", "Sogno non disponibile", $navBar);
         }
 
         // Controlla se la variabile di sessione user_id è impostata
