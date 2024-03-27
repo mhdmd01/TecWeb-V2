@@ -17,36 +17,49 @@
         if(isset($_POST['descrizione']) && strlen($_POST['descrizione']) != 0)
             $descrizione = $_POST['descrizione'];
 
-        //Controlli
-        if (isset($_FILES['immagineSogno'])) {
-            $uploadDir = "../assets/sogni/";
-            $fileName = $titoloSogno . '.' . pathinfo($_FILES["immagineSogno"]["name"], PATHINFO_EXTENSION);
-            $targetFilePath = $uploadDir . $fileName;
-            $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-            
-            // Verifica se il file è un'immagine
-            $allowTypes = array("jpg", "jpeg", "png");
-            if (in_array($fileType, $allowTypes)) {
-                // Sposta il file nella cartella di destinazione
-                if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {
-                    $functions->openDBConnection();
-                    $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile) VALUES (?, ?, ?, ?)");
-                    $stmt->bind_param("ssds", $titoloSogno, $descrizione, $prezzo, $fileType);
-                    $ris = $stmt->execute();
-                    $stmt->close();
-                    $functions->closeConnection();
+        //Controllo duplicato
+        $functions->openDBConnection();
+        $stmt = $functions->getConnection()->prepare("SELECT * FROM sogni WHERE titolo=?");
+        $stmt->bind_param("s", $titoloSogno);
+        $stmt->execute();
+        $risultato = $stmt->get_result();
 
-                    if($ris)
-                        $errorMsg = "File caricato con successo";
-                    else
-                        $errorMsg = "Errore caricamento file";
+        if(is_null($risultato)){
+            //Controlli
+            if (isset($_FILES['immagineSogno'])) {
+                $uploadDir = "../assets/sogni/";
+                $fileName = $titoloSogno . '.' . pathinfo($_FILES["immagineSogno"]["name"], PATHINFO_EXTENSION);
+                $targetFilePath = $uploadDir . $fileName;
+                $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+                
+                // Verifica se il file è un'immagine
+                $allowTypes = array("jpg", "jpeg", "png");
+                if (in_array($fileType, $allowTypes)) {
+                    // Sposta il file nella cartella di destinazione
+                    if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {
+                        $functions->openDBConnection();
+                        $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile) VALUES (?, ?, ?, ?)");
+                        $stmt->bind_param("ssds", $titoloSogno, $descrizione, $prezzo, $fileType);
+                        $ris = $stmt->execute();
+                        $stmt->close();
+                        $functions->closeConnection();
+
+                        if($ris)
+                            $errorMsg = "File caricato con successo";
+                        else
+                            $errorMsg = "Errore caricamento file";
+                    } else {
+                        $errorMsg = "Si è verificato un errore durante il caricamento dell'immagine.";
+                    }
                 } else {
-                    $errorMsg = "Si è verificato un errore durante il caricamento dell'immagine.";
+                    $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG e PNG.";
                 }
-            } else {
-                $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG e PNG.";
             }
+        }else{
+            $errorMsg = "Cambiare titolo, già esistente";
         }
+
+        
     }
 
     $pagina->modificaHTML("{Error}", $errorMsg);
