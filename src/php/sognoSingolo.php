@@ -4,11 +4,11 @@
 
     use functions\functions;
     $functions = new functions();
+    $functions->openDBConnection();
 
     if (isset($_GET['sogno'])) {
         $sogno = urldecode($_GET['sogno']);
         // Esegue la query utilizzando uno statement preparato
-        $functions->openDBConnection();
         $stmt = $functions->getConnection()->prepare("SELECT * FROM sogni WHERE titolo=?");
         $stmt->bind_param("s", $sogno);
         $stmt->execute();
@@ -34,18 +34,24 @@
                 $pagina->modificaHTML("{descrizione}", $row['descrizione']);
                 $pagina->modificaHTML("{prezzo}", $row['prezzo']);
                 $pagina->modificaHTML("{pathImg}",  "\"../assets/sogni/".$row['titolo'].".".$row['estensioneFile']."\"");
+
+                if(isset($_SESSION['user_name'])){ //Se sono loggato
+                    if($_SESSION['user_name'] === "admin") //Se sono admin
+                        $bottone = "<a href=\"modificaSogno.php?sogno={$row['titolo']}\" role=\"button\">Modifica</a>";
+                    else //Se sono un utente
+                        $bottone = "<a href=\"acquistaSogno.php?sogno={$row['titolo']}\" role=\"button\">Compra</a>";
+                }else{   //Se non sono loggato
+                    $bottone = "<a href=\"login.php\" role=\"button\">Esegui il login per acquistare</a>";
+                }
                 
-                $bottone = "<a href=\"acquisto.php?titolo={$row['titolo']}\" role=\"button\">Compra</a>";
                 $pagina->modificaHTML("{bottoneCompra}",  $bottone);
             }
         }else{
             $pagina= new newPage("../html/sognoNonTrovato.html",
                                     "Sogno non disponibile",
                                     "", "Pagina di errore per il sogno non disponibile");
-            
-            //$pagina->modificaHTML("{errorMsg}", "Il sogno che stai cercando non esiste o è stato rimosso, torna all'<a href=\"sogni.php\">elenco</a>");
         }
     }
     
-
+    $functions->closeConnection();
     $pagina->printPage();

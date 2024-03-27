@@ -28,7 +28,10 @@ class newPage{
     }
 
     public function printNavBar($currentPage=null){
-        session_start();
+        // Avvia una sessione, se non è già attiva
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $navBar = file_get_contents("../html/navBarTemplate.html");
 
         if($currentPage == "../html/index.html"){

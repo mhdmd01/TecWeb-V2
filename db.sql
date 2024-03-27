@@ -55,11 +55,12 @@ INSERT INTO sogni(titolo, descrizione, prezzo, estensioneFile) VALUES
 -- Acquisti
 CREATE TABLE acquisti(
   user_name VARCHAR(20) NOT NULL,
-  titolo VARCHAR(20) NOT NULL,
-  PRIMARY KEY (user_name, titolo),
+  articolo VARCHAR(20) NOT NULL,
+  data DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (user_name, articolo),
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
-  FOREIGN KEY (titolo) REFERENCES sogni(titolo) ON DELETE CASCADE
+  FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 
 /*
