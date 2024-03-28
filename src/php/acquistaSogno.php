@@ -14,12 +14,14 @@
         $stmt->execute();
         $risultato = $stmt->get_result();
 
-        $pagina = new newPage("../html/acquistaSogno.html", 
+        if(mysqli_num_rows($risultato) > 0){
+            $pagina = new newPage("../html/acquistaSogno.html", 
 								"Acquisto".$sogno, 
 								$sogno, 
 								"Pagina di acquisto per ".$sogno);
 
-        if(mysqli_num_rows($risultato) > 0){
+            $pagina->modificaHTML("{breadcrumb}", "Acquisto sogno \"".$sogno."\"");
+
             foreach( $risultato as $row){
                 $pagina->modificaHTML("{titolo}", $row['titolo']);
                 $pagina->modificaHTML("{descrizione}", $row['descrizione']);
@@ -38,9 +40,10 @@
                                     "", "Pagina di errore per il sogno non disponibile");
         }
     } else {
-        echo "Errore passaggio parametri, riprovare"; // Da migliorare
+        $pagina= new newPage("../html/sognoNonTrovato.html",
+                                    "Sogno non disponibile",
+                                    "", "Pagina di errore per il sogno non disponibile");
     }
 	
     $functions->closeConnection();
-    $pagina->modificaHTML("{breadcrumb}", "Acquisto sogno \"".$sogno."\"");
     $pagina->printPage();

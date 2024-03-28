@@ -45,7 +45,6 @@ class newPage{
 
 
         }else if($currentPage == "../html/sogni.html"){
-            $navBar = str_replace("{sogniLink}", "<li>Sogni</li>", $navBar);
             $navBar = str_replace("{breadcrumb}", "Sogni", $navBar);
 
 
@@ -71,20 +70,30 @@ class newPage{
             $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
             
         }else if($currentPage == "../html/sognoSingolo.html"){
-            $navBar = str_replace("{sogniLink}", "<li>Sogni</li>", $navBar);
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
+
         }else if($currentPage == "paginaErrore"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> sogno non trovato", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Sogno non trovato", $navBar);
+
         }else if($currentPage == "../html/error404.html"){
             $navBar = str_replace("{breadcrumb}", "Pagina non trovata", $navBar);
+
         }else if($currentPage == "../html/dashboardUser.html" || $currentPage == "../html/dashboardAdmin.html"){
             $navBar = str_replace("{breadcrumb}", "Area personale", $navBar);
             $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
+
         }else if($currentPage == "../html/aggiungiSogno.html"){
             $navBar = str_replace("{breadcrumb}", "Nuovo sogno", $navBar);
+
         }else if($currentPage == "../html/sognoNonTrovato.html"){
             $navBar = str_replace("{breadcrumb}", "Sogno non disponibile", $navBar);
+        }else if($currentPage == "../html/acquistoGiaEffettuato.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Acquisto già effettuato", $navBar);
+
         }
+
+        if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")
+            $navBar = str_replace("{sogniLink}", "<li>Sogni</li>", $navBar);
 
         // Controlla se la variabile di sessione user_id è impostata
         if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {

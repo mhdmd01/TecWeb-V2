@@ -38,8 +38,17 @@
                 if(isset($_SESSION['user_name'])){ //Se sono loggato
                     if($_SESSION['user_name'] === "admin") //Se sono admin
                         $bottone = "<a href=\"modificaSogno.php?sogno={$row['titolo']}\" role=\"button\">Modifica</a>";
-                    else //Se sono un utente
-                        $bottone = "<a href=\"acquistaSogno.php?sogno={$row['titolo']}\" role=\"button\">Compra</a>";
+                    else{ //Se sono un utente
+                        $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti WHERE user_name=? AND articolo=?");
+                        $stmt->bind_param("ss", $_SESSION['user_name'], $sogno);
+                        $stmt->execute();
+                        $risultato = $stmt->get_result();
+
+                        if($risultato->num_rows == 0)
+                            $bottone = "<a href=\"acquistaSogno.php?sogno={$row['titolo']}\" role=\"button\">Compra</a>";
+                        else
+                            $bottone = "<a role=\"button\">Aricolo già acquistato</a>";
+                    }
                 }else{   //Se non sono loggato
                     $bottone = "<a href=\"login.php\" role=\"button\">Esegui il login per acquistare</a>";
                 }

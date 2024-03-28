@@ -31,6 +31,7 @@
 					$user_data = mysqli_fetch_assoc($result);
 					
 					if($user_data['password'] === $password){
+						session_start();
 						$_SESSION['user_name'] = $user_data['user_name'];
 
 						if($user_data['user_name'] == "admin")
