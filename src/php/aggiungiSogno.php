@@ -24,7 +24,7 @@
         $stmt->execute();
         $risultato = $stmt->get_result();
 
-        if(is_null($risultato)){
+        if($risultato->num_rows == 0){ //Se non esiste già
             //Controlli
             if (isset($_FILES['immagineSogno'])) {
                 $uploadDir = "../assets/sogni/";

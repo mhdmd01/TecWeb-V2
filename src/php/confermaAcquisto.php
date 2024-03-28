@@ -14,14 +14,7 @@
         $stmt->execute();
         $risultato = $stmt->get_result();*/
 
-        $pagina = new newPage("../html/confermaAcquisto.html", 
-								"Conferma acquisto".$sogno, 
-								$sogno, 
-								"Pagina di conferma acquisto per ".$sogno);
         
-        $pagina->modificaHTML("{breadcrumb}", "Conferma acquisto sogno \"".$sogno."\"");
-        $pagina->modificaHTML("{titolo}", $sogno);
-        $pagina->modificaHTML("{username}", $_SESSION['user_name']);
 
         $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti WHERE user_name=? AND articolo=?");
         $stmt->bind_param("ss", $_SESSION['user_name'], $sogno);
@@ -29,12 +22,22 @@
         $risultato = $stmt->get_result();
 
         if($risultato->num_rows == 0){
-            foreach( $risultato as $row){
-                // Registrazione acquisto utilizzando uno statement preparato
-                $stmt = $functions->getConnection()->prepare("INSERT INTO acquisti (user_name, articolo) VALUES (?, ?)");
-                $stmt->bind_param("ss", $_SESSION['user_name'], $sogno);
-                $stmt->execute();
-            }
+            if (session_status() === PHP_SESSION_NONE) // Se la sessione non è stata ancora avviata, avviala
+                session_start();
+
+            // Registrazione acquisto utilizzando uno statement preparato
+            $stmt = $functions->getConnection()->prepare("INSERT INTO acquisti (user_name, articolo) VALUES (?, ?)");
+            $stmt->bind_param("ss", $_SESSION['user_name'], $sogno);
+            $stmt->execute();
+            
+            $pagina = new newPage("../html/confermaAcquisto.html", 
+								"Conferma acquisto".$sogno, 
+								$sogno, 
+								"Pagina di conferma acquisto per ".$sogno);
+        
+            $pagina->modificaHTML("{breadcrumb}", "Conferma acquisto sogno \"".$sogno."\"");
+            $pagina->modificaHTML("{titolo}", $sogno);
+            $pagina->modificaHTML("{username}", $_SESSION['user_name']);
         }else{
             //
             $pagina = new newPage("../html/acquistoGiaEffettuato.html",

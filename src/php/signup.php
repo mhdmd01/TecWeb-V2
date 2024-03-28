@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 		$stmt->execute();
 		$result = $stmt->get_result();
 		
-		if(is_null($result)){
+		if($result->num_rows == 0){
 			$stmt = $functions->getConnection()->prepare("INSERT INTO utenti (user_name, password) VALUES (?, ?)");
 			$stmt->bind_param("ss", $user_name, $password);
 			$stmt->execute();
