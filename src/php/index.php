@@ -9,7 +9,6 @@
     $recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins;");
 
     if($recenz == null){
-        //$pagina->printErrorPage("Ancora nessuna recensione");
         $rec = "Ancora nessuna recensione";
         $pagina->modificaHTML("{recensioni}", $rec);
     }        

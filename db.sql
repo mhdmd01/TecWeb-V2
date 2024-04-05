@@ -63,6 +63,18 @@ CREATE TABLE acquisti(
   FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 
+-- Recensioni
+CREATE TABLE recensioni (
+  id SERIAL PRIMARY KEY,
+  user_name VARCHAR(20) NOT NULL,
+  testo VARCHAR(256) NOT NULL,
+  sogno VARCHAR(20),
+  data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
+  FOREIGN KEY (sogno) REFERENCES sogni(titolo) ON DELETE CASCADE
+);
+
 /*
 -- Ordini dei chip
 CREATE TABLE chipOrders(
@@ -91,17 +103,5 @@ CREATE TABLE scissionOrders(
   messaggio VARCHAR(256),
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE
-);
-
--- Recensioni
-CREATE TABLE recensioni (
-  id SERIAL PRIMARY KEY,
-  user_name VARCHAR(20) NOT NULL,
-  testo VARCHAR(256) NOT NULL,
-  sogno VARCHAR(20),
-  data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
-  FOREIGN KEY (sogno) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 */
