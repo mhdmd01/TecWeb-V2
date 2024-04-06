@@ -29,7 +29,7 @@
                     if($row['user_name'] == NULL) //DA AGGIUNGERE LINK CON PARAMETRO  (GIORGNO) AL FORM DI PRENOTAZIONE
                         $tabella .= "<td style=\"background-color: ".$coloreDisponibile.";\"><a href=\"prenotazione.php?data=".$row['data']."\">".date('d', strtotime($row['data']))."</a></td>";
                     else
-                        $tabella .= "<td style=\"background-color: ".$coloreNonDisponibile.";\"><a href=\"prenotazione.php?data=".$row['data']."\">".date('d', strtotime($row['data']))."</a></td>";
+                        $tabella .= "<td style=\"background-color: ".$coloreNonDisponibile.";\">".date('d', strtotime($row['data']))."</td>";
                 }
                 $pagina->modificaHTML("{tabella".$mese."}", $tabella);
             }else{
