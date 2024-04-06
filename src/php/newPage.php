@@ -87,8 +87,15 @@ class newPage{
 
         }else if($currentPage == "../html/sognoNonTrovato.html"){
             $navBar = str_replace("{breadcrumb}", "Sogno non disponibile", $navBar);
+
         }else if($currentPage == "../html/acquistoGiaEffettuato.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Acquisto già effettuato", $navBar);
+
+        }else if($currentPage == "../html/formChip.html"){
+            $navBar = str_replace("{breadcrumb}", "Prenotazione", $navBar);
+
+        }else if($currentPage == "../html/prenotazione.html"){
+            $navBar = str_replace("{breadcrumb}", "Prenotazione {dataPrenotazione}", $navBar);
 
         }
 
