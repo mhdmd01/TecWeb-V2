@@ -16,6 +16,9 @@
         $stmt->execute();
         $risultato = $stmt->get_result();
 
+        $data = date('d/m/Y', strtotime($data)); //Formattazione data 
+
+
         if ($risultato->num_rows > 0) { //Se la data esiste
 
             // Avvia una sessione, se non è già attiva

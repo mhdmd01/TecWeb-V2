@@ -16,13 +16,18 @@
         $stmt->bind_param("s", $data);
         $stmt->execute();
         $risultato = $stmt->get_result();
+        $riga = $risultato->fetch_assoc(); // Ottenere la prima riga del risultato
 
-        if ($risultato->num_rows > 0) { //Se la data esiste
+        $data = date('d/m/Y', strtotime($data)); // Formattazione data
+
+
+        if ($risultato->num_rows > 0 && $riga['user_name'] == NULL) { //Se la data esiste ed è disponibile
 
             // Avvia una sessione, se non è già attiva
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }            
+
             
             if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name']) /*&& $_SESSION['user_name'] != "admin"*/){ // Lasciare possibilità ad admin di prenotare ? (magari per tenersi libero qualche giorno)
                 $pagina->modificaHTML("{dataPrenotazione}", $data);
