@@ -73,7 +73,7 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
 
         }else if($currentPage == "paginaErrore"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Sogno non trovato", $navBar);
+            $navBar = str_replace("{breadcrumb}", "Pagina di errore", $navBar);
 
         }else if($currentPage == "../html/error404.html"){
             $navBar = str_replace("{breadcrumb}", "Pagina non trovata", $navBar);
@@ -86,7 +86,7 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Nuovo sogno", $navBar);
 
         }else if($currentPage == "../html/sognoNonTrovato.html"){
-            $navBar = str_replace("{breadcrumb}", "Sogno non disponibile", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Sogno non disponibile", $navBar);
 
         }else if($currentPage == "../html/acquistoGiaEffettuato.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Acquisto già effettuato", $navBar);
@@ -95,7 +95,10 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Prenotazione", $navBar);
 
         }else if($currentPage == "../html/prenotazione.html"){
-            $navBar = str_replace("{breadcrumb}", "Prenotazione {dataPrenotazione}", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> >> Prenotazione {dataPrenotazione}", $navBar);
+
+        }else if($currentPage == "../html/confermaPrenotazione.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> >> Prenotazione {dataPrenotazione} avvenuta con successo", $navBar);
 
         }
 
@@ -134,9 +137,9 @@ class newPage{
         $this->strutturaHTML = file_get_contents("../html/generalTemplate.html"); //strutturaHTML ora contiene l'HTML di generalTemplate (il template generale)
 
         $this->strutturaHTML = str_replace("{titoloPagina}", "Errore" , $this->strutturaHTML);                 //Sostituisce segnaposto titolo
-        //Aggiungere keyword comuni per tutte le pagine
-        $this->strutturaHTML = str_replace("{metaKeywords}", "Saudade, error" , $this->strutturaHTML);         //Sostituisce segnaposto keywords 
-        $this->strutturaHTML = str_replace("{metaDescription}", "Pagina di errore Saudade" , $this->strutturaHTML);               //Sostituisce segnaposto description
+        //Aggiungere altre keyword comuni per tutte le pagine ?
+        $this->strutturaHTML = str_replace("{metaKeywords}", "Saudade, error" , $this->strutturaHTML);              //Sostituisce segnaposto keywords 
+        $this->strutturaHTML = str_replace("{metaDescription}", "Pagina di errore Saudade" , $this->strutturaHTML); //Sostituisce segnaposto description
 	    $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter, $this->strutturaHTML);              //Sostituzione segnaposto testoFooter
         $this->printNavBar("paginaErrore");
         
