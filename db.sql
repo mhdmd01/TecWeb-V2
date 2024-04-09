@@ -49,7 +49,7 @@ CREATE TABLE sogni(
   /*categoria Categorie, */
 );
 
-INSERT INTO sogni(titolo, descrizione, prezzo, estensioneFile) VALUES
+INSERT INTO sogni(titolo, descrizione, prezzo, estensioneFile, categoria) VALUES
   ('Sogno 1', 'Il primo sogno di prova', 23, 'jpg', 'Avventura'),
   ('Sogno 2', 'Il secondo sogno di prova', 123, 'png', 'Avventura');
 
