@@ -3,8 +3,11 @@
 	    <a class="aiutoNavigazione"> <!-- href="#contenuto --> "Vai al contenuto</a>
     </nav>
     
+    <div class="titolo">    
     {logo}
-    
+        <h1>Saudade</h1>
+    </div>
+
     <nav id="menu">
         <ul class="listaNavBar">
             {homeLink}
@@ -17,10 +20,10 @@
             {logoutLink}
         </ul>
     </nav>
-    <a class="hideOnDesktop" onclick="showSideBar()" href="#"><img class="hamcroce" src="../assets/ham.svg"></a>
+    <a class="hideOnDesktop" onclick="showSideBar()" href="#"><img class="ham" src="../assets/ham.svg"></a>
     <nav class="nascondi">
         <ul class="listaSideBar">
-            <li onclick="hideSideBar()"><a class="close" href="#"><img class="hamcroce" src="../assets/close.svg"></a></li>
+            <li onclick="hideSideBar()"><a class="close" href="#"><img class="croce" src="../assets/close.svg"></a></li>
             {homeLink}
             {serviziLink}
             {sogniLink}

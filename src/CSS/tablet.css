@@ -50,3 +50,9 @@ ul.listaSideBar > li{
 ul.listaSideBar a:hover{
     color:var(--visitedLinkColor);
 }
+
+#breadcrump{
+    margin-top: 70px;
+    bottom: 0;
+    padding:0;
+}
