@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS scissionOrders;
 DROP TABLE IF EXISTS sogni;
 DROP TABLE IF EXISTS prenotazioni;
 DROP TABLE IF EXISTS utenti;
+DROP TABLE IF EXISTS categorie;
 
 
 /*
@@ -83,6 +84,26 @@ CREATE TABLE prenotazioni (
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE
 );
+
+CREATE TABLE categorie(
+  nome VARCHAR(20) PRIMARY KEY,
+);
+
+INSERT INTO categorie(name) VALUES
+('Avventura'),
+ ('Fantasia'),
+  ('Romantico'),
+  ('Horror'),
+  ('Fantascienza'),
+  ('Mistero'),
+  ('Storico'),
+  ('Azione'),
+  ('Commedia'),
+  ('Drammatico'),
+  ('Documentario'),
+  ('Educativo'),
+  ('Surreale/Spirituale');
+)
 
 INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-06-03', NULL),
