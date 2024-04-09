@@ -44,14 +44,14 @@ CREATE TABLE sogni(
   descrizione VARCHAR(256), 
   prezzo INT NOT NULL, 
   estensioneFile VARCHAR(20) NOT NULL,
-  data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-
+  data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  categoria VARCHAR(20)
   /*categoria Categorie, */
 );
 
 INSERT INTO sogni(titolo, descrizione, prezzo, estensioneFile) VALUES
-  ('Sogno 1', 'Il primo sogno di prova', 23, 'jpg'),
-  ('Sogno 2', 'Il secondo sogno di prova', 123, 'png');
+  ('Sogno 1', 'Il primo sogno di prova', 23, 'jpg', 'Avventura'),
+  ('Sogno 2', 'Il secondo sogno di prova', 123, 'png', 'Avventura');
 
 
 -- Acquisti
@@ -86,10 +86,10 @@ CREATE TABLE prenotazioni (
 );
 
 CREATE TABLE categorie(
-  nome VARCHAR(20) PRIMARY KEY,
+  nome VARCHAR(20) PRIMARY KEY
 );
 
-INSERT INTO categorie(name) VALUES
+INSERT INTO categorie(nome) VALUES
 ('Avventura'),
  ('Fantasia'),
   ('Romantico'),
@@ -103,7 +103,7 @@ INSERT INTO categorie(name) VALUES
   ('Documentario'),
   ('Educativo'),
   ('Surreale/Spirituale');
-)
+
 
 INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-06-03', NULL),

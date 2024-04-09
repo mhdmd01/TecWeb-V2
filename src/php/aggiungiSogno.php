@@ -6,10 +6,28 @@
     use functions\functions;
     $functions = new functions();
     $errorMsg = "";
+    $options= "";
+
+    $categorie = $functions->executeQuery("SELECT * FROM categorie;");
+    if($categorie == null)
+        $pagina->modificaHTML("{options}", "Non ci sono categorie");
+    else{
+
+        foreach($categorie as $row){
+            $name= $row['nome'];
+            $options .= "<option value='$name'> $name</option>";
+        }
+
+        $pagina->modificaHTML("{options}", $options);
+    }
+
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST['titoloSogno']) && strlen($_POST['titoloSogno']) != 0)
             $titoloSogno = $_POST['titoloSogno'];
+
+        if(isset($_POST['categoria']) && strlen($_POST['categoria']) != 0)
+            $categoria = $_POST['categoria'];
 
         if(isset($_POST['prezzo']) && $_POST['prezzo'] >= 0)
             $prezzo = $_POST['prezzo'];
@@ -38,8 +56,8 @@
                     // Sposta il file nella cartella di destinazione
                     if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {
                         $functions->openDBConnection();
-                        $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile) VALUES (?, ?, ?, ?)");
-                        $stmt->bind_param("ssds", $titoloSogno, $descrizione, $prezzo, $fileType);
+                        $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile,categoria) VALUES (?, ?, ?, ?)");
+                        $stmt->bind_param("ssds", $titoloSogno, $descrizione, $prezzo, $fileType, $categoria);
                         $ris = $stmt->execute();
                         $stmt->close();
                         $functions->closeConnection();
