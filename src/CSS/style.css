@@ -36,7 +36,7 @@
     display: none;
 }
 
-.prova:visited{
+.prova{
     color:var(--visitedLinkColor);
 }
 
