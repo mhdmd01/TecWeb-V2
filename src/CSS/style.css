@@ -118,10 +118,11 @@ ul.listaNavBar > li{
     transition: all -50s ease-in-out;
 }
 
-.breadcrump{
+#breadcrump{
     font-size: 1em;
     text-align: center;
     position: relative;
+    float: left;
 }
 
 .titolo > h1{
@@ -140,7 +141,19 @@ ul.listaNavBar > li{
 }
 
 #logo:hover{
-    rotate: 360deg;
+    animation: rotate-animation 3s infinite linear;
+}
+
+@keyframes rotate-animation { /*Animazione di rotazione per il logo*/
+	0% {
+		transform: rotate(0deg);
+  }
+  50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /*Inizio sideBar, molte cose sono su mobile ovviamente*/
