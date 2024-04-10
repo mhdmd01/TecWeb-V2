@@ -86,19 +86,19 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Nuovo sogno", $navBar);
 
         }else if($currentPage == "../html/sognoNonTrovato.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Sogno non disponibile", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt Sogno non disponibile", $navBar);
 
         }else if($currentPage == "../html/acquistoGiaEffettuato.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> Acquisto già effettuato", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt Acquisto già effettuato", $navBar);
 
         }else if($currentPage == "../html/formChip.html"){
             $navBar = str_replace("{breadcrumb}", "Prenotazione", $navBar);
 
         }else if($currentPage == "../html/prenotazione.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> >> Prenotazione {dataPrenotazione}", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione}", $navBar);
 
         }else if($currentPage == "../html/confermaPrenotazione.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> >> Prenotazione {dataPrenotazione} avvenuta con successo", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione} avvenuta con successo", $navBar);
 
         }
 
