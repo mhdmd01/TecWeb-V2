@@ -56,6 +56,10 @@ a:hover{
     opacity: 0.3;
 }
 
+#logo{
+    border-radius: 50%;
+}
+
 body{
     display: flex; /*Primo flex*/
     flex-direction: column;
