@@ -21,13 +21,13 @@
 :root{
     --headerBgColor: #001542;
     --headerTxtColor: #FFFFFF;
-    --BgColor: #7A7A7A;
+    --BgColor: #220042;
     --BgTxtColor: #FFFFFF;
     --footerBgColor: #001542;
     --footerTxtColor: #FFFFFF;
     --visitedLinkColor: #26C281; /*#085454 ALTERNATIVA*/
     --linkColor: #FFB30D;
-    --BgAll: #FFFFFF;
+    --BgAll: #7A7A7A;
     --BgSidebar:rgb(0,21,66, 0.5);
     --fontMenu: sans-serif;
 }
@@ -54,10 +54,6 @@ a:visited{
 
 a:hover{
     opacity: 0.3;
-}
-
-#logo{
-    border-radius: 50%;
 }
 
 body{
@@ -118,12 +114,10 @@ ul.listaNavBar > li{
     transition: all -50s ease-in-out;
 }
 
-#breadcrump{
+.breadcrump{
     font-size: 1em;
     text-align: center;
     position: relative;
-    padding-left: 45%;
-    padding-right: 45%;
 }
 
 .titolo > h1{
@@ -142,19 +136,7 @@ ul.listaNavBar > li{
 }
 
 #logo:hover{
-    animation: rotate-animation 3s infinite linear;
-}
-
-@keyframes rotate-animation { /*Animazione di rotazione per il logo*/
-	0% {
-		transform: rotate(0deg);
-  }
-  50% {
-		transform: rotate(180deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+    rotate: 360deg;
 }
 
 /*Inizio sideBar, molte cose sono su mobile ovviamente*/
