@@ -7,16 +7,38 @@
     use functions\functions;
     $functions = new functions();
 
+    //FILTRO
+    $filtro = isset($_GET['categoria']) ? ($_GET['categoria']) : '';
     //BARRA DI RICERCA
     $item = isset($_GET['search']) ? $functions->pulisciInput($_GET['search']) : '';
     $sql = "SELECT * FROM sogni WHERE titolo LIKE '%$item%' OR descrizione LIKE '%$item%'";
+    if (!empty($filtro)) {
+        $sql = "SELECT * FROM sogni WHERE categoria LIKE '%$filtro%'";
+    }
     $sogni = $functions->executeQuery($sql);
 
-    //Vecchia select per all
+    //Filtro per categorie
+    $options= "";
+    $categorie = $functions->executeQuery("SELECT * FROM categorie;");
+    if($categorie == null)
+        $pagina->modificaHTML("{options}", "Non ci sono categorie");
+    else{
+        $name= '';
+        //$options .="<option value='$name'> $name</option>";
+        foreach($categorie as $row){
+            $name= $row['nome'];
+            $options .= "<option value='$name'> $name</option>";
+        }
+        $pagina->modificaHTML("{chosen}", $filtro);
+        $pagina->modificaHTML("{options}", $options);
+    }
+
+    //Vecchia select per all senza cerca e filtro
     //$sogni = $functions->executeQuery("SELECT * FROM sogni;");
 
     if($sogni == null)
-        $pagina->printErrorPage("Non ci sono sogni disponibili al momento o per la ricerca fatta, riprovare più tardi o tornare alla pagina <a href=\"index.php\">home</a>");
+        //$pagina->printErrorPage("Non ci sono sogni disponibili al momento o per la ricerca fatta, riprovare più tardi o tornare alla pagina <a href=\"index.php\">home</a>");
+        $annuncio="<div> Non ci sono sogni disponibili al momento o per la ricerca fatta, riprovare più tardi o tornare alla pagina <a href=\"index.php\">home</a> </div>";
     else{
         $annuncio = "";
 
@@ -29,9 +51,10 @@
             $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
             $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['titolo'].".".$row['estensioneFile']."\"", $annuncio);
         }
-        $pagina->modificaHTML("{ricerca}", $item);
-        $pagina->modificaHTML("{elencoSogni}", $annuncio);
+        //$pagina->modificaHTML("{ricerca}", $item);
+        //$pagina->modificaHTML("{elencoSogni}", $annuncio);
     }
-
+    $pagina->modificaHTML("{ricerca}", $item);
+    $pagina->modificaHTML("{elencoSogni}", $annuncio);
     
     $pagina->printPage();

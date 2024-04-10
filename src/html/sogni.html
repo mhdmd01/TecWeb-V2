@@ -1,12 +1,20 @@
 <div>
     <form action="sogni.php" method="GET">
-        <input type="text" id="search" name="search" value="{ricerca}">
+        <input type="text" id="search" name="search" value="{ricerca}" placeholder="Cerca per titolo ">
         <input type="submit" value="Cerca">
     </form>
 </div>
 
-
-{filtro per categoria}
+<div>
+    <form action="sogni.php" method="GET">
+        <label for="categoria">Filtro:</label>
+        <select id="categoria" name="categoria">
+            <option value=""> - </option>
+            {options}
+        </select>
+        <input type="submit" value="Applica">
+    </form>
+</div>
 
 <ul>
     {elencoSogni}
