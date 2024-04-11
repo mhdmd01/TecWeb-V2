@@ -119,10 +119,12 @@ ul.listaNavBar > li{
     transition: all -50s ease-in-out;
 }
 
-.breadcrump{
+#breadcrump{
     font-size: 1em;
     text-align: center;
     position: relative;
+    padding-left: 45%;
+    padding-right: 45%;
 }
 
 .titolo > h1{
