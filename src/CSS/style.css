@@ -16,14 +16,15 @@
     --BgSidebar:rgb(72,61,139, 0.5); 
     --fontMenu: sans-serif;
 }*/
-
+/*220042 viola*/
+/*001542 blu*/
 /*NUOVA PALETTE*/
 :root{
-    --headerBgColor: #001542;
+    --headerBgColor: #220042;
     --headerTxtColor: #FFFFFF;
-    --BgColor: #220042;
+    --BgColor: #001542;
     --BgTxtColor: #FFFFFF;
-    --footerBgColor: #001542;
+    --footerBgColor: #220042;
     --footerTxtColor: #FFFFFF;
     --visitedLinkColor: #26C281; /*#085454 ALTERNATIVA*/
     --linkColor: #FFB30D;
@@ -36,7 +37,7 @@
     display: none;
 }
 
-.prova{
+.prova{ /*da usare solo per capire il contrasto dei colori*/
     color:var(--visitedLinkColor);
 }
 
@@ -139,8 +140,21 @@ ul.listaNavBar > li{
     z-index: 10;
 }
 
+
 #logo:hover{
-    rotate: 360deg;
+    animation: rotate-animation 3s infinite linear;
+}
+
+@keyframes rotate-animation { /*Animazione di rotazione per il logo*/
+	0% {
+		transform: rotate(0deg);
+  }
+  50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /*Inizio sideBar, molte cose sono su mobile ovviamente*/
