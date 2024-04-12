@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS sogni;
 DROP TABLE IF EXISTS prenotazioni;
 DROP TABLE IF EXISTS utenti;
 DROP TABLE IF EXISTS categorie;
+DROP TABLE IF EXISTS assistenza;
 
 
 /*
@@ -49,7 +50,7 @@ CREATE TABLE sogni(
   /*categoria Categorie, */
 );
 
-INSERT INTO sogni(titolo, descrizione, prezzo, estensioneFile, categoria) VALUES
+INSERT INTO sogni(titolo, descrizione, prezzo, patch, categoria) VALUES
   ('Sogno 1', 'Il primo sogno di prova', 23, 'jpg', 'Avventura'),
   ('Sogno 2', 'Il secondo sogno di prova', 123, 'png', 'Avventura');
 
@@ -83,6 +84,14 @@ CREATE TABLE prenotazioni (
   user_name VARCHAR(20),
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE
+);
+
+CREATE TABLE assistenza(
+  data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  email VARCHAR(256),
+  motivo VARCHAR(20),
+  descrizione VARCHAR(256),
+  PRIMARY KEY (email, descrizione)
 );
 
 CREATE TABLE categorie(

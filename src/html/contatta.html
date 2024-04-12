@@ -1,7 +1,39 @@
 <div class="contatti">
-    <h2 class="titolo">Contattaci</h2>
+    <h2 class="titolo">Assistenza</h2>
 
-    <p>saudade@support.com</p>
+    <div>
+    <form action="contatta.php" method="POST">
+        <fieldset>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="example@abc123.com">
+        </fieldset>
+        
+        <fieldset>
+            <label>Per cosa ti serve assistenza:</label>
+            <div>
+                <input type="radio" id="sogni" name="motivo" value="sogni" required>
+                <label for="sogni">Sogni</label>
+            </div>
+            <div>
+                <input type="radio" id="chip" name="motivo" value="chip" required>
+                <label for="chip">Servizi o altro</label>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <label for="messaggio">Descrivi problema:</label>
+            <textarea id="messaggio" name="messaggio" maxlength="256" placeholder="Descrivi il problema" required></textarea>
+        </fieldset>
+        
+        <input type="submit" value="Invia">
+    </form>
+    </div>
+</div>
 
-    <p>0123456789</p>
+<div>
+    {Error}
+</div>
+
+<div>
+    <p>Oppure contatta: saudade@support.com</p>
 </div>

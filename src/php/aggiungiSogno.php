@@ -15,7 +15,7 @@
 
         foreach($categorie as $row){
             $name= $row['nome'];
-            $options .= "<option value='$name'> $name</option>";
+            $options .= "<option value='$name'>$name</option>";
         }
 
         $pagina->modificaHTML("{options}", $options);
@@ -46,6 +46,12 @@
             //Controlli
             if (isset($_FILES['immagineSogno'])) {
                 $uploadDir = "../assets/sogni/";
+                
+                // Verifica se la cartella di destinazione esiste, altrimenti crea la cartella
+                if (!file_exists($uploadDir)) {
+                    mkdir($uploadDir, 0777, true);
+                }
+
                 $fileName = $titoloSogno . '.' . pathinfo($_FILES["immagineSogno"]["name"], PATHINFO_EXTENSION);
                 $targetFilePath = $uploadDir . $fileName;
                 $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
@@ -56,8 +62,8 @@
                     // Sposta il file nella cartella di destinazione
                     if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {
                         $functions->openDBConnection();
-                        $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile,categoria) VALUES (?, ?, ?, ?)");
-                        $stmt->bind_param("ssds", $titoloSogno, $descrizione, $prezzo, $fileType, $categoria);
+                        $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile, categoria) VALUES (?, ?, ?, ?, ?)");
+                        $stmt->bind_param("ssdss", $titoloSogno, $descrizione, $prezzo, $targetFilePath, $categoria);
                         $ris = $stmt->execute();
                         $stmt->close();
                         $functions->closeConnection();
@@ -70,8 +76,10 @@
                         $errorMsg = "Si è verificato un errore durante il caricamento dell'immagine.";
                     }
                 } else {
-                    $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG e PNG.";
+                    $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG e PNG o non hai caricato nessuna immagine";
                 }
+            }else{
+                $errorMsg = "Non hai caricato nessuna immagine o qualcosa è andato storto";
             }
         }else{
             $errorMsg = "Cambiare titolo, già esistente";
