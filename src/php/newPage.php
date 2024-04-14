@@ -80,8 +80,11 @@ class newPage{
 
         }else if($currentPage == "../html/dashboardUser.html" || $currentPage == "../html/dashboardAdmin.html"){
             $navBar = str_replace("{breadcrumb}", "Area personale", $navBar);
-            $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
-
+            if(isset($_SESSION['user_name'])) {
+                    $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
+            }else{
+                $navBar = str_replace("{loginLink}", "<li><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
+            }
         }else if($currentPage == "../html/aggiungiSogno.html"){
             $navBar = str_replace("{breadcrumb}", "Nuovo sogno", $navBar);
 
