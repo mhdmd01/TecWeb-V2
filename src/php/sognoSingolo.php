@@ -46,16 +46,18 @@
 
                         if($risultato->num_rows == 0)
                             $bottone = "<a href=\"acquistaSogno.php?sogno={$row['titolo']}\" role=\"button\">Compra</a>";
-                        else
+                        else{
                             $bottone = "<a role=\"button\">Aricolo già acquistato.</a>";
                             $bottone .= "<a href=\"aggiungiRecensione.php?sogno={$row['titolo']}\" role=\"button\"> Lascia una recensione</a>";
+                        }
+                            
                     }
                 }else{   //Se non sono loggato
                     $bottone = "<a href=\"login.php\" role=\"button\">Esegui il login per acquistare</a>";
                 }
                 
                 $pagina->modificaHTML("{bottoneCompra}",  $bottone);
-                $pagina->modificaHTML("{bottoneCompra}",  $bottone);
+               
             }
         }else{
             $pagina= new newPage("../html/sognoNonTrovato.html",

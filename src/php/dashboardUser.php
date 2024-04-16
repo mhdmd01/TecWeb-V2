@@ -10,6 +10,7 @@
         }
         $pagina = new newPage("../html/dashboardUser.html", "Area personale", "Area personale", "Area personale Saudade");
         $pagina->modificaHTML("{elencosogni}", "HELLO" );
+        $pagina->printPage();
     }else{
         $pagina->modificaHTML("{placeholder}",  "<div>Pagina riservata, accedere come utente prima</div>");
         $pagina->printPage();

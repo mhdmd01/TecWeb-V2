@@ -30,13 +30,21 @@
                 else
                     $errorMsg = "Errore nel caricamento della recensione";
             }     
+            $pagina->modificaHTML("{titoloSogno}", $sogno);
+        $pagina->modificaHTML("{Errore}", $errorMsg);
+        $pagina->printPage();
         }else{
+
             $errorMsg = "<a href=\"login.php\" role=\"button\">Esegui il login per acquistare</a>";
         }    
+    
+    } 
+    $pagina = new newPage("../html/login.html", 
+								"Login", 
+								"Login - accesso", 
+								"Pagina di login");
 
-        
-    }
+            $errorMsg = "Accedi come utente prima";
+            $pagina->modificaHTML("{Error}", $errorMsg);                    
 
-    $pagina->modificaHTML("{titoloSogno}", $sogno);
-    $pagina->modificaHTML("{Errore}", $errorMsg);
-    $pagina->printPage();
+            $pagina->printPage();    
