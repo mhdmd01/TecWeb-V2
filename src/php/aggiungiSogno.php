@@ -1,10 +1,12 @@
 <?php
     require_once"newPage.php";
     require_once "functions.php"; 
-
-    $pagina = new newPage("../html/aggiungiSogno.html", "Nuovo sogno", "Nuovo sogno", "Aggiunta nuovo sogno");
     use functions\functions;
     $functions = new functions();
+    
+    if(isset($_POST['recensione']) && $_SESSION['user_name'] === "admin"){
+    $pagina = new newPage("../html/aggiungiSogno.html", "Nuovo sogno", "Nuovo sogno", "Aggiunta nuovo sogno");
+    
     $errorMsg = "";
     $options= "";
 
@@ -85,8 +87,17 @@
             $errorMsg = "Cambiare titolo, già esistente";
         }
 
-        
     }
-
     $pagina->modificaHTML("{Error}", $errorMsg);
     $pagina->printPage();
+}
+$pagina = new newPage("../html/login.html", 
+								"Login", 
+								"Login - accesso", 
+								"Pagina di login");
+
+            $errorMsg = "Accedi come admin prima";
+            $pagina->modificaHTML("{Error}", $errorMsg);                    
+
+            $pagina->printPage();
+    
