@@ -5,12 +5,14 @@
 
     if(isset($_SESSION['user_name'])){
         if($_SESSION['user_name'] === "admin") { 
-            $pagina->modificaHTML("{placeholder}",  "<div><a href='aggiungiSogno.php'>Aggiungi sogno</a></div>");
-            $pagina->printPage();
+            $pagina->modificaHTML("{aggiungiSogno}",  "<div><a href='aggiungiSogno.php'>Aggiungi sogno</a></div>"); 
+            $pagina->modificaHTML("{aggiungiDate}",  "<div><a href='aggiungiDate.php'>Aggiungi una settimana</a></div>");
         }
     }else{
-        $pagina->modificaHTML("{placeholder}",  "<div>Pagina riservata, accedere come admin</div>");
-        $pagina->printPage();
+        $pagina->printErrorPage("Pagina riservata all'admin");
     }    
+
+    $pagina->printPage();
+
     
     
