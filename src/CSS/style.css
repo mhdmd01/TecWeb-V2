@@ -73,7 +73,13 @@ body{
 header{
     text-align: center;
     width: 100%;
-    background-color: var(--headerBgColor);
+    /* background-color: var(--headerBgColor); */
+    
+    /* commentare riga successiva e ripristinare 
+     * quella precenente a questo commento 
+     * per ripristinare lo sfondo navbar omogeneo
+     */
+    background-image: linear-gradient(to top right, #000000 0%, var(--headerBgColor) 20%, #000000 100%);
     color: var(--headerTxtColor);
 }
 
@@ -200,6 +206,11 @@ main{
     background-color: var(--BgColor);
     color:var(--BgTxtColor);
 }
+
+.tornasu{
+    margin-top:1em;
+    margin-bottom:1em;
+}
 /*Pagina Home*/
 
 
@@ -263,4 +274,51 @@ footer{
     width: 100%;
     padding: 1em 0em 1em 0em;
     font-size: 1rem;
+}
+
+
+/* Inizio storia e servizi */
+
+.article{
+    font-size: 1.5rem;
+    width:90%;
+    font-family: var(--fontMenu);
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.article > h2 {
+    font-size:2em;
+    color: #085454;
+}
+
+.section > h2 {
+    font-size:2em;
+    /* margin-top: 1em; */
+    /* margin-bottom:0.5em; */
+    color: #085454;
+    text-align:center;
+    
+}
+
+.section > h3 {
+    color: #085454;
+    font-size:1.5em;
+    text-align:center;
+}
+
+.article > ul{
+    margin-left:1.5em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+
+.section{
+    background-color: gray;
+    margin:auto;
+    margin-top:1em;
+    margin-bottom:1em;
+    padding:1em;
+    border-radius: 1em;
+
 }
