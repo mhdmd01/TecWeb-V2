@@ -241,6 +241,12 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
     margin-right: auto;
 }
 
+.contatti form{
+    background-color:gray;
+    border-radius:1em;
+    border:0px;
+}
+
 .contatti fieldset {
     padding-top:0.8em;
     padding-bottom:0.8em;
