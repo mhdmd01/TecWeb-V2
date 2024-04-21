@@ -236,8 +236,19 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 /*Pagina Contatti*/
 .contatti{
     text-align: center;
+    width:50%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.contatti fieldset {
+    padding-top:0.8em;
+    padding-bottom:0.8em;
+}
+
+#messaggio {
+    min-width:80%;
+    min-height:25em;
 }
 /*Fine pagina Contatti*/
 
