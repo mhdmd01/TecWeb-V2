@@ -1,9 +1,8 @@
 <div class="contatti">
-    <h2 class="titolo">Assistenza</h2>
-
-    <div>
+    <h2 class="titolo">Contatta Il team Saudade</h2>
+    <div class="formContatta">
     <form action="contatta.php" method="POST">
-        <fieldset>
+        <fieldset class="emailForm">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required placeholder="example@abc123.com">
         </fieldset>
@@ -24,7 +23,6 @@
             <label for="messaggio">Descrivi problema:</label>
             <textarea id="messaggio" name="messaggio" maxlength="256" placeholder="Descrivi il problema" required></textarea>
         </fieldset>
-        
         <input type="submit" value="Invia">
     </form>
     </div>
