@@ -1,51 +1,36 @@
 <div>
-    <p>Tabella Giugno</p>
-
-    <table>
-        <tr>
-            <th>Data</th>
-        </tr>
-        <tr>
-            {tabellaGiugno}
-        </tr>
-    </table>
+    <form action="formChip.php" method="GET">
+        <label for="mese">Mese:</label>
+        <select id="mese" name="mese" required>
+            <option value="" disabled selected> Scegli un mese </option>
+            <option value="1"> Gennaio </option>
+            <option value="2"> Febbraio </option>
+            <option value="3"> Marzo </option>
+            <option value="4"> Aprile </option>
+            <option value="5"> Maggio </option>
+            <option value="6"> Giugno </option>
+            <option value="7"> Luglio </option>
+            <option value="8"> Agosto </option>
+            <option value="9"> Settembre </option>
+            <option value="10"> Ottobre </option>
+            <option value="11"> Novembre </option>
+            <option value="12"> Dicembre </option>
+        </select>
+        <input type="submit" value="Applica">
+    </form>
 </div>
 
-<div>
-    <p>Tabella Luglio</p>
+<ul>
+    {data}
+</ul>
 
-    <table>
-        <tr>
-            <th>Data</th>
-        </tr>
-        <tr>
-            {tabellaLuglio}
-        </tr>
-    </table>
-</div>
 
-<div>
-    <p>Tabella Agosto</p>
 
-    <table>
-        <tr>
-            <th>Data</th>
-        </tr>
-        <tr>
-            {tabellaAgosto}
-        </tr>
-    </table>
-</div>
 
-<div>
-    <p>Tabella Settembre</p>
 
-    <table>
-        <tr>
-            <th>Data</th>
-        </tr>
-        <tr>
-            {tabellaSettembre}
-        </tr>
-    </table>
-</div>
+
+
+
+
+
+
