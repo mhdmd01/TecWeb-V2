@@ -9,42 +9,31 @@
 
     $sogno = urldecode($_GET['sogno']);
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
     
-        if(isset($_SESSION['user_name'])){
-            if(isset($_POST['recensione']) && strlen($_POST['recensione']) != 0){
+    if(isset($_SESSION['user_name'])){
+        if(isset($_POST['recensione']) && strlen($_POST['recensione']) > 0){ //Parte eseguita solo se viene inviato il form
 
-                
-                $recensione = $_POST['recensione'];
-                $user_name = $_SESSION['user_name'];
-                
-                $functions->openDBConnection();
-                $stmt = $functions->getConnection()->prepare("INSERT INTO recensioni (user_name, testo, sogno) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $user_name, $recensione, $sogno); 
-                $ris = $stmt->execute();
-                $stmt->close();
-                $functions->closeConnection();
-                
-                if($ris)
-                    $errorMsg = "Recensione caricato con successo";
-                else
-                    $errorMsg = "Errore nel caricamento della recensione";
-            }     
-            $pagina->modificaHTML("{titoloSogno}", $sogno);
+            $recensione = $functions->pulisciInput($_POST['recensione']);
+            $user_name = $_SESSION['user_name'];
+            
+            $functions->openDBConnection();
+            $stmt = $functions->getConnection()->prepare("INSERT INTO recensioni (user_name, testo, sogno) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $user_name, $recensione, $sogno); 
+            $ris = $stmt->execute();
+            $stmt->close();
+            $functions->closeConnection();
+            
+            if($ris)
+                $errorMsg = "Recensione caricata con successo";
+            else
+                $errorMsg = "Errore nel caricamento della recensione";
+        }     
+        $pagina->modificaHTML("{titoloSogno}", $sogno);
         $pagina->modificaHTML("{Errore}", $errorMsg);
-        $pagina->printPage();
-        }else{
+    }else{
 
-            $errorMsg = "<a href=\"login.php\" role=\"button\">Esegui il login per acquistare</a>";
-        }    
-    
-    } 
-    $pagina = new newPage("../html/login.html", 
-								"Login", 
-								"Login - accesso", 
-								"Pagina di login");
+        $pagina->printErrorPage("Pagina riservata ad utenti loggati, esegui il <a href=\"login.php\">login</a> per accedere");
+    }    
 
-            $errorMsg = "Accedi come utente prima";
-            $pagina->modificaHTML("{Error}", $errorMsg);                    
-
-            $pagina->printPage();    
+    $pagina->modificaHTML("{Errore}", $errorMsg);                    
+    $pagina->printPage();    

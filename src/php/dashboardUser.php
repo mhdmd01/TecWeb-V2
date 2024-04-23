@@ -16,7 +16,8 @@
             $stmt->execute();
             $risultato = $stmt->get_result();
     
-            if(mysqli_num_rows($risultato) > 0){
+            if(mysqli_num_rows($risultato) > 0){ //Se utente esiste ed è registrato
+                //ACQUISTI
                 $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti WHERE user_name=?");
                 $stmt->bind_param("s", $_SESSION['user_name']);
                 $stmt->execute();
@@ -27,15 +28,22 @@
                     while ($row = $ris->fetch_assoc()) {
                         $acquisti .= "<br>";    //Da eliminare
                         $acquisti .= $row['articolo']. " ";
-                        $acquisti .= $row['data'];
+                        $acquisti .= $row['data'] . " ";
+                        $acquisti .= "<a href=\"aggiungiRecensione.php?sogno=".urldecode($row['articolo'])."\">Lascia una recensione</a>";
                     }
                     $pagina->modificaHTML("{elencosogni}", $acquisti);
                 }else{
                     $pagina->modificaHTML("{elencosogni}", "Nessun acquisto ancora effettuato");
                 }
+
+                //RECENSIONI
+                //DA FARE
+
             }else{
                 $pagina->printErrorPage("Utente non trovato"); //Quasi impossibile accada
             }
+        }else{
+            $pagina->printErrorPage("Pagina riservata agli utenti");
         }
     }else{
         $pagina->printErrorPage("Pagina riservata ad utenti loggati, esegui il <a href=\"login.php\">login</a> per accedere");

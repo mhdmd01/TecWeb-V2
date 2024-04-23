@@ -9,7 +9,7 @@
 
     $sogni = $functions->executeQuery("SELECT * FROM sogni ORDER BY data_ins DESC LIMIT 3;");
 
-    $recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins;");
+    $recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins LIMIT 5;");
 
     if($recenz == null){
         $rec = "Ancora nessuna recensione";
