@@ -57,17 +57,17 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Contattaci", $navBar);
 
         }else if($currentPage == "../html/signup.html"){
-            $navBar = str_replace("{signupLink}", "<li>Registrati</li>", $navBar);
+            $navBar = str_replace("{signupLink}", "<li class=\"spostaSign\">Registrati</li>", $navBar);
             $navBar = str_replace("{breadcrumb}", "Registrati", $navBar);
 
-            $navBar = str_replace("{loginLink}", "<li><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
+            $navBar = str_replace("{loginLink}", "<li class=\"spostaSign\"><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
 
 
         }else if($currentPage == "../html/login.html"){
-            $navBar = str_replace("{loginLink}", "<li>Accedi</li>", $navBar);
+            $navBar = str_replace("{loginLink}", "<li class=\"spostaSign\">Accedi</li>", $navBar);
             $navBar = str_replace("{breadcrumb}", "Accedi", $navBar);
 
-            $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
+            $navBar = str_replace("{signupLink}", "<li class=\"spostaSign\"><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
             
         }else if($currentPage == "../html/sognoSingolo.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
@@ -120,8 +120,8 @@ class newPage{
             $navBar = str_replace("{logoutLink}", "<li><a href=\"../php/logout.php\">Logout</a></li>", $navBar);
         }else{
             $navBar = str_replace("{logoutLink}", "", $navBar);
-            $navBar = str_replace("{loginLink}", "<li><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
-            $navBar = str_replace("{signupLink}", "<li><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
+            $navBar = str_replace("{loginLink}", "<li class=\"spostaSign\"><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
+            $navBar = str_replace("{signupLink}", "<li class=\"spostaSign\"><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
 
             session_destroy();
         }
