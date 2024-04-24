@@ -6,35 +6,32 @@
 
     use functions\functions;
     $functions = new functions();
+    $functions->openDBConnection();
 
-    //Colori delle celle
-    $coloreDisponibile = "green";
-    $coloreNonDisponibile = "red";
+    if(isset($_GET['mese']) && $_GET['mese'] >= 1 && $_GET['mese'] <= 12){
+        $stmt = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE data BETWEEN ? AND ?;");
+        $settimana1 = "2024-".$_GET['mese']."-01";
+        $settimana2 = "2024-".$_GET['mese']."-31";
+        $stmt->bind_param("ss", $settimana1, $settimana2);
+        $stmt->execute();
+        $risultato = $stmt->get_result();
+        
+        if($risultato == null)
+            $pagina->printErrorPage("Data non trovata");                            
+        else{
+            if(mysqli_num_rows($risultato) > 0){
+                $placeHolderData = "";
 
-    $mesi = array("Giugno", "Luglio", "Agosto", "Settembre");
-
-
-
-        foreach($mesi as $mese){
-            if($mese == "Giugno") $meseNum = "6"; 
-            if($mese == "Luglio") $meseNum = "7"; 
-            if($mese == "Agosto") $meseNum = "8"; 
-            if($mese == "Settembre") $meseNum = "9"; 
-
-            $prenotazioni = $functions->executeQuery("SELECT * FROM prenotazioni WHERE data BETWEEN '2024-".$meseNum."-01' AND '2024-".$meseNum."-31' ORDER BY data ASC");
-
-            if(!is_null($prenotazioni)){
-                $tabella = "";
-                foreach($prenotazioni as $row){
-                    if($row['user_name'] == NULL)
-                        $tabella .= "<td style=\"background-color: ".$coloreDisponibile.";\"><a href=\"prenotazione.php?data=".$row['data']."\">".date('d', strtotime($row['data']))."</a></td>";
-                    else
-                        $tabella .= "<td style=\"background-color: ".$coloreNonDisponibile.";\">".date('d', strtotime($row['data']))."</td>";
+                foreach( $risultato as $row){
+                    $placeHolderData .= "<li><a href=\"confermaPrenotazione.php?data=".$row['data']."\">".$row['data']."</a></li>";
                 }
-                $pagina->modificaHTML("{tabella".$mese."}", $tabella);
+                $pagina->modificaHTML("{data}", $placeHolderData);
             }else{
-                $pagina->modificaHTML("{tabella".$mese."}", "Date disponibili a breve");
+                $pagina->modificaHTML("{data}", "Ancora nessuna data disponibile nel periodo selezionato");
             }
         }
+    }else{
+        $pagina->printErrorPage("Data selezionata non valida, <a href=\"formChip.php\">riprovare</a>");
+    }
 
     $pagina->printPage();   

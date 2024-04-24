@@ -95,7 +95,7 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt Acquisto già effettuato", $navBar);
 
         }else if($currentPage == "../html/formChip.html"){
-            $navBar = str_replace("{breadcrumb}", "Prenotazione", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione", $navBar);
 
         }else if($currentPage == "../html/prenotazione.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione}", $navBar);
@@ -103,6 +103,8 @@ class newPage{
         }else if($currentPage == "../html/confermaPrenotazione.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione} avvenuta con successo", $navBar);
 
+        }else if($currentPage ==  "../html/aggiungiRecensione.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardUser.php\">Area personale</a> &gt&gt Recensione {titoloSogno}", $navBar);
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")

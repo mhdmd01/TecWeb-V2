@@ -9,7 +9,7 @@
 
     $sogni = $functions->executeQuery("SELECT * FROM sogni ORDER BY data_ins DESC LIMIT 3;");
 
-    $recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins;");
+    $recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins LIMIT 5;");
 
     if($recenz == null){
         $rec = "Ancora nessuna recensione";
@@ -43,7 +43,7 @@
             $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
             $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
             $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
-            $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['titolo'].".".$row['estensioneFile']."\"", $annuncio);
+            $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['nomeFile']."\"", $annuncio);
         }
 
         $pagina->modificaHTML("{sogni}", $annuncio);

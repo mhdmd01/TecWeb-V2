@@ -7,12 +7,11 @@
         if($_SESSION['user_name'] === "admin") { 
             $pagina->modificaHTML("{aggiungiSogno}",  "<div><a href='aggiungiSogno.php'>Aggiungi sogno</a></div>"); 
             $pagina->modificaHTML("{aggiungiDate}",  "<div><a href='aggiungiDate.php'>Aggiungi una settimana</a></div>");
+        }else{
+            $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");
         }
     }else{
-        $pagina->printErrorPage("Pagina riservata all'admin");
+        $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");
     }    
 
     $pagina->printPage();
-
-    
-    
