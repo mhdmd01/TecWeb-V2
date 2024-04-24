@@ -424,15 +424,18 @@ input.bottoneForm:hover{
     background-color: var(--linkColor); 
 }
 
-
-
-
-
 /*Accedi*/
 
-table {
-    padding:1em;
-    margin:auto;
+.loginTitle{
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0em 1em 0.7em 1em;
+}
+
+#loginForm > label{
+    font-weight: bold;
+    font-size: 1.25em;
+    padding-right: 0.3em;
 }
 
 
