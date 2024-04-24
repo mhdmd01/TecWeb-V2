@@ -268,7 +268,7 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    width: 40%;
+    width: 60%;
     height: 35px;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -337,7 +337,6 @@ input.bottoneForm:hover{
     background-color: var(--linkColor);
 }
 
-/*Fine pagina Contatti*/
 
 /*Pagina Servizi*/
 
