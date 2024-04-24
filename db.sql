@@ -44,7 +44,7 @@ CREATE TABLE sogni(
   titolo VARCHAR(20) PRIMARY KEY,
   descrizione VARCHAR(256), 
   prezzo INT NOT NULL, 
-  nomeFile VARCHAR(20) NOT NULL,
+  nomeFile VARCHAR(256) NOT NULL,
   data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   categoria VARCHAR(20)
 );

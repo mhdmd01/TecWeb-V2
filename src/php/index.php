@@ -43,7 +43,7 @@
             $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
             $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
             $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
-            $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['titolo'].".".$row['estensioneFile']."\"", $annuncio);
+            $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['nomeFile']."\"", $annuncio);
         }
 
         $pagina->modificaHTML("{sogni}", $annuncio);

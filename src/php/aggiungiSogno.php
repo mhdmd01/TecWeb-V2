@@ -26,7 +26,7 @@
 
         if($_SERVER['REQUEST_METHOD'] == "POST"){
             if(isset($_POST['titoloSogno']) && strlen($_POST['titoloSogno']) != 0)
-                $titoloSogno = $_POST['titoloSogno'];
+                $titoloSogno = $functions->pulisciInput($_POST['titoloSogno']);
 
             if(isset($_POST['categoria']) && strlen($_POST['categoria']) != 0)
                 $categoria = $_POST['categoria'];
@@ -35,7 +35,7 @@
                 $prezzo = $_POST['prezzo'];
 
             if(isset($_POST['descrizione']) && strlen($_POST['descrizione']) != 0)
-                $descrizione = $_POST['descrizione'];
+                $descrizione = $functions->pulisciInput($_POST['descrizione']);
 
             //Controllo duplicato
             $functions->openDBConnection();
@@ -47,15 +47,17 @@
             if($risultato->num_rows == 0){ //Se non esiste già
                 //Controlli
                 if (isset($_FILES['immagineSogno'])) {
-                    $uploadDir = "../assets/sogni/";
-                    
+
+                    $uploadDir = "../assets/sogni/";                   
                     // Verifica se la cartella di destinazione esiste, altrimenti crea la cartella
                     if (!file_exists($uploadDir)) {
                         mkdir($uploadDir, 0777, true);
                     }
 
-                    $fileName = $titoloSogno . '.' . pathinfo($_FILES["immagineSogno"]["name"], PATHINFO_EXTENSION);
+                    //$fileName = $titoloSogno . '.' . pathinfo($_FILES["immagineSogno"]["name"], PATHINFO_EXTENSION);
+                    $fileName = basename($_FILES["immagineSogno"]["name"]);
                     $targetFilePath = $uploadDir . $fileName;
+                    
                     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
                     
                     // Verifica se il file è un'immagine
@@ -64,8 +66,8 @@
                         // Sposta il file nella cartella di destinazione
                         if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {
                             $functions->openDBConnection();
-                            $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, estensioneFile, categoria) VALUES (?, ?, ?, ?, ?)");
-                            $stmt->bind_param("ssdss", $titoloSogno, $descrizione, $prezzo, $targetFilePath, $categoria);
+                            $stmt = $functions->getConnection()->prepare("INSERT INTO sogni (titolo, descrizione, prezzo, nomeFile, categoria) VALUES (?, ?, ?, ?, ?)");
+                            $stmt->bind_param("ssdss", $titoloSogno, $descrizione, $prezzo, $fileName, $categoria);
                             $ris = $stmt->execute();
                             $stmt->close();
                             $functions->closeConnection();
