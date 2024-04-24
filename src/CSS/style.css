@@ -113,6 +113,7 @@ ul.listaNavBar{
     text-align: center;
     list-style: none;
     font-family: var(--fontMenu);
+    color: var(--visitedLinkColor);
     margin-top: 1em;
 }
 
@@ -126,9 +127,15 @@ ul.listaNavBar > li{
 .menu a{
     margin: auto;
     color: var(--linkColor);
-    font-size: 1.5em;
-    font-weight: 500;
     transition: all -50s ease-in-out;
+}
+
+.menu a:hover{
+    color: var(--visitedLinkColor);
+}
+
+.menu a::after{
+    color: var(--linkColor);
 }
 
 #breadcrump{
@@ -157,6 +164,8 @@ ul.listaNavBar > li{
 
 #logo:hover{
     animation: rotate-animation 3s infinite linear;
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 @keyframes rotate-animation { /*Animazione di rotazione per il logo*/
