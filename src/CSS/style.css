@@ -334,7 +334,7 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 }
 
 .messageForm > textarea:hover{
-    background-color: var(--linkColor);
+    background-color: var(--6inkColor);
 }
 
 .messageForm > textarea:focus{
@@ -373,6 +373,8 @@ input.bottoneForm:hover{
     background-color: var(--colorSlide);
     border-radius:1em;
     padding:2em;
+    margin:auto;
+    max-width:600px;
 }
 
 .signupTitle{
@@ -464,7 +466,7 @@ footer{
     margin-bottom:0.6em;
 }
 
-.article h3{
+.article > h3{
     color: var(--slideTitleTxtColor);
     font-size:1.5em;
     margin-top:1em;
@@ -496,8 +498,8 @@ footer{
 .section{
     background-color: #7A7A7A;
     margin:auto;
-    margin-top:1em;
-    margin-bottom:1em;
+    margin-top:2em;
+    margin-bottom:2em;
     padding:1em;
     border-radius: 1em;
 
