@@ -425,7 +425,6 @@ input.bottoneForm:hover{
 }
 
 /*Accedi*/
-
 .loginTitle{
     font-size: 3em;
     font-weight: bold;
@@ -436,6 +435,37 @@ input.bottoneForm:hover{
     font-weight: bold;
     font-size: 1.25em;
     padding-right: 0.3em;
+}
+
+/*Aggiungi Sogno*/
+
+#nuovoSognoForm > label{
+    font-weight: bold;
+    font-size: 1.25em;
+    padding-right: 0.3em;
+}
+
+#button-lungo{
+    width: 260px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: white;
+    color: #000000;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.7em; 
+}
+
+textarea.casellaTesto{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 80%;
+    height: 200px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 0.75em;
 }
 
 
@@ -511,3 +541,6 @@ footer{
 .tornasu{
     display:none; 
 }
+
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_custom_select PER I SELECT DEI FORM*/
