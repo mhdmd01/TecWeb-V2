@@ -236,6 +236,7 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 /*Pagina Contatti*/
 .contatti{
     text-align: center;
+    width:50%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -276,6 +277,22 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 .emailForm > input:focus{
     background-color: var(--linkColor);
 }
+
+.contatti form{
+    background-color:gray;
+    border-radius:1em;
+    border:0px;
+}
+
+.contatti fieldset {
+    padding-top:0.8em;
+    padding-bottom:0.8em;
+}
+
+#messaggio {
+    min-width:80%;
+    min-height:25em;
+}
 /*Fine pagina Contatti*/
 
 /*Pagina Servizi*/
@@ -290,6 +307,9 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 .box{
     text-align: center;
     line-height: 1.5em;
+    background-color:gray;
+    border-radius:1em;
+    padding:2em;
 }
 
 .signupTitle{
@@ -300,6 +320,11 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 
 
 /*Accedi*/
+
+table {
+    padding:1em;
+    margin:auto;
+}
 
 
 /*Inizio Footer*/
@@ -327,6 +352,15 @@ footer{
 .article > h2 {
     font-size:2em;
     color: #085454;
+    margin-top:1em;
+    margin-bottom:0.6em;
+}
+
+.article h3{
+    color: #085454;
+    font-size:1.5em;
+    margin-top:1em;
+    margin-bottom:0.6em;
 }
 
 .section > h2 {
@@ -358,4 +392,8 @@ footer{
     padding:1em;
     border-radius: 1em;
 
+}
+
+.tornasu{
+    display:none; 
 }
