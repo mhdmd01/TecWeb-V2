@@ -47,6 +47,11 @@
     text-align: center;
 }
 
+.avviso{
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
 html{
     width: 100%;
     font-size: 100%;
@@ -352,6 +357,7 @@ input.bottoneForm:hover{
 }
 
 
+
 /*Pagina Servizi*/
 
 /*Fine pagina Servizi*/
@@ -372,8 +378,52 @@ input.bottoneForm:hover{
 .signupTitle{
     font-size: 3em;
     font-weight: bold;
-    padding: 1em;
+    padding: 0em 1em 0.7em 1em;
 }
+
+#signupForm > label{
+    font-weight: bold;
+    font-size: 1.25em;
+    padding-right: 0.3em;
+}
+
+.casellaTesto{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 30%;
+    height: 20px;
+    padding: 1em;
+    margin: 1em;
+}
+
+.casellaTesto:hover{
+    background-color: var(--linkColor);
+}
+
+.casellaTesto:focus{
+    background-color: var(--linkColor);
+}
+
+#button{
+    width: 130px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: white;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em; 
+}
+
+#button:hover{
+    background-color: var(--linkColor); 
+}
+
+
+
 
 
 /*Accedi*/
@@ -399,11 +449,12 @@ footer{
 /* Inizio storia e servizi */
 
 .article{
-    font-size: 1.5rem;
+    font-size: 1.1em;
     width:90%;
     font-family: var(--fontMenu);
     margin-right:auto;
     margin-left:auto;
+    text-align: center;
 }
 
 .article > h2 {
@@ -439,6 +490,7 @@ footer{
     margin-left:1.5em;
     margin-top:0.5em;
     margin-bottom:0.5em;
+    text-align: left;
 }
 
 .section{

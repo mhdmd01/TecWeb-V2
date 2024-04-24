@@ -7,22 +7,16 @@
 <div class="box">
     <form id="signupForm" action="signup.php" method="post">
         <p class="signupTitle">Registrati</p>
-        
-
-        <p>Username e password devono essere di una lunghezza compresa tra 4 e 15 caratteri e composti da numeri, lettere o caratteri speciali</p>
-        <table> 
-            <tr>
-                <td><label for="username"><span lang="en">Username:</span></label></td>
-                <td><input class="casellaTesto" placeholder="Username" id="username" type="text" name="user_name" maxlength="50"></td>
-            </tr>
-            <tr>
-                <td><label for="password"><span lang="en">Password:</span></label></td>
-                <td><input class="casellaTesto" placeholder="Password" id="password" type="password" name="password" maxlength="50"></td>
-            </tr>
-        </table>
+        <p class="avviso">Username e password devono essere di una lunghezza compresa tra 4 e 15 caratteri e composti da numeri, lettere o caratteri speciali</p>
+        <label for="username"><span lang="en">Username:</span></label>
+        <input class="casellaTesto" placeholder="Username" id="username" type="text" name="user_name" maxlength="50">
+        <br>
+        <label for="password"><span lang="en">Password:</span></label>
+        <input class="casellaTesto" placeholder="Password" id="password" type="password" name="password" maxlength="50">
+        <br>
         <input id="button" type="submit" value="Signup">
-
-        <a href="login.php">Clicca qui fare login</a>
+        <br>
+        <a class="avviso"href="login.php">Clicca qui fare login</a>
     </form>    
 </div>
 
