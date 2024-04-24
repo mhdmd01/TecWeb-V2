@@ -41,6 +41,10 @@
     color:var(--visitedLinkColor);
 }
 
+.center{
+    text-align: center;
+}
+
 html{
     width: 100%;
     font-size: 100%;
@@ -276,6 +280,62 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 .emailForm > input:focus{
     background-color: var(--linkColor);
 }
+
+.assistanceForm{
+    border: none;
+    margin: 1em 0em 0em 0em;
+}
+
+.assistanceForm > label{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.radioButton > label{
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.messageForm{
+    border:none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.messageForm > textarea{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 80%;
+    height: 200px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.messageForm > textarea:hover{
+    background-color: var(--linkColor);
+}
+
+.messageForm > textarea:focus{
+    background-color: var(--linkColor);
+}
+
+input.bottoneForm{
+    margin: 1.5em;
+    width: 130px;
+    height: 75px;
+    border-radius: 5px;
+    background-color: white;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+input.bottoneForm:hover{
+    background-color: var(--linkColor);
+}
+
 /*Fine pagina Contatti*/
 
 /*Pagina Servizi*/
