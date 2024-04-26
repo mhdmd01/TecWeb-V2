@@ -81,7 +81,7 @@ class newPage{
         }else if($currentPage == "../html/dashboardUser.html" || $currentPage == "../html/dashboardAdmin.html"){
             $navBar = str_replace("{breadcrumb}", "Area personale", $navBar);
             if(isset($_SESSION['user_name'])) {
-                    $navBar = str_replace("{loginLink}", "Ciao ".$_SESSION['user_name'], $navBar);
+                    $navBar = str_replace("{loginLink}", "<li>Ciao ".$_SESSION['user_name']."</li>", $navBar);
             }else{
                 $navBar = str_replace("{loginLink}", "<li><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
             }
@@ -105,6 +105,10 @@ class newPage{
 
         }else if($currentPage ==  "../html/aggiungiRecensione.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardUser.php\">Area personale</a> &gt&gt Recensione {titoloSogno}", $navBar);
+
+        }else if($currentPage == "../html/aggiungiDate.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Area personale admin</a> &gt&gt Aggiungi date", $navBar);
+
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")
@@ -113,9 +117,9 @@ class newPage{
         // Controlla se la variabile di sessione user_id è impostata
         if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name'])) {
             if($_SESSION['user_name'] == "admin")
-                $navBar = str_replace("{loginLink}", "<a href=\"dashboardAdmin.php\">Ciao ".$_SESSION['user_name']."</a>", $navBar);
+                $navBar = str_replace("{loginLink}", "<li><a href=\"dashboardAdmin.php\">Ciao ".$_SESSION['user_name']."</a></li>", $navBar);
             else
-                $navBar = str_replace("{loginLink}", "<a href=\"dashboardUser.php\">Ciao ".$_SESSION['user_name']."</a>", $navBar);
+                $navBar = str_replace("{loginLink}", "<li><a href=\"dashboardUser.php\">Ciao ".$_SESSION['user_name']."</a></li>", $navBar);
 
             $navBar = str_replace("{signupLink}", "", $navBar);
 
