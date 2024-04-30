@@ -14,7 +14,7 @@ $paginaObj = new newPage("../html/signup.html",
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    $user_name = $functions->pulisciInput($_POST['signupUsername']);
+    echo $user_name = $functions->pulisciInput($_POST['signupUsername']);
     $password = $functions->pulisciInput($_POST['signupPassword']);
 
 	if(strlen($user_name) < 4)
@@ -27,15 +27,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	else if(strlen($password) > 15)
 		$error .= "Username troppo lunga. ";
 	
-
+//NON FUNZIONA CON L'APOSTROFO
 	// Verifica se la password contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
-	if (!preg_match('/^[a-zA-Z0-9-_@#$%^&*!\'\']+$/', $password))
-		$error = "Usare per la <span lang='en'>password</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')";
+	/*if (!preg_match('/^[a-zA-Z0-9\-_@#$%^&*!\' ]+$/', $password))
+		$error .= "Usare per la <span lang='en'>password</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')";
 
 	// Verifica se lo username contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
-	if (!preg_match('/^[a-zA-Z0-9-_@#$%^&*!\'\']+$/', $user_name))
-		$error = "Usare per la <span lang='en'>username</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')";		
-
+	if (!preg_match('/^[a-zA-Z0-9\-_@#$%^&*!\' ]+$/', $user_name))
+		$error .= "Usare per lo <span lang='en'>username</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')";		
+	*/
 
 	if($error == "" && !empty($user_name) && !empty($password) && !is_numeric($user_name)){
 		$functions->openDBConnection();

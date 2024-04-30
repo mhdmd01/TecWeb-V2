@@ -9,7 +9,7 @@ function isValidPassword(psw){
         return "<span lang='en'>Password</span> troppo lunga";
 
     // Controlla se la password contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
-    if(/^[a-zA-Z0-9-_@#$%^&*!']+$/.test(psw) === false)
+    if(/^[a-zA-Z0-9-_@#$%^&*!' ]+$/.test(psw) === false)
         return "Usare per la <span lang='en'>password</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')"
 
     return true;
@@ -27,7 +27,7 @@ function isValidUsername(name) {
         return "<span lang='en'>Username</span> è troppo lungo";
 
     // Controlla se il nome contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
-    if(/^[a-zA-Z0-9-_@#$%^&*!']+$/.test(name) === false)
+    if(/^[a-zA-Z0-9-_@#$%^&*!' ]+$/.test(name) === false)
         return "Usare per lo <span lang='en'>username</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')"
 
     return true;
