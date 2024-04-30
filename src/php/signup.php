@@ -14,7 +14,7 @@ $paginaObj = new newPage("../html/signup.html",
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    echo $user_name = $functions->pulisciInput($_POST['signupUsername']);
+    $user_name = $functions->pulisciInput($_POST['signupUsername']);
     $password = $functions->pulisciInput($_POST['signupPassword']);
 
 	if(strlen($user_name) < 4)
