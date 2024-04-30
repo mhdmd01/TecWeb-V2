@@ -26,7 +26,7 @@
                 $pagina->modificaHTML("{titolo}", $row['titolo']);
                 $pagina->modificaHTML("{descrizione}", $row['descrizione']);
                 $pagina->modificaHTML("{prezzo}", $row['prezzo']);
-                $pagina->modificaHTML("{pathImg}",  "\"../assets/sogni/".$row['titolo'].".".$row['estensioneFile']."\"");
+                $pagina->modificaHTML("{pathImg}",  "\"../assets/sogni/".$row['nomeFile']."\"");
 
                 if(isset($_SESSION['user_name']) && $_SESSION['user_name'] != "admin"){ //Se sono loggato e sono un utente 
                     $bottone = "<a href=\"confermaAcquisto.php?sogno={$row['titolo']}\" role=\"button\">Conferma acquisto</a>";
