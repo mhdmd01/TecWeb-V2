@@ -13,8 +13,8 @@
 
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-        $user_name = $functions->pulisciInput($_POST['user_name']);
-        $password = $functions->pulisciInput($_POST['password']);
+        $user_name = $functions->pulisciInput($_POST['loginUsername']);
+        $password = $functions->pulisciInput($_POST['loginPassword']);
 
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
 			$functions->openDBConnection();

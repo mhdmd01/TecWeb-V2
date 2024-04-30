@@ -14,10 +14,30 @@ $paginaObj = new newPage("../html/signup.html",
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    $user_name = $functions->pulisciInput($_POST['user_name']);
-    $password = $functions->pulisciInput($_POST['password']);
+    $user_name = $functions->pulisciInput($_POST['signupUsername']);
+    $password = $functions->pulisciInput($_POST['signupPassword']);
 
-	if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
+	if(strlen($user_name) < 4)
+		$error .= "Username troppo corto. ";
+	else if(strlen($user_name) > 15)
+		$error .= "Username troppo lungo. ";
+
+	if(strlen($password) < 4)
+		$error .= "Password troppo corta. ";
+	else if(strlen($password) > 15)
+		$error .= "Username troppo lunga. ";
+	
+
+	// Verifica se la password contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
+	if (!preg_match('/^[a-zA-Z0-9-_@#$%^&*!\'\']+$/', $password))
+		$error = "Usare per la <span lang='en'>password</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')";
+
+	// Verifica se lo username contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
+	if (!preg_match('/^[a-zA-Z0-9-_@#$%^&*!\'\']+$/', $user_name))
+		$error = "Usare per la <span lang='en'>username</span> solo i caratteri indicati (caratteri speciali consentiti: -_@#$%^&*!')";		
+
+
+	if($error == "" && !empty($user_name) && !empty($password) && !is_numeric($user_name)){
 		$functions->openDBConnection();
 		$stmt = $functions->getConnection()->prepare("SELECT * FROM utenti WHERE user_name=?");
 		$stmt->bind_param("s", $user_name);
@@ -38,12 +58,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 			$error = "Username già esistente, sceglierne un altro";
 	}else{
 		if(empty($user_name))
-			$error = "<p>Campo 'username' vuoto, inserire dati</p>";
+			$error = "Campo <span lang='en'>username</span> vuoto, inserire dati";
 		else if(is_numeric($user_name))
-			$error .= "<p>Il campo 'username' non può contentere solo numeri</p>";
+			$error .= "Il campo <span lang='en'>username</span> non può contentere solo numeri";
 
 		if(empty($password))
-			$error .= "<p>Campo 'password' vuoto, inserire dati</p>";
+			$error .= "Campo <span lang='en'>password</span> vuoto, inserire dati";
 	}
 
 	if($error != "")
