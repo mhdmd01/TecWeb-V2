@@ -242,17 +242,23 @@ main{
 /*FINE HOME*/
 
 /*Pagina Sogni*/
+/*Form*/
+
+.cercaSogno{
+    text-align: center;
+}
+
 .cercaSogno > input.barraRicerca{
     display: inline-block;
     font-size: 1.5em;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    width: 30%;
+    width: 40%;
     height: 70px;
     padding: 1em;
     margin: 1em 1em 1em 0em;
-    transition: width 0.4s ease-in-out;
+    transition: width 0.6s ease-in-out;
 }
 
 .cercaSogno > input.barraRicerca:focus{
@@ -274,6 +280,31 @@ main{
     font-weight: bold;
     margin-top: 0.7em;
     margin-bottom: 0.7em;
+}
+
+.cercaSogno > input.bottoneCerca:hover{
+    background-color: var(--linkColor);
+}
+
+.filtraSogno{
+    text-align: center;
+}
+
+.filtraSogno > label{
+    font-weight: bold;
+    font-size: 2em;
+    padding-right: 0.3em;
+}
+
+.filtraSogno > input.bottoneFiltro{
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: white;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0.5em;
 }
 
 /*Fine Sogni*/
