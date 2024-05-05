@@ -70,11 +70,18 @@ ul.listaSideBar > li > a::after{
     padding-right: 35%;
 }
 
-
 .tornasu{
     display:inline;
 }
 
 .contatti{
     width:100%;
+}
+
+.cercaSogno > input.barraRicerca{
+    width:100%;
+}
+
+.cercaSogno > input.barraRicerca:focus{
+    width: 100%;
 }

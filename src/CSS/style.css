@@ -231,13 +231,42 @@ main{
     margin-top:1em;
     margin-bottom:1em;
 }
+
 /*Pagina Home*/
 
+.thumbnail{ /*dimensione immagine della lista dei sogni*/
+    width: 100px;
+    height: 100px;
+}
 
 /*FINE HOME*/
 
+/*Pagina Sogni*/
+.cercaSogno > input.barraRicerca{
+    display: inline-block;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 30%;
+    height: 20px;
+    padding: 1em;
+    margin: 1em 1em 1em 0em;
+    transition: width 0.4s ease-in-out;
+}
 
+.cercaSogno > input.barraRicerca:focus{
+    background-color: var(--linkColor);
+    width: 80%;
+}
 
+.cercaSogno > input.barraRicerca:hover{
+    background-color: var(--linkColor);
+}
+
+/*Fine Sogni*/
+
+ul > li > a > div > img {display: none;} /*Solo per il responsive test DA RIMUOVERE*/ 
 /********************** 
 
     SERVIZI e ABOUT
@@ -334,7 +363,7 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 }
 
 .messageForm > textarea:hover{
-    background-color: var(--6inkColor);
+    background-color: var(--linkColor);
 }
 
 .messageForm > textarea:focus{
