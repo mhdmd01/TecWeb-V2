@@ -65,8 +65,9 @@ ul.listaSideBar > li > a::after{
 #breadcrump{
     margin-top: 70px;
     bottom: 0;
-    padding-left: 40%;
-    padding-right: 40%;
+    padding-top: 1%;
+    padding-left: 35%;
+    padding-right: 35%;
 }
 
 
