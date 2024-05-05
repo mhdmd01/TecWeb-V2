@@ -79,9 +79,16 @@ ul.listaSideBar > li > a::after{
 }
 
 .cercaSogno > input.barraRicerca{
-    width:100%;
+    width: 70%;
+    margin: 0.5em 0.5em 0.5em 0em;
 }
 
 .cercaSogno > input.barraRicerca:focus{
-    width: 100%;
+    width: 70%;
 }
+/*
+.cercaSogno > input.bottoneCerca{
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 0.1em;
+}*/
