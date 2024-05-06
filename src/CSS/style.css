@@ -178,8 +178,8 @@ ul.listaNavBar > li{
 @keyframes rotate-animation { /*Animazione di rotazione per il logo*/
 	0% {
 		transform: rotate(0deg);
-  }
-  50% {
+    }
+    50% {
 		transform: rotate(180deg);
 	}
 	100% {
@@ -439,10 +439,7 @@ input.bottoneForm:hover{
     background-color: var(--linkColor);
 }
 
-
-
 /*Pagina Servizi*/
-
 /*Fine pagina Servizi*/
 
 /*Registrati*/
