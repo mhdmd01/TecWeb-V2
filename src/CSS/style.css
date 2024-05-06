@@ -563,7 +563,8 @@ textarea.casellaTesto{
 
 /*Inizio Footer*/
 footer{
-    background-color: var(--footerBgColor);
+    /* background-color: var(--footerBgColor); */
+    background-image: linear-gradient(to top right, #000000 0%, var(--headerBgColor) 20%, #000000 100%);
     color:var(--footerTxtColor);
     text-align: center;
     margin-top: auto;
