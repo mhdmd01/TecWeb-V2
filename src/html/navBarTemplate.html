@@ -4,32 +4,32 @@
     </nav>
     
     <div class="titolo">    
-    {logo} <!--tabindex="1"-->
+    {logo} <!--tabindex="0"-->
         <h1>Saudade</h1>
     </div>
 
     <nav class="menu">
         <ul class="listaNavBar">
-            {homeLink} <!--tabindex="2"-->
-            {sogniLink} <!--tabindex="3"-->
-            {serviziLink} <!--tabindex="4"-->
-            {storiaLink} <!--tabindex="5"-->
-            {signupLink} <!--tabindex="6"-->
-            {loginLink} <!--tabindex="7"-->
-            {logoutLink} <!--tabindex="8"-->
+            {homeLink} <!--tabindex="1"-->
+            {sogniLink} <!--tabindex="2"-->
+            {serviziLink} <!--tabindex="3"-->
+            {storiaLink} <!--tabindex="4"-->
+            {signupLink} <!--tabindex="5"-->
+            {loginLink} <!--tabindex="6"-->
+            {logoutLink} <!--tabindex="7"-->
         </ul>
     </nav>
-    <a class="hideOnDesktop" onclick="showSideBar()" href="#"><img alt="Apri tendina" class="ham" src="../assets/ham.svg"></a>
+    <a class="hideOnDesktop" tabindex="8" onclick="showSideBar()" href="#"><img alt="Apri tendina" class="ham" src="../assets/ham.svg"></a>
     <nav class="nascondi">
         <ul class="listaSideBar">
             <li onclick="hideSideBar()"><a class="close" href="#"><img alt="Chiudi tendina" class="croce" src="../assets/close.svg"></a></li>
-            {homeLink} <!--tabindex="2"-->
-            {sogniLink} <!--tabindex="3"-->
-            {serviziLink} <!--tabindex="4"-->
-            {storiaLink} <!--tabindex="5"-->
-            {signupLink} <!--tabindex="6"-->
-            {loginLink} <!--tabindex="7"-->
-            {logoutLink} <!--tabindex="8"-->
+            {homeLink} <!--tabindex="1"-->
+            {sogniLink} <!--tabindex="2"-->
+            {serviziLink} <!--tabindex="3"-->
+            {storiaLink} <!--tabindex="4"-->
+            {signupLink} <!--tabindex="5"-->
+            {loginLink} <!--tabindex="6"-->
+            {logoutLink} <!--tabindex="7"-->
         </ul>
     </nav>
     <nav id="breadcrump">
