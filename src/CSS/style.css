@@ -241,6 +241,10 @@ main{
     height: 100px;
 }
 
+.slide-2 > ul {
+    max-width: 7em;
+}
+
 /*FINE HOME*/
 
 /*Pagina Sogni*/
