@@ -33,6 +33,8 @@
     --colorSlide: #7A7A7A;
     --slideTitleTxtColor: #085454;
     --fontMenu: sans-serif;
+    --errorBackground: #FF0000;
+    --errorText: #FFFFFF;
 }
 
 .nascondi{
@@ -331,14 +333,24 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
     width:50%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom:20px;
+    padding
 }
 
-.contatti > h2.titolo{
-    font-size: 3em;
-}
 
 .formContatta{
+    text-align: center;
+    line-height: 1.5em;
+    background-color: var(--colorSlide);
+    border-radius:1em;
+    padding:2em;
+    margin:auto;
+    max-width:600px;
     border:none;
+}
+
+.formContatta > h2.titolo{
+    font-size: 2.5em;
 }
 
 .emailForm{
@@ -414,7 +426,7 @@ modificate le animazione che vanno tuttavia sistemate con lo scroll
 }
 
 input.bottoneForm{
-    margin: 1.5em;
+    margin-top: 1.5em;
     width: 130px;
     height: 75px;
     border-radius: 5px;
@@ -504,6 +516,19 @@ input.bottoneForm:hover{
     font-weight: bold;
     font-size: 1.25em;
     padding-right: 0.3em;
+}
+
+.Errore {
+    border-radius: 1em;
+    font-size:1.5em;
+    font-weight:bold;
+    background-color: var(--errorBackground);
+    text-align:center;
+    color: var(--errorText);
+    margin-bottom:1em;
+    max-width:600px;
+    margin-right:auto; 
+    margin-left:auto; 
 }
 
 /*Aggiungi Sogno*/
