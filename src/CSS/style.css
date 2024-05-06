@@ -235,10 +235,21 @@ main{
 }
 
 /*Pagina Home*/
+.elListaSogno{
+    list-style: none;
+}
 
-.thumbnail{ /*dimensione immagine della lista dei sogni*/
-    width: 100px;
+div.thumbnail{
+    margin: 1em;
+}
+
+div.thumbnail > img{ /*dimensione immagine della lista dei sogni*/
+    width: 200px;
     height: 100px;
+}
+
+div.thumbnail:hover{
+    opacity: 0.5;
 }
 
 .slide-2 > ul {
@@ -314,22 +325,6 @@ main{
 }
 
 /*Fine Sogni*/
-
-ul > li > a > div > img {display: none;} /*Solo per il responsive test DA RIMUOVERE*/ 
-/********************** 
-
-    SERVIZI e ABOUT
-modificate le animazione che vanno tuttavia sistemate con lo scroll
-
-**********************/
-
-    
-/********************** 
-
-    FINE SERVIZI e ABOUT
-
-***********************/
-
 
 /*Pagina Contatti*/
 .contatti{
