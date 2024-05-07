@@ -633,5 +633,9 @@ footer{
     display:none; 
 }
 
-
+.listaStoria{
+    padding-right: 0.75em;
+    padding-left: 0.75em;
+    text-align: left;
+}
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_custom_select PER I SELECT DEI FORM*/
