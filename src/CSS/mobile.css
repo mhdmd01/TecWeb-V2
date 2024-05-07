@@ -22,3 +22,9 @@
 .cercaSogno > input.bottoneCerca{
     width: 90px;
 }
+
+.elencoSogni{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+}

@@ -1,0 +1,273 @@
+*{
+    margin: 0;
+    padding: 0;
+}/*questo si fa di base*/
+
+:root{
+    --headerBgColor: rgb(0,0,0);
+    --headerTxtColor: rgb(255,255,255);
+    --bgColor: rgb(255,255,255);
+    --txtColor: rgb(0,0,0);
+    --footerBgColor: rgb(0,0,0);
+    --footerTxtColor: rgb(255,255,255);
+    --visitedLinkColor: rgb(230,12,83);
+    --linkColor: rgb(255,255,255);
+    --flagColor: rgb(218,103,66);
+    --headTable: rgb(230,12,83);
+    --font-body-family: "Roboto Condensed", sans-serif;
+}
+
+html{
+    font-size: 100%;
+    font-family: var(--font-body-family);
+    line-height: 1.5em; /*per accessibilita' e' necessario almeno un interlinea di 1.5*/
+    margin:auto; /*centrare un elemento*/
+    background-image: url("../TecWeb/images/bg.png");
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /*il footer arriva a pie' pagina*/
+}
+
+.navigationHelp{ /*Nascondiamo dei testi che diventano visibili solo per gli screen reader*/
+    position: absolute;
+    text-indent: -999em;
+}
+
+header{
+    background-color: var(--headerBgColor);
+    color:var(--headerTxtColor);
+    text-align: center;
+    padding: 1em;
+}
+
+header h1{
+    text-indent: -999em; /*nasconde h1 cosi da mettere l'immagine*/
+    background-image: url(../TecWeb/images/logo.png);
+    background-size: contain;/*rispetta le condizioni di altezza e larghezza*/
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 4em;
+    line-height: 1.5em;
+}
+
+nav{
+    background-color: var(--headerBgColor);
+    color:var(--headerTxtColor);
+}
+
+nav a:link{
+    color:var(--linkColor);
+}
+
+nav a:visited{
+    color:var(--visitedLinkColor);
+}
+
+#menu{
+    text-align: center;
+}
+
+#menu ul{
+    margin:auto;
+    max-width: 1024px;
+    padding: 1em;
+    list-style-type: none;/*rimuove i punti della lista*/
+}
+
+#menu ul li{/*nav#menu ha specificita' 1,0,1 mentre #nav ha specificita' 1,0,0*/
+    display: inline-block;
+    width: 22%;
+    margin: 0 0.5em;
+}
+
+#breadcrump{
+    padding: 1em;
+}
+
+#breadcrump p{
+    max-width: 1024px;
+    margin:auto;
+}
+
+#imgIndex{
+    width: 65%;
+}
+
+main{
+    color: var(--txtColor);
+    margin: auto;
+    width: 80%;
+}
+
+.colonne dl{
+    font-size: 90%;
+    margin: auto;
+}
+
+main.colonne div dt, main.colonne div dd{/*sono 2 specificita' diverse in questo caso con lo stesso valore*/
+    display: inline;
+    text-transform: uppercase;
+}
+
+.soldout{/*questa classe non rispetta la separazione tra contenuto e presentazione, infatti soldout e' un immagine di contenuto, e poi non e' accessibile per gli screen reader*/
+    background-image: url(../TecWeb/images/soldout.png);/*Non e' corretto usare quindi l'image replace perche' viola questi vincoli.*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+dd.citta{
+    color: var(--flagColor);
+    font-weight: bold;
+}
+
+main.colonne time span{
+    font-weight: bold;
+}
+
+main dl div{
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+main.colonne{
+    column-count: 3;
+    width: 90%;
+}
+
+main h2{
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+footer{
+    background-color: var(--footerBgColor);
+    color: var(--footerTxtColor);
+    padding: 1.0em;
+    text-align: center;
+    margin-top: auto;
+}
+
+.headerTable th{
+    background-color: var(--flagColor);
+    color: var(--headerTxtColor);
+    padding: 0.3em;
+    border: 1px solid var(--flagColor);
+}
+
+td.city{
+    color: var(--flagColor);
+    font-weight: bold;
+}
+
+#tabella{
+    width: 95%;
+    text-align: center;
+}
+
+main table{
+    margin: auto;
+}
+
+th{
+    font-weight: normal;
+}
+
+th, td{
+    padding: 0.5em;
+}
+
+th time span{
+    font-weight: bold;
+}
+
+thead{
+    background-color: var(--flagColor);
+    color: var(--headerTxtColor)
+}
+
+
+
+/*************************
+    Componenti
+**************************/
+
+#componenti{
+    margin:auto;
+    width: 95%;
+    max-width: 1024px; /*va sempre messo, max 1200*/
+    padding-bottom: 2em;
+}
+
+#componenti>dt{/*il maggiore mi dice non ai figli dei componenti*/
+    background-color: var(--headTable);
+    color: var(--txtColor);
+    border: 1px solid black;
+    padding: 0.5em;
+    font-size: 1.1em;
+}
+
+#componenti>dd{
+    background-color: var(--bgColor);
+    border: 1px solid black;
+    border-top: none;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#componenti > dd img{
+    width: 15%;
+    float: left; /*in automatico ha il displaay block*/
+    margin-right: 1em;
+}
+
+.componente dt{
+    float: left;
+    font-weight: bold;
+}
+
+/*Discografia*/
+
+#discografia dl{
+    display: inline-block;
+    width: 26%;
+    aspect-ratio: 1 / 1;
+    padding: 2.0em;
+}
+
+#discografia dl a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+    font-size: 7em;
+    line-height: 1.5em;
+}
+
+#discografia dl a:link{
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: .5s; /*se non aggiungo questo non c'è la transizione o meglio va istantaneamente*/
+}
+
+#discografia dl a:hover{
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/*
+#fakenews {
+    background-image: url("images/fakenews.jpg");
+}
+
+- lei lo fa per ogni immagine, inoltre lei non ha fatto la lista di definizione ma una lista normale
+*/

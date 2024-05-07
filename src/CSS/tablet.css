@@ -87,3 +87,6 @@ ul.listaSideBar > li > a::after{
     width: 70%;
 }
 
+.elencoSogni{
+    justify-content: space-between;
+}

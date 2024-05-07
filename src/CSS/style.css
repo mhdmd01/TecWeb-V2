@@ -235,26 +235,27 @@ main{
 }
 
 /*Pagina Home*/
-.elListaSogno{
-    list-style: none;
+.elencoSogni > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
 }
 
-div.thumbnail{
-    margin: 1em;
+.elListaSogno{
+    list-style: none;
+    text-align: center;
+    margin: 0.25em;
 }
 
 div.thumbnail > img{ /*dimensione immagine della lista dei sogni*/
     width: 200px;
     height: 100px;
 }
-
 div.thumbnail:hover{
     opacity: 0.5;
 }
 
-.slide-2 > ul {
-    max-width: 7em;
-}
 
 /*FINE HOME*/
 
