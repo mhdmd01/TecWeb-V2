@@ -6,32 +6,57 @@
 
     use functions\functions;
     $functions = new functions();
-    $functions->openDBConnection();
 
-    if(isset($_GET['mese']) && $_GET['mese'] >= 1 && $_GET['mese'] <= 12){
-        $stmt = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE data BETWEEN ? AND ?;");
-        $settimana1 = "2024-".$_GET['mese']."-01";
-        $settimana2 = "2024-".$_GET['mese']."-31";
-        $stmt->bind_param("ss", $settimana1, $settimana2);
-        $stmt->execute();
-        $risultato = $stmt->get_result();
-        
-        if($risultato == null)
-            $pagina->printErrorPage("Data non trovata");                            
-        else{
-            if(mysqli_num_rows($risultato) > 0){
-                $placeHolderData = "";
+    $arrayMesi = array("", "Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre");
 
-                foreach( $risultato as $row){
-                    $placeHolderData .= "<li><a href=\"confermaPrenotazione.php?data=".$row['data']."\">".$row['data']."</a></li>";
+    //Popolo menù a tendina
+    $dateTabella = $functions->executeQuery("SELECT DISTINCT YEAR(data) AS anno, MONTH(data) AS mese FROM prenotazioni;");
+
+    if($dateTabella == null){
+        $pagina->printErrorPage("Errore di connessione al server, riprovare più tardi");
+    }else{
+        $dateMenu = "";
+        foreach($dateTabella as $row){
+            //echo $row['anno'] ." - ". $row['mese'] . "<br>";
+            $dateMenu .= "<option value=\"".$row['mese']."-".$row['anno']."\"> ".$arrayMesi[$row['mese']]." ".$row['anno']." </option>";
+        }
+        $pagina->modificaHTML("{dateMenu}", $dateMenu);
+    }
+
+    //Ottengo valori data
+    if(isset($_GET['data'])) {
+        $valore = $_GET['data'];
+        $valori = explode('-', $valore); // Splittare il valore del mese e dell'anno
+        $mese = $valori[0];
+        $anno = $valori[1];
+
+        if($mese>=1 && $mese <=12 && $anno>=date('Y')){ //Controllo sui valori della data
+            $dataInizioQuery = $anno."-".$mese."-01"; 
+            $dataFineQuery = $anno."-".$mese."-31";
+
+            $functions->openDBConnection();
+            $stmt = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE data BETWEEN ? AND ?;");
+            $stmt->bind_param("ss", $dataInizioQuery, $dataFineQuery);
+            $stmt->execute();
+            $risultato = $stmt->get_result();
+
+            if($risultato == null)
+                $pagina->printErrorPage("Data non trovata");                            
+            else{
+                if(mysqli_num_rows($risultato) > 0){
+                    $placeHolderData = "";
+
+                    foreach( $risultato as $row){
+                        $placeHolderData .= "<li><a href=\"confermaPrenotazione.php?data=".$row['data']."\">".$row['data']."</a></li>";
+                    }
+                    $pagina->modificaHTML("{data}", $placeHolderData);
+                }else{
+                    $pagina->modificaHTML("{data}", "Ancora nessuna data disponibile nel periodo selezionato");
                 }
-                $pagina->modificaHTML("{data}", $placeHolderData);
-            }else{
-                $pagina->modificaHTML("{data}", "Ancora nessuna data disponibile nel periodo selezionato");
             }
         }
     }else{
-        $pagina->printErrorPage("Data selezionata non valida, <a href=\"formChip.php\">riprovare</a>");
+        $pagina->modificaHTML("{data}", "Data selezionata non valida, scegliere una data esistente");
     }
 
     $pagina->printPage();   
