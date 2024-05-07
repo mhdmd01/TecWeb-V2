@@ -16,8 +16,13 @@ class newPage{
         //Aggiungere keyword comuni per tutte le pagine
         $this->strutturaHTML = str_replace("{metaKeywords}", "Saudade, ".$keywords , $this->strutturaHTML);         //Sostituisce segnaposto keywords 
         $this->strutturaHTML = str_replace("{metaDescription}", $description , $this->strutturaHTML);               //Sostituisce segnaposto description
-	    $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter, $this->strutturaHTML);              //Sostituzione segnaposto testoFooter
         $this->printNavBar($template);
+
+        if($template == "../html/contatta.html"){ //Per rimuovere link circolare in contatta
+            $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter, $this->strutturaHTML);
+        }else{
+            $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter." Hai bisogno di aiuto? <a href=\"../php/contatta.php\">Contattaci</a>", $this->strutturaHTML);
+        }
         
         //Sostituzione contenuto principale con il segnaposto main
         $this->strutturaHTML = str_replace("{contenutoMain}", $paginaTemplate, $this->strutturaHTML);
