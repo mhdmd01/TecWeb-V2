@@ -17,7 +17,6 @@
     }else{
         $dateMenu = "";
         foreach($dateTabella as $row){
-            //echo $row['anno'] ." - ". $row['mese'] . "<br>";
             $dateMenu .= "<option value=\"".$row['mese']."-".$row['anno']."\"> ".$arrayMesi[$row['mese']]." ".$row['anno']." </option>";
         }
         $pagina->modificaHTML("{dateMenu}", $dateMenu);
@@ -31,11 +30,27 @@
         $anno = $valori[1];
 
         if($mese>=1 && $mese <=12 && $anno>=date('Y')){ //Controllo sui valori della data
-            $dataInizioQuery = $anno."-".$mese."-01"; 
+            $anno."-".$mese."-01" < date("Y/m/d") ?  $dataInizioQuery = date("Y/m/d") : $dataInizioQuery = $anno."-".$mese."-01"; //Verifica tramite operatore ternario, sulla data se è già passata
+
             $dataFineQuery = $anno."-".$mese."-31";
 
+            $pagina->modificaHTML("{mesePrenotazione}", $arrayMesi[$mese]);
+
             $functions->openDBConnection();
-            $stmt = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE data BETWEEN ? AND ?;");
+            $stmt = $functions->getConnection()->prepare("SELECT COUNT(DISTINCT data) AS num_date FROM prenotazioni WHERE user_name IS NULL AND data BETWEEN ? AND ?;");
+            $stmt->bind_param("ss", $dataInizioQuery, $dataFineQuery);
+            $stmt->execute();
+            $risultato = $stmt->get_result();
+
+            if ($risultato->num_rows > 0) {
+                $riga = $risultato->fetch_assoc();
+                $numeroAppuntamenti = $riga['num_date']; // Ottieni il numero di date disponibili
+                $pagina->modificaHTML("{numeroAppuntamenti}", $numeroAppuntamenti);
+            } else {
+                $pagina->modificaHTML("{numeroAppuntamenti}", "errore");
+            }
+
+            $stmt = $functions->getConnection()->prepare("SELECT DISTINCT(data) FROM prenotazioni WHERE user_name IS NULL AND data BETWEEN ? AND ?;");
             $stmt->bind_param("ss", $dataInizioQuery, $dataFineQuery);
             $stmt->execute();
             $risultato = $stmt->get_result();
@@ -54,9 +69,15 @@
                     $pagina->modificaHTML("{data}", "Ancora nessuna data disponibile nel periodo selezionato");
                 }
             }
-        }
+        }else
+            $pagina->modificaHTML("{data}", "Data selezionata non valida, scegliere una data esistente");
     }else{
         $pagina->modificaHTML("{data}", "Data selezionata non valida, scegliere una data esistente");
     }
+
+    //Nel caso qualcosa vada male comunque i placeholder vengono gestiti qui
+    $pagina->modificaHTML("{mesePrenotazione}", "");
+    $pagina->modificaHTML("{numeroAppuntamenti}", "0");
+    $pagina->modificaHTML("{data}", "");
 
     $pagina->printPage();   

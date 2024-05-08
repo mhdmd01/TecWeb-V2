@@ -77,6 +77,10 @@ CREATE TABLE recensioni (
   FOREIGN KEY (sogno) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 
+INSERT INTO recensioni(user_name, testo, sogno) VALUES 
+  ('user', 'Recensione di prova', 'Sogno 1'),
+  ('user', 'No vabbe bellissimo !!! Incredibile !!!', 'Sogno 1');
+
 
 CREATE TABLE prenotazioni (
   data DATE PRIMARY KEY,
@@ -114,6 +118,12 @@ INSERT INTO categorie(nome) VALUES
 
 
 INSERT INTO prenotazioni (data, user_name) VALUES
+('2024-05-06', NULL),
+('2024-05-07', NULL),
+('2024-05-08', NULL),
+('2024-05-09', NULL),
+('2024-05-10', NULL),
+
 ('2024-06-03', NULL),
 ('2024-06-04', 'user'),
 ('2024-06-05', NULL),

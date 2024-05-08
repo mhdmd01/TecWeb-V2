@@ -1,5 +1,5 @@
 <div>
-    <form action="formChip.php" method="GET">
+    <form action="formChip.php" method="GET" title ="Modulo di prenotazione">
         <label for="data">Mese:</label>
         <select id="data" name="data" required>
             <option value="" disabled selected> Scegli un mese </option>
@@ -8,6 +8,9 @@
         <input type="submit" value="Applica">
     </form>
 </div>
+
+<h1>{mesePrenotazione}</h1>
+Appuntamenti disponibili: {numeroAppuntamenti}
 
 <ul>
     {data}
