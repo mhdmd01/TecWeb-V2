@@ -171,8 +171,11 @@ ul.listaNavBar > li{
 
 #logo:hover{
     animation: rotate-animation 3s infinite linear;
-    cursor: pointer;
     opacity: 0.5;
+}
+
+.titolo > a:hover{
+    cursor: pointer;
 }
 
 @keyframes rotate-animation { /*Animazione di rotazione per il logo*/
@@ -249,8 +252,8 @@ main{
 }
 
 div.thumbnail > img{ /*dimensione immagine della lista dei sogni*/
-    width: 200px;
-    height: 100px;
+    width: 16em;
+    height: 9em;
 }
 div.thumbnail:hover{
     opacity: 0.5;
