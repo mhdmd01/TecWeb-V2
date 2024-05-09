@@ -30,9 +30,16 @@
         $anno = $valori[1];
 
         if($mese>=1 && $mese <=12 && $anno>=date('Y')){ //Controllo sui valori della data
-            $anno."-".$mese."-01" < date("Y/m/d") ?  $dataInizioQuery = date("Y/m/d") : $dataInizioQuery = $anno."-".$mese."-01"; //Verifica tramite operatore ternario, sulla data se è già passata
+            $dataInput = new DateTime("$anno-$mese-01"); //Uso DateTime, la classe per date ed orari di php
 
-            $dataFineQuery = $anno."-".$mese."-31";
+            // Verifica se la data è passata
+            if ($dataInput < new DateTime()) {
+                $dataInizioQuery = (new DateTime())->format("Y-m-d");
+            } else {
+                $dataInizioQuery = $dataInput->format("Y-m-d");
+            }
+
+            $dataFineQuery = $anno."-".$mese."-"."31";
 
             $pagina->modificaHTML("{mesePrenotazione}", $arrayMesi[$mese]);
 

@@ -106,7 +106,7 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione}", $navBar);
 
         }else if($currentPage == "../html/confermaPrenotazione.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione} avvenuta con successo", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione {dataPrenotazione}", $navBar);
 
         }else if($currentPage ==  "../html/aggiungiRecensione.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardUser.php\">Area personale</a> &gt&gt Recensione {titoloSogno}", $navBar);
