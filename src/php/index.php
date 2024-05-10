@@ -9,11 +9,12 @@
 
     $sogni = $functions->executeQuery("SELECT * FROM sogni ORDER BY data_ins DESC LIMIT 3;");
 
-    $recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins LIMIT 5;");
+    //$recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins LIMIT 5;");
 
     $sognitop = $functions->executeQuery("SELECT *, AVG(r.stelle) AS media_valutazione FROM recensioni r 
     INNER JOIN sogni s ON r.sogno = s.titolo GROUP BY s.titolo ORDER BY media_valutazione DESC LIMIT 3;");
-
+    
+    /*
     if($recenz == null){
         $rec = "Ancora nessuna recensione";
         $pagina->modificaHTML("{recensioni}", $rec);
@@ -31,6 +32,7 @@
 
         $pagina->modificaHTML("{recensioni}", $rec);
     }
+    */
 
     if($sogni == null){
         $rec = "Ancora nessun sogno disponibile";
@@ -44,7 +46,6 @@
 
             $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
             $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
-            $annuncio = str_replace("{prezzo}", $row['prezzo']." &#8364;", $annuncio);
             $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['nomeFile']."\"", $annuncio);
         }
 
