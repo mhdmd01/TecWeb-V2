@@ -43,9 +43,10 @@
 
         foreach( $sogni as $row){
             $annuncio .= file_get_contents("../html/annuncioSogno.html");
-
+            
             $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
             $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
+            $annuncio = str_replace("{prezzo}", "", $annuncio);
             $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['nomeFile']."\"", $annuncio);
         }
 
