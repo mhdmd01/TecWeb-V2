@@ -6,6 +6,16 @@
     <form id="nuovaRecensione" action="aggiungiRecensione.php?sogno={titoloSogno}" method="post" enctype="multipart/form-data"> 
         <p>Nuova recensione per {titoloSogno} </p>
 
+        <label for="valutazione">Quante stelle vuoi mettere?</label>
+        <select id="valutazione" name="valutazione">
+            <option value=""> Scegli una valutazione </option>
+            <option value="1"> 1 stella </option>
+            <option value="2"> 2 stella </option>
+            <option value="3"> 3 stella </option>
+            <option value="4"> 4 stella </option>
+            <option value="5"> 5 stella </option>
+        </select>
+
         <label for="recensione">Recensione</label>
         <textarea class="casellaTesto" placeholder="Recensione" id="recensione" name="recensione"></textarea>
         <br>

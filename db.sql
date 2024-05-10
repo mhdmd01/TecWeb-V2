@@ -71,15 +71,16 @@ CREATE TABLE recensioni (
   user_name VARCHAR(20) NOT NULL,
   testo VARCHAR(256) NOT NULL,
   sogno VARCHAR(20),
+  stelle INT,
   data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
   FOREIGN KEY (sogno) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 
-INSERT INTO recensioni(user_name, testo, sogno) VALUES 
-  ('user', 'Recensione di prova', 'Sogno 1'),
-  ('user', 'No vabbe bellissimo !!! Incredibile !!!', 'Sogno 1');
+INSERT INTO recensioni(user_name, testo, sogno, stelle) VALUES 
+  ('user', 'Recensione di prova', 'Sogno 1', '5'),
+  ('user', 'No vabbe bellissimo !!! Incredibile !!!', 'Sogno 1', '4');
 
 
 CREATE TABLE prenotazioni (

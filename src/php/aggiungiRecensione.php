@@ -15,10 +15,11 @@
 
             $recensione = $functions->pulisciInput($_POST['recensione']);
             $user_name = $_SESSION['user_name'];
+            $stelle = isset($_POST['valutazione']) ? ($_POST['valutazione']) : '';
             
             $functions->openDBConnection();
-            $stmt = $functions->getConnection()->prepare("INSERT INTO recensioni (user_name, testo, sogno) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $user_name, $recensione, $sogno); 
+            $stmt = $functions->getConnection()->prepare("INSERT INTO recensioni (user_name, testo, sogno, stelle) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("sssi", $user_name, $recensione, $sogno, $stelle); 
             $ris = $stmt->execute();
             $stmt->close();
             $functions->closeConnection();
