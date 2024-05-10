@@ -44,8 +44,7 @@
 
             $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
             $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
-            $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
-            $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
+            $annuncio = str_replace("{prezzo}", $row['prezzo']." &#8364;", $annuncio);
             $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['nomeFile']."\"", $annuncio);
         }
 
@@ -61,11 +60,10 @@
 
         foreach( $sognitop as $row){
             $annuncio .= file_get_contents("../html/annuncioSogno.html");
-
+            $numero= round($row['media_valutazione'], 1);
             $annuncio = str_replace("{linkSogno}", "sognoSingolo.php?sogno=".urlencode($row['titolo']), $annuncio);
             $annuncio = str_replace("{titolo}", $row['titolo'], $annuncio);
-            $annuncio = str_replace("{descrizione}", $row['descrizione'], $annuncio);
-            $annuncio = str_replace("{prezzo}", $row['prezzo'], $annuncio);
+            $annuncio = str_replace("{prezzo}", $numero."/5", $annuncio);
             $annuncio = str_replace("{pathImg}", "\"../assets/sogni/".$row['nomeFile']."\"", $annuncio);
         }
 
