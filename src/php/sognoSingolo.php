@@ -16,13 +16,40 @@
     } else {
         echo "Errore passaggio parametri, riprovare"; // Da migliorare
     }
-    
 
     
     $pagina = new newPage("../html/sognoSingolo.html", 
                             $sogno, 
                             strval($sogno)." saudade", 
                             "Pagina riguardante ".strval($sogno));
+
+
+    //$recenz = $functions->executeQuery("SELECT * FROM recensioni WHERE sogno = ORDER BY data_ins LIMIT 5;");
+
+    $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE sogno=? ORDER BY data_ins LIMIT 5;");
+                        $recenz->bind_param("s", $_GET['sogno']);
+                        $recenz->execute();
+                        $recenz = $recenz->get_result();
+
+    if($recenz == null){
+        $rec = "Ancora nessuna recensione";
+        $pagina->modificaHTML("{recensioni}", $rec);
+    }        
+    else{
+        $rec = "";
+
+        foreach( $recenz as $row){
+            $rec .= file_get_contents("../html/recensioneTemp.html");
+
+            $rec = str_replace("{utente}", $row['user_name'], $rec);
+            $rec = str_replace("{stelle}", $row['stelle'], $rec);
+            $rec = str_replace("{sogno}", $row['sogno'], $rec);
+            $rec = str_replace("{testo}", $row['testo'], $rec);
+        }
+
+        $pagina->modificaHTML("{recensioni}", $rec);
+    }
+
 
     if($risultato == null)
         $pagina->printErrorPage("Sogno non trovato, tornare alla pagina <a href=\"sogni.php\">Sogni</a> e provare a riselezionare il sogno desiderato");                            
