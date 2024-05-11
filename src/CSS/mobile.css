@@ -28,3 +28,7 @@
     justify-content: space-around;
     align-items: space-around;
 }
+
+.slide-1{
+    display: none;
+}
