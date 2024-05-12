@@ -719,6 +719,10 @@ input.bottoneForm:hover{
     margin-bottom: 0.7em; 
 }
 
+#button-lungo:hover{
+    background-color: var(--linkColor);
+}
+
 textarea.casellaTesto{
     display: inline-block;
     border: 1px solid #ccc;
