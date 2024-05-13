@@ -70,15 +70,15 @@ CREATE TABLE recensioni (
   id SERIAL PRIMARY KEY,
   user_name VARCHAR(20) NOT NULL,
   testo VARCHAR(256) NOT NULL,
-  sogno VARCHAR(20),
+  articolo VARCHAR(20),
   stelle INT,
-  data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
-  FOREIGN KEY (sogno) REFERENCES sogni(titolo) ON DELETE CASCADE
+  FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE
 );
 
-INSERT INTO recensioni(user_name, testo, sogno, stelle) VALUES 
+INSERT INTO recensioni(user_name, testo, articolo, stelle) VALUES 
   ('user', 'Recensione di prova', 'Sogno 1', '5'),
   ('user', 'No vabbe bellissimo !!! Incredibile !!!', 'Sogno 1', '4');
 

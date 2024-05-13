@@ -6,7 +6,7 @@
     $functions = new functions();
     $functions->openDBConnection();
 
-    $pagina = new newPage("../html/registroAcquisti.html", "Registro acquisti", "Registro acquisti", "Registro acquisti");
+    $pagina = new newPage("../html/registroRecensioni.html", "Registro recensioni", "Registro recensioni", "Registro recensioni");
 
     if(isset($_SESSION['user_name'])){
         if($_SESSION['user_name'] === "admin") {
@@ -19,12 +19,14 @@
             $filtro = "data ASC"; //Di default
             $ordine = "data: ordine crescente";
 
-            $linkUsrAsc = "<a href=\"registroAcquisti.php?filtro=usr-asc\">Username ordine alfabetico crescente</a>";
-            $linkUsrDec = "<a href=\"registroAcquisti.php?filtro=usr-desc\">Username ordine alfabetico decrescente</a>";
-            $linkArtAsc = "<a href=\"registroAcquisti.php?filtro=art-asc\">Articolo ordine alfabetico crescente</a>";
-            $linkArtDec = "<a href=\"registroAcquisti.php?filtro=art-desc\">Articolo ordine alfabetico decrescente</a>";
-            $linkDataAsc = "<a href=\"registroAcquisti.php?filtro=date-asc\">Data ordine decrescente</a>";
-            $linkDataDec = "<a href=\"registroAcquisti.php?filtro=date-desc\">Data ordine decrescente</a>";
+            $linkUsrAsc = "<a href=\"registroRecensioni.php?filtro=usr-asc\">Username ordine alfabetico crescente</a>";
+            $linkUsrDec = "<a href=\"registroRecensioni.php?filtro=usr-desc\">Username ordine alfabetico decrescente</a>";
+            $linkArtAsc = "<a href=\"registroRecensioni.php?filtro=art-asc\">Articolo ordine alfabetico crescente</a>";
+            $linkArtDec = "<a href=\"registroRecensioni.php?filtro=art-desc\">Articolo ordine alfabetico decrescente</a>";
+            $linkDataAsc = "<a href=\"registroRecensioni.php?filtro=date-asc\">Data ordine decrescente</a>";
+            $linkDataDec = "<a href=\"registroRecensioni.php?filtro=date-desc\">Data ordine decrescente</a>";
+            $linkStarAsc =  "<a href=\"registroRecensioni.php?filtro=star-asc\">Numero stelle ordine crescente</a>";
+            $linkStarDec =  "<a href=\"registroRecensioni.php?filtro=star-desc\">Numero stelle ordine decrescente</a>";
 
             if (isset($_GET['filtro'])){
                 //Username ordine alfabetico crescente
@@ -66,6 +68,20 @@
                     $ordine = "data: ordine crescente";
                     $linkDataDec = "";
                 }
+
+                //Stelle crescente
+                if($_GET['filtro'] == "star-asc"){
+                    $filtro = "stelle ASC";
+                    $ordine = "stelle: ordine crescente";
+                    $linkStarAsc = "";
+                }
+
+                //Stelle descresente
+                if($_GET['filtro'] == "star-desc"){
+                    $filtro = "stelle DESC";
+                    $ordine = "stelle: ordine decrescente";
+                    $linkStarDesc = "";
+                }
             }
 
             $pagina->modificaHTML("{ordine}", $ordine);
@@ -76,8 +92,10 @@
             $pagina->modificaHTML("{linkArtDec}", $linkArtDec);
             $pagina->modificaHTML("{linkDataAsc}", $linkDataAsc);
             $pagina->modificaHTML("{linkDataDec}", $linkDataDec);
+            $pagina->modificaHTML("{linkStarAsc}", $linkStarAsc);
+            $pagina->modificaHTML("{linkStarDec}", $linkStarDec);
 
-            $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti ORDER BY $filtro ;");
+            $stmt = $functions->getConnection()->prepare("SELECT * FROM recensioni ORDER BY $filtro ;");
             $stmt->execute();
             $risultato = $stmt->get_result();
 
@@ -87,9 +105,9 @@
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
                     foreach( $risultato as $row){
-                        $output .= "<div class = \"section\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</div>";
+                        $output .= "<div class = \"section\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "<p>Stelle: ".$row["stelle"]."</p>" . "<p>Testo: ".$row["testo"]."</p>" . "</div>";
                     }
-                    $pagina->modificaHTML("{acquisto}", $output);
+                    $pagina->modificaHTML("{commenti}", $output);
                 }
             }
 

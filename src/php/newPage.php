@@ -114,6 +114,9 @@ class newPage{
         }else if($currentPage == "../html/aggiungiDate.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Area personale admin</a> &gt&gt Aggiungi date", $navBar);
 
+        }else if($currentPage == "../html/registroAcquisti.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro acquisti", $navBar);
+
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")
