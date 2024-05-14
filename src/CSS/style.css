@@ -82,7 +82,7 @@ body{
     background-color: var(--BgColor);
 }
 
-select {
+select.formListaSogni{
     appearance: none;
     /* safari */
     -webkit-appearance: none;
@@ -97,7 +97,27 @@ select {
     cursor: pointer;
 }
 
-select:focus{
+select.formListaSogni:focus{
+    background-color: var(--linkColor);
+    color: black;
+}
+
+select.selectForm{
+    appearance: none;
+    /* safari */
+    -webkit-appearance: none;
+    /* other styles for aesthetics */
+    height: 42px;
+    width: 25%;
+    font-size: 1rem;
+    background-color: var(--BgTxtColor);
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+select.selectForm:focus{
     background-color: var(--linkColor);
     color: black;
 }
@@ -277,7 +297,7 @@ main{
 }
 
 .elencoSogni > ul{
-    display: flex;
+    display: flex; /*secondo flex*/
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-evenly;
@@ -311,6 +331,10 @@ div.thumbnail:hover{
 
 /*Pagina Sogni*/
 /*Form*/
+
+div.searchSogno{
+    margin-bottom: 0.75em;
+}
 
 .cercaSogno{
     text-align: center;

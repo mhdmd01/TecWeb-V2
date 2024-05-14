@@ -32,3 +32,12 @@
 .slide-1{
     display: none;
 }
+
+.filtraSogno > label{
+    font-size: 1.5em;
+}
+
+select.formListaSogni{
+    font-size: 1rem;
+    width: 35%;
+}
