@@ -44,7 +44,14 @@
             $rec = str_replace("{utente}", $row['user_name'], $rec);
             $rec = str_replace("{stelle}", $row['stelle'], $rec);
             $rec = str_replace("{sogno}", $row['sogno'], $rec);
-            $rec = str_replace("{testo}", $row['testo'], $rec);
+            //$rec = str_replace("{testo}", $row['testo'], $rec);
+
+            $text = $row['testo'];
+            $maxLength=256;
+            if (strlen($text) > $maxLength) {
+            $text = substr($text, 0, $maxLength) . "...leggi tutto";
+            }
+            $rec = str_replace("{testo}", $text, $rec);
         }
 
         $pagina->modificaHTML("{recensioni}", $rec);

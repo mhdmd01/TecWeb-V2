@@ -69,9 +69,9 @@ CREATE TABLE acquisti(
 CREATE TABLE recensioni (
   id SERIAL PRIMARY KEY,
   user_name VARCHAR(20) NOT NULL,
-  testo VARCHAR(256) NOT NULL,
+  testo TEXT NOT NULL,
   articolo VARCHAR(20),
-  stelle INT,
+  stelle INT CHECK (stelle >= 1 AND stelle <= 5),
   data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
