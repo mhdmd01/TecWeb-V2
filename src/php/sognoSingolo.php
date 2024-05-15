@@ -26,7 +26,7 @@
 
     //$recenz = $functions->executeQuery("SELECT * FROM recensioni WHERE sogno = ORDER BY data_ins LIMIT 5;");
 
-    $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE articolo = ? ORDER BY data LIMIT 5;");
+    $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE articolo=? ORDER BY data LIMIT 5;");
                         $recenz->bind_param("s", $_GET['sogno']);
                         $recenz->execute();
                         $recenz = $recenz->get_result();
@@ -47,9 +47,9 @@
             //$rec = str_replace("{testo}", $row['testo'], $rec);
 
             $text = $row['testo'];
-            $maxLength=256;
+            $maxLength=2;
             if (strlen($text) > $maxLength) {
-            $text = substr($text, 0, $maxLength) . "...leggi tutto";
+                $text = substr($text, 0, $maxLength) . '<a href="#" class="read-more" onclick="espandi(event)">...leggi tutto</a><span class="full-description hidden" ">' . substr($text, $maxLength) . '</span>';
             }
             $rec = str_replace("{testo}", $text, $rec);
         }
