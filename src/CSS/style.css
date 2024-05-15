@@ -817,3 +817,9 @@ footer{
     background-color: var(--linkColor);
     opacity: 1;
 }
+
+.sectionDash > p{
+    color: var(--slideTitleTxtColor);
+    font-size: 1.75em;
+    font-weight: bold;
+}
