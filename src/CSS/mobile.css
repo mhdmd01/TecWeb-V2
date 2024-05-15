@@ -41,3 +41,18 @@ select.formListaSogni{
     font-size: 1rem;
     width: 35%;
 }
+
+.formPrenotazione{
+    margin-bottom: 1em;
+}
+
+.formPrenotazione > form > label{
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-right: 0.3em;
+}
+
+select.selectForm{
+    font-size: 1em;
+    width: 50%;
+}

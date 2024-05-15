@@ -1,18 +1,19 @@
-<div>
+<div class="formPrenotazione">
+    <h2>Prenota un appuntamento:</h2>
     <form action="formChip.php" method="GET" title ="Modulo di prenotazione">
         <label for="data">Mese:</label>
-        <select id="data" name="data" required>
+        <select class="selectForm" id="data" name="data" required>
             <option value="" disabled selected> Scegli un mese </option>
             {dateMenu}
         </select>
         <input type="submit" value="Applica">
     </form>
+    <p>{mesePrenotazione} Appuntamenti disponibili: {numeroAppuntamenti} </p>
 </div>
 
-<h1>{mesePrenotazione}</h1>
-Appuntamenti disponibili: {numeroAppuntamenti}
-
-<ul>
-    {data}
-</ul>
+<div class="elencoSogni">
+    <ul class="elencoDate">
+        {data}
+    </ul>
+</div>
 

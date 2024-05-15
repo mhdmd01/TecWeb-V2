@@ -90,3 +90,17 @@ ul.listaSideBar > li > a::after{
 .elencoSogni{
     justify-content: space-between;
 }
+
+.formPrenotazione{
+    margin-bottom: 1.5em;
+}
+
+.formPrenotazione > h2{
+    font-size: 2.5em;
+    margin-bottom: 0.35em;
+}
+
+select.selectForm{
+    font-size: 1em;
+    width: 50%;
+}
