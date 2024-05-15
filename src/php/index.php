@@ -12,7 +12,7 @@
     //$recenz = $functions->executeQuery("SELECT * FROM recensioni ORDER BY data_ins LIMIT 5;");
 
     $sognitop = $functions->executeQuery("SELECT *, AVG(r.stelle) AS media_valutazione FROM recensioni r 
-    INNER JOIN sogni s ON r.sogno = s.titolo GROUP BY s.titolo ORDER BY media_valutazione DESC LIMIT 3;");
+    INNER JOIN sogni s ON r.articolo = s.titolo GROUP BY s.titolo ORDER BY media_valutazione DESC LIMIT 3;");
     
     /*
     if($recenz == null){

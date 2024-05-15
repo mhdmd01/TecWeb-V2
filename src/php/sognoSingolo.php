@@ -26,7 +26,7 @@
 
     //$recenz = $functions->executeQuery("SELECT * FROM recensioni WHERE sogno = ORDER BY data_ins LIMIT 5;");
 
-    $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE sogno=? ORDER BY data_ins LIMIT 5;");
+    $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE articolo = ? ORDER BY data LIMIT 5;");
                         $recenz->bind_param("s", $_GET['sogno']);
                         $recenz->execute();
                         $recenz = $recenz->get_result();
@@ -43,7 +43,7 @@
 
             $rec = str_replace("{utente}", $row['user_name'], $rec);
             $rec = str_replace("{stelle}", $row['stelle'], $rec);
-            $rec = str_replace("{sogno}", $row['sogno'], $rec);
+            $rec = str_replace("{sogno}", $row['articolo'], $rec);
             //$rec = str_replace("{testo}", $row['testo'], $rec);
 
             $text = $row['testo'];
