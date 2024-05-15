@@ -33,7 +33,7 @@
                     }
                     $pagina->modificaHTML("{elencosogni}", $acquisti);
                 }else{
-                    $pagina->modificaHTML("{elencosogni}", "Nessun acquisto ancora effettuato");
+                    $pagina->modificaHTML("{elencosogni}", "<p>Nessun acquisto ancora effettuato</p>");
                 }
 
                 //RECENSIONI
