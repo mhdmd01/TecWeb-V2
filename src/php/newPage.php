@@ -117,6 +117,9 @@ class newPage{
         }else if($currentPage == "../html/registroAcquisti.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro acquisti", $navBar);
 
+        }else if($currentPage == "../html/registroRecensioni.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro recensioni", $navBar);
+
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")
