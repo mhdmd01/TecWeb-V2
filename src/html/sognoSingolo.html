@@ -1,25 +1,16 @@
-<style>
-    .hidden {
-    display: none;
-}
-</style>
-
-<!--TOGLIERE STYLE-->
-
-<div >
-    <img src={pathImg} width="40px" height="40px" alt={titolo}>
-    <br>
-    Titolo: {titolo}
-    <br>
-    Descrizione: {descrizione}
-    <br>
-    Prezzo: {prezzo}
-    <br>
-    {bottoneCompra}
+<h3 class="titoloSogno">{titolo}</h3>
+<div class="sognoContainer">
+    <img class="sognoImmagine" src={pathImg} alt={titolo}>
+    <div class="sognoDescrizione">
+        <p><span class="titoletto">Titolo:</span> {titolo}</p>
+        <p><span class="titoletto">Descrizione:</span> {descrizione}</p>
+        <p><span class="titoletto">Prezzo:</span> {prezzo}</p>
+        {bottoneCompra}
+    </div>
 </div>
 
-<p>Recensioni degli utenti: </p>
 <div class="elencoRecensioni">
+    <p>Recensioni degli utenti: </p>
     <ul>
         {recensioni}
     </ul>

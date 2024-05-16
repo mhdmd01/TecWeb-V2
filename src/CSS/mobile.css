@@ -56,3 +56,16 @@ select.selectForm{
     font-size: 1em;
     width: 50%;
 }
+
+.sognoImmagine{
+    width: 90%;
+    height: 90%;
+}
+
+div.sognoDescrizione{
+    font-size: 1em;
+}
+
+div.sognoDescrizione > a{
+    padding: 7px 13px;
+}
