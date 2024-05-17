@@ -6,6 +6,7 @@
     use functions\functions;
     $functions = new functions();
     $errorMsg = "";
+    $successMsg = "";
 
     $sogno = urldecode($_GET['sogno']);
 
@@ -18,14 +19,14 @@
             $stelle = isset($_POST['valutazione']) ? ($_POST['valutazione']) : '';
             
             $functions->openDBConnection();
-            $stmt = $functions->getConnection()->prepare("INSERT INTO recensioni (user_name, testo, sogno, stelle) VALUES (?, ?, ?, ?)");
+            $stmt = $functions->getConnection()->prepare("INSERT INTO recensioni (user_name, testo, articolo, stelle) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("sssi", $user_name, $recensione, $sogno, $stelle); 
             $ris = $stmt->execute();
             $stmt->close();
             $functions->closeConnection();
             
             if($ris)
-                $errorMsg = "Recensione caricata con successo";
+                $successMsg = "Recensione caricata con successo";
             else
                 $errorMsg = "Errore nel caricamento della recensione";
         }     
@@ -35,6 +36,7 @@
 
         $pagina->printErrorPage("Pagina riservata ad utenti loggati, esegui il <a href=\"login.php\">login</a> per accedere");
     }    
-
+    
+    $pagina->modificaHTML("{messaggioSuccesso}", $successMsg);                    
     $pagina->modificaHTML("{Errore}", $errorMsg);                    
     $pagina->printPage();    

@@ -47,7 +47,7 @@
             //$rec = str_replace("{testo}", $row['testo'], $rec);
 
             $text = $row['testo'];
-            $maxLength=2;
+            $maxLength=20;
             if (strlen($text) > $maxLength) {
                 $text = substr($text, 0, $maxLength) . '<a href="#" class="read-more" onclick="espandi(event)">...leggi tutto</a><span class="full-description hidden" ">' . substr($text, $maxLength) . '</span>';
             }

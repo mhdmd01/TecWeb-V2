@@ -2,6 +2,10 @@
     {Errore}
 </div>
 
+<div class="">
+    {messaggioSuccesso}
+</div>
+
 <div class="box">
     <form id="nuovaRecensione" action="aggiungiRecensione.php?sogno={titoloSogno}" method="post" enctype="multipart/form-data"> 
         <p>Nuova recensione per {titoloSogno} </p>
@@ -17,7 +21,7 @@
         </select>
 
         <label for="recensione">Recensione</label>
-        <textarea class="casellaTesto" placeholder="Recensione" id="recensione" name="recensione"></textarea>
+        <textarea class="casellaTesto" placeholder="Recensione" id="recensione" name="recensione" required></textarea>
         <br>
         
         <input id="button" type="submit" value="Pubblica">
