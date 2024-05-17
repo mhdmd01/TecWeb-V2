@@ -94,7 +94,7 @@ select.formListaSogni{
     background-color: var(--BgTxtColor);
     border: 1px solid #caced1;
     border-radius: 0.25rem;
-    color: #ccc;
+    color: black;
     cursor: pointer;
 }
 /*
@@ -103,6 +103,9 @@ select.formListaSogni:focus{
     color: black;
 }
 */
+
+/*aggiungere arancione nella selezione*/
+
 select.selectForm{
     appearance: none;
     /* safari */
@@ -114,7 +117,7 @@ select.selectForm{
     background-color: var(--BgTxtColor);
     border: 1px solid #caced1;
     border-radius: 0.25rem;
-    color: #ccc;
+    color: black;
     cursor: pointer;
 }
 /*
