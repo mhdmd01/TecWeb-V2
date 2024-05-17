@@ -97,12 +97,12 @@ select.formListaSogni{
     color: #ccc;
     cursor: pointer;
 }
-
+/*
 select.formListaSogni:focus{
     background-color: var(--linkColor);
     color: black;
 }
-
+*/
 select.selectForm{
     appearance: none;
     /* safari */
@@ -117,12 +117,12 @@ select.selectForm{
     color: #ccc;
     cursor: pointer;
 }
-
+/*
 select.selectForm:focus{
     background-color: var(--linkColor);
     color: black;
 }
-
+*/
 /* NAVBAR */
 header{
     text-align: center;
