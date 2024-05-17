@@ -35,6 +35,7 @@
     --fontMenu: sans-serif;
     --errorBackground: #FF0000;
     --errorText: #FFFFFF;
+    --successBackground:green;
 }
 
 .nascondi{
@@ -602,6 +603,19 @@ input.bottoneForm:hover{
     font-size:1.5em;
     font-weight:bold;
     background-color: var(--errorBackground);
+    text-align:center;
+    color: var(--errorText);
+    margin-bottom:1em;
+    max-width:600px;
+    margin-right:auto; 
+    margin-left:auto; 
+}
+
+.Successo{
+    border-radius: 1em;
+    font-size:1.5em;
+    font-weight:bold;
+    background-color: var(--successBackground);
     text-align:center;
     color: var(--errorText);
     margin-bottom:1em;
