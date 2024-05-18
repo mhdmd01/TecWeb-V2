@@ -1,7 +1,7 @@
 <div class="contatti">
     <div class="formContatta">
     <h2 class="titolo">Contatta Il team Saudade</h2>
-    <form action="contatta.php" method="POST">
+    <form action="contatta.php" id="contatta" method="POST">
         <fieldset class="emailForm">
             <label for="email">Email:</label>
             <input tabindex="9" type="email" id="email" name="email" required placeholder="example@abc123.com">
@@ -29,8 +29,12 @@
     </div>
 </div>
 
-<div>
+<div class="Errore">
     {Error}
+    <p id="emailError"></p>
+    <p id="messageError"></p>
 </div>
 
 <p class="center">Oppure contatta: saudade@support.com</p>
+
+<script src="../js/contact.js"></script>

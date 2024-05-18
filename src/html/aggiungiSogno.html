@@ -2,15 +2,14 @@
 
 <div class="Errore">
     {Error}
-    <p id="loginUsernameError"></p>
-    <p id="loginPasswordError"></p>
+    <p id="titError"></p>
+    <p id="decError"></p>
 </div>
 
 <div class="box">
     <form id="nuovoSognoForm" action="aggiungiSogno.php" method="post" enctype="multipart/form-data"> 
         <p>Nuovo sogno</p>
                 
-        <p>CONTROLLI SU INPUTS !!!</p>
         <label for="titoloSogno">Titolo sogno:</label>
         <input class="casellaTesto" placeholder="Titolo sogno" id="titoloSogno" type="text" name="titoloSogno" maxlength="50">
         <br>
@@ -38,4 +37,4 @@
     </form>
 </div>
 
-<script src="../js/functions.js"></script>
+<script src="../js/newDream.js"></script>

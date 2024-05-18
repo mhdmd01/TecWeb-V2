@@ -1,6 +1,10 @@
+<div class="Errore">
+    <p id="ricError"></p>
+</div>
+
 <div>
-    <form class="cercaSogno" action="sogni.php" method="GET">
-        <input class="barraRicerca" type="text" id="search" name="search" value="{ricerca}" placeholder="Cerca per titolo ">
+    <form class="cercaSogno" id="cercaSogno" action="sogni.php" method="GET">
+        <input class="barraRicerca" type="text" id="search" name="search" value="{ricerca}" placeholder="Cerca per titolo " maxlength="256">
         <input class="bottoneCerca" type="submit" value="Cerca">
     </form>
 </div>
@@ -22,3 +26,5 @@
         {elencoSogni}
     </ul>
 </div>
+
+<script src="../js/barraRic.js"></script>
