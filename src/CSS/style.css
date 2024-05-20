@@ -641,7 +641,10 @@ input.bottoneForm:hover{
     max-width: 90%;
     margin-right:auto; 
     margin-left:auto; 
-    padding: 1em;
+}
+
+.Successo > p{
+    margin: 1em;
 }
 
 /*Aggiungi Sogno*/
