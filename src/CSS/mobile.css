@@ -69,3 +69,11 @@ div.sognoDescrizione{
 div.sognoDescrizione > a{
     padding: 7px 13px;
 }
+
+form#nuovaRecensione > p{
+    font-size: 1.5em;
+}
+
+form#nuovaRecensione > label{
+    font-size: 1em;
+}

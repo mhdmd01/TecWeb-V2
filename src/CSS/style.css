@@ -575,8 +575,8 @@ input.bottoneForm:hover{
 }
 
 #button{
-    width: 130px;
-    height: 50px;
+    width: 140px;
+    height: 65px;
     border-radius: 5px;
     background-color: white;
     color: #000000;
@@ -793,8 +793,12 @@ footer{
 }
 
 .elencoDate > li{
-    border: 2px solid white;
+    background-color: var(--colorSlide);
+    border: 3px solid white;
+    border-radius: 4px;
     padding: 1em;
+    font-weight: bold;
+    font-size: 1.15em;
 }
 
 /*Dashboard Admin*/
@@ -911,3 +915,39 @@ div.sognoDescrizione > a:hover{
 .elencoRecensioni{
 
 }*/
+
+
+/*AGGIUNGI RECENSIONE*/
+
+form#nuovaRecensione{
+    font-size: 1.25em;
+}
+
+form#nuovaRecensione > p {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0.75em;
+    line-height: 1.25em;
+}
+
+form#nuovaRecensione > label{
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+#valutazione{
+    appearance: none;
+    /* safari */
+    -webkit-appearance: none;
+    /* other styles for aesthetics */
+    height: 42px;
+    width: 35%;
+    padding-left: 0.75em;
+    font-size: 1rem;
+    margin-left: 0.25em;
+    background-color: var(--BgTxtColor);
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: black;
+    cursor: pointer;
+}
