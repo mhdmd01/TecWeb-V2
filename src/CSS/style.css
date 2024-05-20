@@ -27,11 +27,11 @@
     --footerBgColor: #220042;
     --footerTxtColor: #FFFFFF;
     --visitedLinkColor: #26C281; /*#085454 ALTERNATIVA*/
-    --linkColor: #FFB30D;
+    --linkColor: #FFD700; /*#FFB30D vecchio*/
     --BgAll: #7A7A7A;
     --BgSidebar:rgb(0,21,66, 0.5);
     --colorSlide: #5A4586;
-    --slideTitleTxtColor: #FFD700; /* vecchio #085454 */
+    --slideTitleTxtColor: #FFFFFF; /* vecchio #085454 */
     --fontMenu: sans-serif;
     --errorBackground: #FF0000;
     --errorText: #FFFFFF;
