@@ -315,6 +315,7 @@ main{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-evenly;
+    margin-bottom: 1em;
 }
 
 .elListaSogno{
@@ -637,9 +638,10 @@ input.bottoneForm:hover{
     text-align:center;
     color: var(--errorText);
     margin-bottom:1em;
-    max-width:600px;
+    max-width: 90%;
     margin-right:auto; 
     margin-left:auto; 
+    padding: 1em;
 }
 
 /*Aggiungi Sogno*/
@@ -830,8 +832,6 @@ footer{
     margin: 0.5em;
 }
 
-
-/*
 .sectionDash > div > a{
     background-color: white;
     color: black;
@@ -841,7 +841,7 @@ footer{
     display: inline-block;
     font-weight: bold;
     border-radius: 5px;
-}*/
+}
 
 .sectionDash > ul > li {
     list-style: none;
@@ -1001,4 +1001,21 @@ img.immagineAcquista{
     text-align: center;
     font-weight: bold;
     font-size: 2em;
+}
+
+/*Apparizione*/
+div.apparizione{
+    opacity: 0;
+    animation: apparizione 2s forwards;
+}
+
+div.apparizioneLenta{
+    opacity: 0;
+    animation: apparizione 3s forwards;
+}
+
+@keyframes apparizione{
+    to{
+        opacity: 1;
+    }
 }
