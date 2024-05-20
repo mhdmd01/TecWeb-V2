@@ -26,10 +26,9 @@
                 if(mysqli_num_rows($ris) > 0){
                     $acquisti = "";
                     while ($row = $ris->fetch_assoc()) {
-                        $acquisti .= "<br>";    //Da eliminare
-                        $acquisti .= $row['articolo']. " ";
+                        $acquisti .= "<li>" . $row['articolo'] . " ";
                         $acquisti .= $row['data'] . " ";
-                        $acquisti .= "<a href=\"aggiungiRecensione.php?sogno=".urldecode($row['articolo'])."\">Lascia una recensione</a>";
+                        $acquisti .= "<a href=\"aggiungiRecensione.php?sogno=".urldecode($row['articolo'])."\">Lascia una recensione</a> </li>";
                     }
                     $pagina->modificaHTML("{elencosogni}", $acquisti);
                 }else{
