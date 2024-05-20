@@ -30,8 +30,8 @@
     --linkColor: #FFB30D;
     --BgAll: #7A7A7A;
     --BgSidebar:rgb(0,21,66, 0.5);
-    --colorSlide: #7A7A7A;
-    --slideTitleTxtColor: #085454;
+    --colorSlide: #5A4586;
+    --slideTitleTxtColor: #FFD700; /* vecchio #085454 */
     --fontMenu: sans-serif;
     --errorBackground: #FF0000;
     --errorText: #FFFFFF;
@@ -431,6 +431,7 @@ div.searchSogno{
 }
 
 .formContatta > h2.titolo{
+    color: var(--slideTitleTxtColor);
     font-size: 2em;
     display: inline-block;
 }
@@ -542,6 +543,7 @@ input.bottoneForm:hover{
 }
 
 .signupTitle{
+    color: var(--slideTitleTxtColor);
     font-size: 3em;
     font-weight: bold;
     padding: 0em 1em 0.7em 1em;
@@ -590,6 +592,7 @@ input.bottoneForm:hover{
 
 /*Accedi*/
 .loginTitle{
+    color: var(--slideTitleTxtColor);
     font-size: 3em;
     font-weight: bold;
     padding: 0em 1em 0.7em 1em;
@@ -633,6 +636,13 @@ input.bottoneForm:hover{
     font-weight: bold;
     font-size: 1.25em;
     padding-right: 0.3em;
+}
+
+#nuovoSognoForm > p{
+    font-weight: bold;
+    font-size: 2em;
+    color: var(--slideTitleTxtColor);
+    margin: 0.5em;
 }
 
 #button-lungo{
@@ -720,7 +730,7 @@ footer{
 }
 
 .section{
-    background-color: #7A7A7A;
+    background-color: var(--colorSlide);
     margin:auto;
     margin-top:2em;
     margin-bottom:2em;
@@ -747,6 +757,7 @@ footer{
 }
 
 .formPrenotazione > h2{
+    color: var(--slideTitleTxtColor);
     font-size: 3em;
     font-weight: bold;
 }
@@ -788,7 +799,7 @@ footer{
 
 /*Dashboard Admin*/
 .sectionDash{
-    background-color: #7A7A7A;
+    background-color: var(--colorSlide);
     margin:auto;
     margin-top:2em;
     margin-bottom:2em;
@@ -848,8 +859,9 @@ footer{
 }
 
 .titoloSogno{
+    color: var(--slideTitleTxtColor);
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -860,7 +872,7 @@ footer{
 }
 
 div.sognoContainer{
-    background-color: #7A7A7A;
+    background-color: var(--colorSlide);
     width: 80%;
     margin:auto;
     margin-top:2em;
