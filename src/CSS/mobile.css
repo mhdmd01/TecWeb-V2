@@ -77,3 +77,22 @@ form#nuovaRecensione > p{
 form#nuovaRecensione > label{
     font-size: 1em;
 }
+
+.introduciElenco{
+    font-size: 1.75em;
+    text-align: center;
+    padding-bottom: 0.5em
+}
+
+img.immagineAcquista{
+    width: 90%;
+    height: 90%;
+}
+
+.sognoContainer{
+    font-size: 1em;
+}
+
+div.sectionDash > p{
+    font-size: 1.25em;
+}

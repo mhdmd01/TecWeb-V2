@@ -26,16 +26,16 @@
     --BgTxtColor: #FFFFFF;
     --footerBgColor: #220042;
     --footerTxtColor: #FFFFFF;
-    --visitedLinkColor: #26C281; /*#085454 ALTERNATIVA*/
+    --visitedLinkColor: #38F689; /*#26C281 /*#085454 ALTERNATIVA*/
     --linkColor: #FFD700; /*#FFB30D vecchio*/
     --BgAll: #7A7A7A;
     --BgSidebar:rgb(0,21,66, 0.5);
-    --colorSlide: #5A4586;
+    --colorSlide: rgb(90, 69, 134);
     --slideTitleTxtColor: #FFFFFF; /* vecchio #085454 */
     --fontMenu: sans-serif;
     --errorBackground: #FF0000;
     --errorText: #FFFFFF;
-    --successBackground:green;
+    --successBackground:#4F7A28;
 }
 
 .nascondi{
@@ -72,7 +72,7 @@ a:visited{
 }
 
 a:hover{
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 body{
@@ -280,6 +280,10 @@ main{
     margin-bottom:1em;
 }
 
+.tornasu > a{
+    text-align: center;
+}
+
 /*Pagina Home*/
 .slide-1{
     margin-bottom: 2em;
@@ -291,9 +295,16 @@ main{
     font-weight: bold;
 }
 
+.homeSlide{
+    background-color: var(--colorSlide);
+    padding: 1em;
+    border-radius: 40px;
+    margin: 0.75em;
+}
+
 .introduciElenco{
     text-align: left;
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: bold;
     padding-bottom: 1.2em;
     padding-top: 0.5em;
@@ -321,6 +332,7 @@ div.thumbnail > img{ /*dimensione immagine della lista dei sogni*/
 div.thumbnail:hover{
     opacity: 0.5;
 }
+
 
 
 .slide-3{
@@ -818,6 +830,8 @@ footer{
     margin: 0.5em;
 }
 
+
+/*
 .sectionDash > div > a{
     background-color: white;
     color: black;
@@ -827,11 +841,17 @@ footer{
     display: inline-block;
     font-weight: bold;
     border-radius: 5px;
+}*/
+
+.sectionDash > ul > li {
+    list-style: none;
 }
 
-.sectionDash > div > a:hover{
-    background-color: var(--linkColor);
-    opacity: 1;
+.sectionDash > ul > li > a {
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-bottom: 0.75em;
 }
 
 .sectionDash > a{
@@ -843,6 +863,7 @@ footer{
     display: inline-block;
     font-weight: bold;
     border-radius: 5px;
+    margin: 1em;
 }
 
 .sectionDash > a:hover{
@@ -950,4 +971,34 @@ form#nuovaRecensione > label{
     border-radius: 0.25rem;
     color: black;
     cursor: pointer;
+}
+
+/* pagina acquista sogno */
+img.immagineAcquista{
+    width: 32em;
+    height: 18em;
+}
+
+.sognoContainer > a{
+    background-color: white;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+.sognoContainer > a:hover{
+    background-color: var(--linkColor);
+}
+
+/*Conferma acquisto */
+
+.vuoiConfermare{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
 }
