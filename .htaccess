@@ -1,1 +1,1 @@
-ErrorDocument 404 /TecWeb-V2/src/php/error404.php
+ErrorDocument 404 /TecWeb-V2/src/html/error404.html
