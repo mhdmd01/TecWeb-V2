@@ -75,7 +75,7 @@ class newPage{
             $navBar = str_replace("{signupLink}", "<li class=\"spostaSign\"><a href=\"../php/signup.php\">Registrati</a></li>", $navBar);
             
         }else if($currentPage == "../html/sognoSingolo.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> >> {titolo}", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt {titolo}", $navBar);
 
         }else if($currentPage == "paginaErrore"){
             $navBar = str_replace("{breadcrumb}", "Pagina di errore", $navBar);
