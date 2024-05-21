@@ -90,9 +90,9 @@
             }
 
         }
-        $pagina->modificaHTML("{Error}", $errorMsg);
+        $pagina->modificaHTML("{Error}", "<p>".$errorMsg."</p>");
     }else{
-        $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");
+        $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin</a>");
     }
 
     $pagina->printPage();
