@@ -19,48 +19,58 @@
 }
 
 /*stile sidebar*/
-.sideBar{
+.sideBar {
     display: flex; /*3 flex*/
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    bottom: 0; /* Estende fino al fondo dello schermo */
     z-index: 999;
     background: var(--BgSidebar);
-    backdrop-filter: blur(1em); /*effetto blur su firefox ed edge*/
-    -webkit-backdrop-filter: blur(1rem); /*effetto blur su safari altrimenti non funziona*/
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5); /*sfondo della sidebar*/
+    backdrop-filter: blur(1em);
+    -webkit-backdrop-filter: blur(1rem); /*effetto blur su firefox e safari*/
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5); /*ombra sidebar*/
     text-align: center;
     flex-direction: column;
     justify-content: space-around;
-    list-style: none;
     width: 30%;
 }
 
-ul.listaSideBar > li{
-    font-size: 1.5em;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    list-style: none;
-    text-align: center;
-    width: 100%;
-    color: var(--visitedLinkColor);
-    font-family: var(--fontMenu);
+ul.listaSideBar {
+    flex:1;
+    display: flex; /*4 flex*/
+    justify-content: space-around;
+    flex-direction: column; /* Assicura che gli elementi si allineino verticalmente */
+    gap: 1.5em;
 }
 
-ul.listaSideBar > li > a{
+ul.listaSideBar > li {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    list-style: none;
+    text-align: center;
+    color: var(--visitedLinkColor);
+    font-family: var(--fontMenu);
+    width: 100%;
+    flex: 1;
+}
+
+ul.listaSideBar > li > a {
     margin: auto;
     color: var(--linkColor);
     transition: all -50s ease-in-out;
+    display: inline-block;
+    width: 100%;
 }
 
-ul.listaSideBar > li > a:hover{
+ul.listaSideBar > li > a:hover {
     color: var(--visitedLinkColor);
 }
 
-ul.listaSideBar > li > a::after{
+ul.listaSideBar > li > a::after {
     color: var(--linkColor);
 }
+
 
 #breadcrump{
     margin-top: 70px;
