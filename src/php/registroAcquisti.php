@@ -10,7 +10,7 @@
 
     if(isset($_SESSION['user_name'])){
         if($_SESSION['user_name'] === "admin") {
-            isset($_GET['pagina']) ? $numPagina = urldecode($_GET['pagina']) : $numPagina = 0; //Operatore ternario, se è stato passato il num pagina usa quello, sennò 0
+            //isset($_GET['pagina']) ? $numPagina = urldecode($_GET['pagina']) : $numPagina = 0; //Operatore ternario, se è stato passato il num pagina usa quello, sennò 0
             //DA IMPLEMENTARE
             //$stmt = $functions->getConnection()->prepare("SELECT * FROM acquisto ORDER BY data_ins LIMIT ".$numPagina*20." OFFSET ".$numPagina*21.";");
             //$stmt->bind_param("s", $numPagina);
@@ -19,52 +19,66 @@
             $filtro = "data ASC"; //Di default
             $ordine = "data: ordine crescente";
 
-            $linkUsrAsc = "<a href=\"registroAcquisti.php?filtro=usr-asc\">Username ordine alfabetico crescente</a>";
-            $linkUsrDec = "<a href=\"registroAcquisti.php?filtro=usr-desc\">Username ordine alfabetico decrescente</a>";
-            $linkArtAsc = "<a href=\"registroAcquisti.php?filtro=art-asc\">Articolo ordine alfabetico crescente</a>";
-            $linkArtDec = "<a href=\"registroAcquisti.php?filtro=art-desc\">Articolo ordine alfabetico decrescente</a>";
-            $linkDataAsc = "<a href=\"registroAcquisti.php?filtro=date-asc\">Data ordine decrescente</a>";
-            $linkDataDec = "<a href=\"registroAcquisti.php?filtro=date-desc\">Data ordine decrescente</a>";
+            $linkUsrAsc = "Username ordine alfabetico crescente";
+            $linkUsrDec = "Username ordine alfabetico decrescente";
+            $linkArtAsc = "Articolo ordine alfabetico crescente";
+            $linkArtDec = "Articolo ordine alfabetico decrescente";
+            $linkDataAsc = "Data ordine crescente";
+            $linkDataDec = "Data ordine decrescente";
+
+            $linkUsrAscValue = "usr-asc";
+            $linkUsrDecValue = "usr-desc";
+            $linkArtAscValue = "art-asc";
+            $linkArtDecValue = "art-desc";
+            $linkDataAscValue = "date-asc";
+            $linkDataDecValue = "date-desc";
+
+            $linkUsrAscDisabled = "";
+            $linkUsrDecDisabled = "";
+            $linkArtAscDisabled = "";
+            $linkArtDecDisabled = "";
+            $linkDataAscDisabled = "";
+            $linkDataDecDisabled = "";
 
             if (isset($_GET['filtro'])){
                 //Username ordine alfabetico crescente
                 if($_GET['filtro'] == "usr-asc"){
                     $filtro = "user_name ASC";
                     $ordine = "username: ordine alfabetico crescente";
-                    $linkUsrAsc = "";
+                    $linkUsrAscDisabled = "disabled selected";
                 }
 
                 //Username ordine alfabetico decrescente
                 if($_GET['filtro'] == "usr-desc"){
                     $filtro = "user_name DESC";
                     $ordine = "username: ordine alfabetico decrescente";
-                    $linkUsrDec = "";
+                    $linkUsrDecDisabled = "disabled selected";
                 }
 
                 //Articolo ordine alfabetico crescente
                 if($_GET['filtro'] == "art-asc"){
                     $filtro = "articolo ASC";
                     $ordine = "articolo: ordine alfabetico crescente";
-                    $linkArtAsc = "";
+                    $linkArtAscDisabled = "disabled selected";
                 }
 
                 //Articolo ordine alfabetico decrescente
                 if($_GET['filtro'] == "art-desc"){
                     $filtro = "user_name DESC";
                     $ordine = "articolo: ordine alfabetico decrescente";
-                    $linkArtDec = "";
+                    $linkArtDecDisabled = "disabled selected";
                 }
 
                 //Data crescente è già di default
                 if($_GET['filtro'] == "date-asc"){
-                    $linkDataAsc = "";
+                    $linkDataAscDisabled = "disabled selected";
                 }
 
                 //Data decrescente
                 if($_GET['filtro'] == "date-desc"){
                     $filtro = "data DESC";
                     $ordine = "data: ordine crescente";
-                    $linkDataDec = "";
+                    $linkDataDecDisabled = "disabled selected";
                 }
             }
 
@@ -76,6 +90,20 @@
             $pagina->modificaHTML("{linkArtDec}", $linkArtDec);
             $pagina->modificaHTML("{linkDataAsc}", $linkDataAsc);
             $pagina->modificaHTML("{linkDataDec}", $linkDataDec);
+
+            $pagina->modificaHTML("{linkUsrAscValue}", $linkUsrAscValue);
+            $pagina->modificaHTML("{linkUsrDecValue}", $linkUsrDecValue);
+            $pagina->modificaHTML("{linkArtAscValue}", $linkArtAscValue);
+            $pagina->modificaHTML("{linkArtDecValue}", $linkArtDecValue);
+            $pagina->modificaHTML("{linkDataAscValue}", $linkDataAscValue);
+            $pagina->modificaHTML("{linkDataDecValue}", $linkDataDecValue);
+
+            $pagina->modificaHTML("{linkUsrAscDisabled}", $linkUsrAscDisabled);
+            $pagina->modificaHTML("{linkUsrDecDisabled}", $linkUsrDecDisabled);
+            $pagina->modificaHTML("{linkArtAscDisabled}", $linkArtAscDisabled);
+            $pagina->modificaHTML("{linkArtDecDisabled}", $linkArtDecDisabled);
+            $pagina->modificaHTML("{linkDataAscDisabled}", $linkDataAscDisabled);
+            $pagina->modificaHTML("{linkDataDecDisabled}", $linkDataDecDisabled);
 
             $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti ORDER BY $filtro ;");
             $stmt->execute();

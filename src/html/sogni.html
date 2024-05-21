@@ -11,8 +11,8 @@
 <div class="searchSogno">
     <form class="filtraSogno" action="sogni.php" method="GET">
         <label for="categoria">Filtro:</label>
-        <select class="formListaSogni" id="categoria" name="categoria">
-            <option value=""> Scegli categoria </option>
+        <select class="formListaSogni" id="categoria" name="categoria" required>
+            <option value="" disabled selected> Scegli categoria </option>
             {options}
         </select>
         <input class="bottoneFiltro" type="submit" value="Applica">
