@@ -175,6 +175,15 @@ ul.listaNavBar > li{
     font-size: 1.25em;
 }
 
+ul.listaNavBar > li:nth-last-child(2){
+    margin-left: 5em;
+}
+
+ul.listaNavBar > li:nth-last-child(1){
+    padding-left: 0.25em;
+    border-left: 1px solid white;
+}
+
 .menu a{
     margin: auto;
     color: var(--linkColor);
@@ -977,7 +986,7 @@ div.sognoDescrizione > a:hover{
     padding: 0.75em;
     border-radius: 1em;
     line-height: 1.25em;
-    font-size: 1em;
+    font-size: 1.15em;
 }
 
 .containerRecensione> p:nth-last-child(1){
