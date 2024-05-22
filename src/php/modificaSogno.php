@@ -115,7 +115,7 @@
 						$errorMsg = "Non hai cambiato immagine o qualcosa è andato storto";
 					}
 				}else{
-					$pagina->printErrorPage("Non esiste un sogno con questo titolo <a href=\"sogni.php\">torna a sogni<a>");
+					$pagina->printErrorPage("<p>Non esiste un sogno con questo titolo <a href=\"sogni.php\">torna a sogni<a> </p>");
 				}
 			}
 
@@ -124,7 +124,7 @@
 		$pagina->modificaHTML("{descrizione}", $desc);
 		$pagina->modificaHTML("{prezzo}", $price);
 
-        $pagina->modificaHTML("{Error}", $errorMsg);
+        $pagina->modificaHTML("{Error}", "<p>".$errorMsg."</p>");
 		
     }else{
         $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");

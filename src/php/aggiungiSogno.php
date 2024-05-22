@@ -8,6 +8,10 @@
 
     $link="aggiungiSogno.php";
 	$pagina->modificaHTML("{link}", $link);
+
+    $tit = "";
+	$desc = "";
+	$price = "";
     
     if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){        
         $errorMsg = "";
@@ -39,6 +43,10 @@
 
             if(isset($_POST['descrizione']) && strlen($_POST['descrizione']) != 0)
                 $descrizione = $functions->pulisciInput($_POST['descrizione']);
+
+                $tit = $titoloSogno;
+				$desc = $descrizione;
+				$price = $prezzo;
 
             //Controllo duplicato
             $functions->openDBConnection();
@@ -93,6 +101,10 @@
             }
 
         }
+        $pagina->modificaHTML("{titolo}", $tit);
+		$pagina->modificaHTML("{descrizione}", $desc);
+		$pagina->modificaHTML("{prezzo}", $price);
+        
         $pagina->modificaHTML("{Error}", "<p>".$errorMsg."</p>");
     }else{
         $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin</a>");
