@@ -282,6 +282,7 @@ main{
     align-items: center;
     background-color: var(--BgColor);
     color:var(--BgTxtColor);
+    font-family: 'Tahoma', sans-serif;
 }
 
 .tornasu{
@@ -340,13 +341,17 @@ div.containerSogni{
     list-style: none;
     text-align: center;
     margin: 0.25em;
+    transition: all 1s ease;
+}
+
+div.thumbnail {
+    transition: all 0.3s ease;
 }
 
 div.thumbnail > img{ /*dimensione immagine della lista dei sogni*/
     width: 16em;
     height: 9em;
     border-radius: 1em;
-    transition: all 0.5s ease-in;
 }
 
 div.thumbnail:hover{
