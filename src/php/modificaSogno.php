@@ -68,8 +68,8 @@
             $check = $stmt->get_result();
 			$functions->closeConnection();
 
-			if($check->num_rows == 1){
-				$errorMsg = "Titolo già esistente.";
+			if($check->num_rows == 1 && $titoloSogno != $sogno){
+				$errorMsg = "Titolo già esistente per un altro sogno.";
 				$titoloSogno = $sogno;
 			}else{
 				$tit = $titoloSogno;
