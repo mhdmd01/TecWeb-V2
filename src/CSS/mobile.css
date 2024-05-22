@@ -29,6 +29,10 @@
     align-items: space-around;
 }
 
+.elencoDate > li > a {
+    font-size:3em;
+}
+
 .slide-1{
     display: none;
 }

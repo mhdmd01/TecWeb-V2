@@ -69,7 +69,8 @@
                     $placeHolderData = "";
 
                     foreach( $risultato as $row){
-                        $placeHolderData .= "<li><a href=\"confermaPrenotazione.php?data=".$row['data']."\">".$row['data']."</a></li>";
+                        $giorno = substr($row['data'], 8, 2);
+                        $placeHolderData .= "<li><a href=\"confermaPrenotazione.php?data=".$row['data']."\">".$giorno ."</a></li>";
                     }
                     $pagina->modificaHTML("{data}", $placeHolderData);
                 }else{
