@@ -119,20 +119,22 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                     }
                 }
             }
+
+			$pagina->modificaHTML("{link}", $link);
+
+			$pagina->modificaHTML("{titolo}", $tit);
+			$pagina->modificaHTML("{descrizione}", $desc);
+			$pagina->modificaHTML("{prezzo}", $price);
+
+			$pagina->modificaHTML("{messaggioSuccesso}", $messaggioSuccesso);
+			$pagina->modificaHTML("{Error}", $errorMsg);
         } else {
-            $pagina->printErrorPage("<p>Non esiste un sogno con questo titolo <a href=\"sogni.php\">torna a sogni<a> </p>");
+            $pagina->printErrorPage("Non esiste un sogno con questo titolo <a href=\"sogni.php\">torna a sogni<a>");
         }
     } else {
-        $errorMsg = "Errore passaggio parametri, riprovare"; 
+        $pagina->printErrorPage("Errore nel passaggio dei parametri <a href=\"sogni.php\">torna a sogni<a>");
     }
-    $pagina->modificaHTML("{link}", $link);
-
-    $pagina->modificaHTML("{titolo}", $tit);
-    $pagina->modificaHTML("{descrizione}", $desc);
-    $pagina->modificaHTML("{prezzo}", $price);
-
-    $pagina->modificaHTML("{messaggioSuccesso}", $messaggioSuccesso);
-    $pagina->modificaHTML("{Error}", $errorMsg);
+    
 
 } else {
     $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");
