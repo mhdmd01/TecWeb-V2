@@ -41,12 +41,11 @@ ul.listaSideBar {
     display: flex; /*4 flex*/
     justify-content: space-around;
     flex-direction: column; /* Assicura che gli elementi si allineino verticalmente */
-    gap: 1.5em;
 }
 
 ul.listaSideBar > li {
     margin-top: 0.5em;
-    font-size: 1.5em;
+    font-size: 1.75em;
     list-style: none;
     text-align: center;
     color: var(--visitedLinkColor);
@@ -134,4 +133,8 @@ img.immagineAcquista{
 
 div.sectionDash > p{
     font-size: 1.5em;
+}
+
+.SuccessoGiorni > p{
+    margin:1em;
 }

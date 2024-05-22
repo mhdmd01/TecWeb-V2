@@ -1,24 +1,22 @@
 <h1>Registro commenti</h1>
 <p>Ordinati per {ordine}</p>
 
-<div class="">
-    <p>{linkUsrAsc}</p>
-    <p>{linkUsrDec}</p>
-</div>
+<div class="searchSogno">
+    <form class="filtraSogno" action="registroRecensioni.php" method="GET">
+        <label for="filtro">Filtro:</label>
+        <select class="formListaSogni" id="filtro" name="filtro" required>
+            <option value="{linkDataAscValue}" {linkDataAscDisabled}>{linkDataAsc}</option>
+            <option value="{linkDataDecValue}" {linkDataDecDisabled}>{linkDataDec}</option>
+            <option value="{linkUsrAscValue}" {linkUsrAscDisabled}>{linkUsrAsc}</option>
+            <option value="{linkUsrDecValue}" {linkUsrDecDisabled}>{linkUsrDec}</option>
+            <option value="{linkArtAscValue}" {linkArtAscDisabled}>{linkArtAsc}</option>
+            <option value="{linkArtDecValue}" {linkArtDecDisabled}>{linkArtDec}</option>
+            <option value="{linkStarAscValue}" {linkStarAscDisabled}>{linkStarAsc}</option>
+            <option value="{linkStarDecValue}" {linkStarDecDisabled}>{linkStarDec}</option>
 
-<div class="">
-    <p>{linkArtAsc}</p>
-    <p>{linkArtDec}</p>
-</div>
-
-<div class="">
-    <p>{linkDataAsc}</p>
-    <p>{linkDataDec}</p>
-</div>
-
-<div class="">
-    <p>{linkStarAsc}</p>
-    <p>{linkStarDec}</p>
+        </select>
+        <input class="bottoneFiltro" type="submit" value="Applica">
+    </form>
 </div>
 
 {commenti}

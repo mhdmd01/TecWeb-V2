@@ -96,3 +96,9 @@ img.immagineAcquista{
 div.sectionDash > p{
     font-size: 1.25em;
 }
+
+.elencoRecensioni > p{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}

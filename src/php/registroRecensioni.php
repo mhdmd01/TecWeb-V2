@@ -19,68 +19,88 @@
             $filtro = "data ASC"; //Di default
             $ordine = "data: ordine crescente";
 
-            $linkUsrAsc = "<a href=\"registroRecensioni.php?filtro=usr-asc\">Username ordine alfabetico crescente</a>";
-            $linkUsrDec = "<a href=\"registroRecensioni.php?filtro=usr-desc\">Username ordine alfabetico decrescente</a>";
-            $linkArtAsc = "<a href=\"registroRecensioni.php?filtro=art-asc\">Articolo ordine alfabetico crescente</a>";
-            $linkArtDec = "<a href=\"registroRecensioni.php?filtro=art-desc\">Articolo ordine alfabetico decrescente</a>";
-            $linkDataAsc = "<a href=\"registroRecensioni.php?filtro=date-asc\">Data ordine decrescente</a>";
-            $linkDataDec = "<a href=\"registroRecensioni.php?filtro=date-desc\">Data ordine decrescente</a>";
-            $linkStarAsc =  "<a href=\"registroRecensioni.php?filtro=star-asc\">Numero stelle ordine crescente</a>";
-            $linkStarDec =  "<a href=\"registroRecensioni.php?filtro=star-desc\">Numero stelle ordine decrescente</a>";
+            $linkUsrAsc = "Username ordine alfabetico crescente";
+            $linkUsrDec = "Username ordine alfabetico decrescente";
+            $linkArtAsc = "Articolo ordine alfabetico crescente";
+            $linkArtDec = "Articolo ordine alfabetico decrescente";
+            $linkDataAsc = "Data ordine crescente";
+            $linkDataDec = "Data ordine decrescente";
+            $linkStarAsc =  "Numero stelle ordine crescente";
+            $linkStarDec =  "Numero stelle ordine decrescente";
+
+            $linkUsrAscValue = "usr-asc";
+            $linkUsrDecValue = "usr-desc";
+            $linkArtAscValue = "art-asc";
+            $linkArtDecValue = "art-desc";
+            $linkDataAscValue = "date-asc";
+            $linkDataDecValue = "date-desc";
+            $linkStarAscValue = "star-asc";
+            $linkStarDecValue = "star-desc";
+
+            $linkUsrAscDisabled = "";
+            $linkUsrDecDisabled = "";
+            $linkArtAscDisabled = "";
+            $linkArtDecDisabled = "";
+            $linkDataAscDisabled = "";
+            $linkDataDecDisabled = "";
+            $linkStarAscDisabled = "";
+            $linkStarDecDisabled = "";
+
+
 
             if (isset($_GET['filtro'])){
                 //Username ordine alfabetico crescente
                 if($_GET['filtro'] == "usr-asc"){
                     $filtro = "user_name ASC";
                     $ordine = "username: ordine alfabetico crescente";
-                    $linkUsrAsc = "";
+                    $linkUsrAscDisabled = "selected disabled";
                 }
 
                 //Username ordine alfabetico decrescente
                 if($_GET['filtro'] == "usr-desc"){
                     $filtro = "user_name DESC";
                     $ordine = "username: ordine alfabetico decrescente";
-                    $linkUsrDec = "";
+                    $linkUsrDecDisabled = "selected disabled";
                 }
 
                 //Articolo ordine alfabetico crescente
                 if($_GET['filtro'] == "art-asc"){
                     $filtro = "articolo ASC";
                     $ordine = "articolo: ordine alfabetico crescente";
-                    $linkArtAsc = "";
+                    $linkArtAscDisabled = "selected disabled";
                 }
 
                 //Articolo ordine alfabetico decrescente
                 if($_GET['filtro'] == "art-desc"){
                     $filtro = "user_name DESC";
                     $ordine = "articolo: ordine alfabetico decrescente";
-                    $linkArtDec = "";
+                    $linkArtDecDisabled = "selected disabled";
                 }
 
                 //Data crescente è già di default
                 if($_GET['filtro'] == "date-asc"){
-                    $linkDataAsc = "";
+                    $linkDataAscDisabled = "selected disabled";
                 }
 
                 //Data decrescente
                 if($_GET['filtro'] == "date-desc"){
                     $filtro = "data DESC";
                     $ordine = "data: ordine crescente";
-                    $linkDataDec = "";
+                    $linkDataDecDisabled = "selected disabled";
                 }
 
                 //Stelle crescente
                 if($_GET['filtro'] == "star-asc"){
                     $filtro = "stelle ASC";
                     $ordine = "stelle: ordine crescente";
-                    $linkStarAsc = "";
+                    $linkStarAscDisabled = "selected disabled";
                 }
 
                 //Stelle descresente
                 if($_GET['filtro'] == "star-desc"){
                     $filtro = "stelle DESC";
                     $ordine = "stelle: ordine decrescente";
-                    $linkStarDesc = "";
+                    $linkStarDecDisabled = "selected disabled";
                 }
             }
 
@@ -94,6 +114,24 @@
             $pagina->modificaHTML("{linkDataDec}", $linkDataDec);
             $pagina->modificaHTML("{linkStarAsc}", $linkStarAsc);
             $pagina->modificaHTML("{linkStarDec}", $linkStarDec);
+
+            $pagina->modificaHtml("{linkUsrAscValue}", $linkUsrAscValue);
+            $pagina->modificaHtml("{linkUsrDecValue}", $linkUsrDecValue);
+            $pagina->modificaHtml("{linkArtAscValue}", $linkArtAscValue);
+            $pagina->modificaHtml("{linkArtDecValue}", $linkArtDecValue);
+            $pagina->modificaHtml("{linkDataAscValue}", $linkDataAscValue);
+            $pagina->modificaHtml("{linkDataDecValue}", $linkDataDecValue);
+            $pagina->modificaHtml("{linkStarAscValue}", $linkStarAscValue);
+            $pagina->modificaHtml("{linkStarDecValue}", $linkStarDecValue);
+
+            $pagina->modificaHtml("{linkUsrAscDisabled}", $linkUsrAscDisabled);
+            $pagina->modificaHtml("{linkUsrDecDisabled}", $linkUsrDecDisabled);
+            $pagina->modificaHtml("{linkArtAscDisabled}", $linkArtAscDisabled);
+            $pagina->modificaHtml("{linkArtDecDisabled}", $linkArtDecDisabled);
+            $pagina->modificaHtml("{linkDataAscDisabled}", $linkDataAscDisabled);
+            $pagina->modificaHtml("{linkDataDecDisabled}", $linkDataDecDisabled);
+            $pagina->modificaHtml("{linkStarAscDisabled}", $linkStarAscDisabled);
+            $pagina->modificaHtml("{linkStarDecDisabled}", $linkStarDecDisabled);
 
             $stmt = $functions->getConnection()->prepare("SELECT * FROM recensioni ORDER BY $filtro ;");
             $stmt->execute();

@@ -77,7 +77,8 @@ class Functions {
                     return true;
                 
                 }else{
-                    $pagina->printErrorPage("<a href=\"login.php\">Accedere</a> al proprio account o <a href=\"signup.php\">registrarsi</a> prima di proseguire con la prenotazione");
+                    $pagina->printErrorPage("<div class=\"sectionDash\"> <p> Per utilizzare questo servizio devi avere un <span lang=\"en\">account</span></p> 
+                        <a href=\"login.php\">Accedi</a><a href=\"signup.php\">Registrati</a></div>");
                 }
     
             } else { //Se non esiste la data

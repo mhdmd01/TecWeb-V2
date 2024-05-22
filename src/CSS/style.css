@@ -29,7 +29,7 @@
     --visitedLinkColor: #38F689; /*#26C281 /*#085454 ALTERNATIVA*/
     --linkColor: #FFD700; /*#FFB30D vecchio*/
     --BgAll: #7A7A7A;
-    --BgSidebar:rgb(0,21,66, 0.5);
+    --BgSidebar:#00154280;
     --colorSlide: rgb(90, 69, 134);
     --slideTitleTxtColor: #FFFFFF; /* vecchio #085454 */
     --fontMenu: sans-serif;
@@ -173,6 +173,15 @@ ul.listaNavBar > li{
     width: 10%;
     margin: 1em 0.5em;
     font-size: 1.25em;
+}
+
+ul.listaNavBar > li:nth-last-child(2){
+    margin-left: 5em;
+}
+
+ul.listaNavBar > li:nth-last-child(1){
+    padding-left: 0.25em;
+    border-left: 1px solid white;
 }
 
 .menu a{
@@ -633,7 +642,6 @@ input.bottoneForm:hover{
 .Successo{
     border-radius: 1em;
     font-size:1.75em;
-    padding: 3px;
     font-weight:bold;
     background-color: var(--successBackground);
     text-align:center;
@@ -642,6 +650,25 @@ input.bottoneForm:hover{
     max-width: 80%;
     margin-right:auto; 
     margin-left:auto; 
+}
+
+.SuccessoGiorni{
+    border-radius: 1em;
+    font-size:1.75em;
+    font-weight:bold;
+    background-color: var(--successBackground);
+    text-align:center;
+    color: var(--errorText);
+    margin-bottom:1em;
+    max-width: 90%;
+    margin-right:auto; 
+    margin-left:auto; 
+}
+
+.SuccessoGiorni > p{
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .Successo > p{
@@ -936,11 +963,37 @@ div.sognoDescrizione > a:hover{
 .titoletto{
     font-weight: bold;
 }
-/*
+
 .elencoRecensioni{
+    background-color: var(--colorSlide);
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0.5em
+}
 
-}*/
+.elencoRecensioni > p{
+    font-size: 2em;
+    font-weight: bold;
+}
 
+.listaRecensioni{
+    list-style: none;
+}
+
+.containerRecensione{
+    background-color: var(--BgSidebar);
+    margin: 0.5em;
+    padding: 0.75em;
+    border-radius: 1em;
+    line-height: 1.25em;
+    font-size: 1.15em;
+}
+
+.containerRecensione> p:nth-last-child(1){
+    margin-top: 0.1em;
+    padding-top: 5px;
+    border-top: 2px dotted var(--BgColor);
+}
 
 /*AGGIUNGI RECENSIONE*/
 
@@ -1008,6 +1061,12 @@ img.immagineAcquista{
 }
 
 /*Apparizione*/
+@keyframes apparizione{
+    to{
+        opacity: 1;
+    }
+}
+
 div.apparizione{
     opacity: 0;
     animation: apparizione 2s forwards;
@@ -1016,10 +1075,4 @@ div.apparizione{
 div.apparizioneLenta{
     opacity: 0;
     animation: apparizione 3s forwards;
-}
-
-@keyframes apparizione{
-    to{
-        opacity: 1;
-    }
 }
