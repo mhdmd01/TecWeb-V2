@@ -9,6 +9,7 @@
     
     if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){ //controllo utente        
         $errorMsg = "";
+		$messaggioSuccesso = "";
         $options= "";
 
 		//carico le categorie
@@ -102,7 +103,7 @@
 						
 							if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {            
 								if($ris)
-									$errorMsg = "Modifica fatta con successo";
+									$messaggioSuccesso = "Modifica effettuata con successo";
 								else
 									$errorMsg = "Errore nella modifica";
 							} else {
@@ -123,8 +124,9 @@
 		$pagina->modificaHTML("{titolo}", $tit);
 		$pagina->modificaHTML("{descrizione}", $desc);
 		$pagina->modificaHTML("{prezzo}", $price);
-
-        $pagina->modificaHTML("{Error}", "<p>".$errorMsg."</p>");
+        
+		$pagina->modificaHTML("{messaggioSuccesso}", $messaggioSuccesso);
+        $pagina->modificaHTML("{Error}", $errorMsg);
 		
     }else{
         $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");

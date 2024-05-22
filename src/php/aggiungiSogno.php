@@ -15,6 +15,7 @@
     
     if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){        
         $errorMsg = "";
+        $messaggioSuccesso = "";
         $options= "";
 
         $categorie = $functions->executeQuery("SELECT * FROM categorie;");
@@ -84,7 +85,7 @@
                             $functions->closeConnection();
 
                             if($ris)
-                                $errorMsg = "File caricato con successo";
+                                $messaggioSuccesso = "File caricato con successo";
                             else
                                 $errorMsg = "Errore caricamento file";
                         } else {
@@ -105,7 +106,8 @@
 		$pagina->modificaHTML("{descrizione}", $desc);
 		$pagina->modificaHTML("{prezzo}", $price);
         
-        $pagina->modificaHTML("{Error}", "<p>".$errorMsg."</p>");
+        $pagina->modificaHTML("{messaggioSuccesso}", $messaggioSuccesso);
+        $pagina->modificaHTML("{Error}", $errorMsg);
     }else{
         $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin</a>");
     }
