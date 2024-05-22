@@ -849,11 +849,14 @@ footer{
 
 .elencoDate > li{
     background-color: var(--colorSlide);
+    text-align:center;
     border: 3px solid white;
     border-radius: 4px;
     padding: 1em;
+    padding-top:1.5em;
     font-weight: bold;
-    font-size: 1.15em;
+    min-width: 4em;
+    /* font-size: 1.15em; */
 }
 
 .elencoDate > li > a {
