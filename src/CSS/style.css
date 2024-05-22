@@ -315,8 +315,17 @@ main{
     text-align: left;
     font-size: 1.5em;
     font-weight: bold;
-    padding-bottom: 1.2em;
-    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    margin-left: 1.2em;
+}
+
+div.containerSogni{
+    background-color: var(--BgSidebar);
+    margin: 0.5em;
+    border-radius: 1em;
+    font-size: 1.15em;
+    padding-top: 1em;
 }
 
 .elencoSogni > ul{
@@ -336,6 +345,7 @@ main{
 div.thumbnail > img{ /*dimensione immagine della lista dei sogni*/
     width: 16em;
     height: 9em;
+    border-radius: 1em;
     transition: all 0.5s ease-in;
 }
 
@@ -924,6 +934,7 @@ footer{
 .sognoImmagine{
     width: 16em;
     height: 9em;
+    border-radius: 1em;
     margin: 0.5em;
 }
 
@@ -1034,6 +1045,7 @@ form#nuovaRecensione > label{
 img.immagineAcquista{
     width: 32em;
     height: 18em;
+    border-radius: 2em;
 }
 
 .sognoContainer > a{
