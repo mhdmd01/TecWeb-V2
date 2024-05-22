@@ -856,6 +856,11 @@ footer{
     font-size: 1.15em;
 }
 
+.elencoDate > li > a {
+    text-decoration:none;
+    font-size:4em;
+}
+
 /*Dashboard Admin*/
 .sectionDash{
     background-color: var(--colorSlide);
@@ -1088,3 +1093,5 @@ div.apparizioneLenta{
     opacity: 0;
     animation: apparizione 3s forwards;
 }
+
+
