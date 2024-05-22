@@ -5,6 +5,9 @@
     $functions = new functions();
 
     $pagina = new newPage("../html/aggiungiSogno.html", "Nuovo sogno", "Nuovo sogno", "Aggiunta nuovo sogno");
+
+    $link="aggiungiSogno.php";
+	$pagina->modificaHTML("{link}", $link);
     
     if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){        
         $errorMsg = "";

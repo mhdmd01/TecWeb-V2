@@ -7,11 +7,11 @@
 </div>
 
 <div class="box">
-    <form id="nuovoSognoForm" action="aggiungiSogno.php" method="post" enctype="multipart/form-data"> 
+    <form id="nuovoSognoForm" action="{link}" method="post" enctype="multipart/form-data"> 
         <p>Aggiungi un nuovo sogno</p>
                 
         <label for="titoloSogno">Titolo sogno:</label>
-        <input class="casellaTesto" placeholder="Titolo sogno" id="titoloSogno" type="text" name="titoloSogno" maxlength="50" value="titolo">
+        <input class="casellaTesto" placeholder="Titolo sogno" id="titoloSogno" type="text" name="titoloSogno" maxlength="50" value="{titolo}">
         <br>
 
         <label for="categoria">Categoria:</label>
@@ -21,7 +21,7 @@
         <br>
 
         <label for="prezzo">Prezzo:</label>
-        <input class="casellaTesto" placeholder="Prezzo" id="prezzo" type="number" name="prezzo" min="0" step="1">
+        <input class="casellaTesto" placeholder="Prezzo" id="prezzo" type="number" name="prezzo" min="0" step="1" value="{prezzo}">
         <br>
 
         <label for="immagineSogno">Immagine sogno:</label>
@@ -29,7 +29,7 @@
         <br>
 
         <label for="descrizione">Descrizione:</label><br>
-        <textarea class="casellaTesto" placeholder="Descrizione" id="descrizione" name="descrizione" maxlength="256"></textarea>
+        <textarea class="casellaTesto" placeholder="Descrizione" id="descrizione" name="descrizione"  maxlength="256" >{descrizione}</textarea>
         <br>
         
         <input id="button-lungo" type="submit" value="Aggiungi sogno">
