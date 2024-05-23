@@ -860,13 +860,24 @@ footer{
     padding: 1em;
     padding-top:1.5em;
     font-weight: bold;
+    font-style: italic;
     min-width: 4em;
     /* font-size: 1.15em; */
+}
+
+.elencoDate > li:hover{
+    background-color: red;
 }
 
 .elencoDate > li > a {
     text-decoration:none;
     font-size:4em;
+    font-family: "Lucida Handwriting";
+}
+
+.elencoDate > li > a:hover{
+    opacity: 100%;
+    color: white;
 }
 
 /*Dashboard Admin*/
