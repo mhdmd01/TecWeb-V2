@@ -99,7 +99,7 @@ class newPage{
         }else if($currentPage == "../html/acquistoGiaEffettuato.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt Acquisto già effettuato", $navBar);
 
-        }else if($currentPage == "../html/formChip.html"){
+        }else if($currentPage == "../html/calendario.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione", $navBar);
 
         }else if($currentPage == "../html/prenotazione.html"){

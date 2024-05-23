@@ -29,7 +29,6 @@ Io e Gabriele abbiamo fatto i test col validatore, il risultato è il seguente: 
 - registrati
 - acquistasogno
 - servizi
-- formChip
 - confermaPrenotazione
 - logout
 - storia

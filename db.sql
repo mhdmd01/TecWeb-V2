@@ -119,11 +119,7 @@ INSERT INTO categorie(nome) VALUES
 
 
 INSERT INTO prenotazioni (data, user_name) VALUES
-('2024-05-06', NULL),
-('2024-05-07', NULL),
-('2024-05-08', NULL),
-('2024-05-09', NULL),
-('2024-05-10', NULL),
+('2024-05-31', NULL),
 
 ('2024-06-03', NULL),
 ('2024-06-04', 'user'),
