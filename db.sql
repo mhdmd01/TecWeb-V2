@@ -61,8 +61,8 @@ CREATE TABLE acquisti(
   data DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (user_name, articolo),
 
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
-  FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE
+  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE  ON UPDATE CASCADE,
+  FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE  ON UPDATE CASCADE
 );
 
 -- Recensioni
@@ -74,8 +74,8 @@ CREATE TABLE recensioni (
   stelle INT CHECK (stelle >= 1 AND stelle <= 5),
   data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE,
-  FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE
+  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE  ON UPDATE CASCADE
 );
 
 INSERT INTO recensioni(user_name, testo, articolo, stelle) VALUES 
@@ -87,7 +87,7 @@ CREATE TABLE prenotazioni (
   data DATE PRIMARY KEY,
   user_name VARCHAR(20),
 
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE
+  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE  ON UPDATE CASCADE
 );
 
 CREATE TABLE assistenza(
