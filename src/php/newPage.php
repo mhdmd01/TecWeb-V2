@@ -120,6 +120,9 @@ class newPage{
         }else if($currentPage == "../html/registroRecensioni.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro recensioni", $navBar);
 
+        }else if($currentPage == "../html/cancellaSogno.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt {titolo} &gt&gt cancella", $navBar);
+
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")

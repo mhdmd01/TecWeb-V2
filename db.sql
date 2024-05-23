@@ -8,24 +8,6 @@ DROP TABLE IF EXISTS utenti;
 DROP TABLE IF EXISTS categorie;
 DROP TABLE IF EXISTS assistenza;
 
-
-/*
-CREATE TYPE Categorie AS ENUM (
-  'Avventura',
-  'Fantasia',
-  'Romantico',
-  'Horror',
-  'Fantascienza',
-  'Mistero',
-  'Storico',
-  'Azione',
-  'Commedia',
-  'Drammatico',
-  'Documentario',
-  'Educativo',
-  'Surreale/Spirituale'
-);
-*/
 -- Utenti
 CREATE TABLE utenti (
   user_name VARCHAR(20) NOT NULL,
@@ -221,22 +203,6 @@ CREATE TABLE chipOrders(
   eta INT NOT NULL,
   mail VARCHAR(20) NOT NULL,
   telefono VARCHAR(20),
-  messaggio VARCHAR(256),
-
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE
-);
-
-
--- Ordini scission
-CREATE TABLE scissionOrders(
-  user_name VARCHAR(20) PRIMARY KEY,
-  nome VARCHAR(20) NOT NULL,
-  cognome VARCHAR(20) NOT NULL,
-  eta INT NOT NULL,
-  mail VARCHAR(20) NOT NULL,
-  telefono VARCHAR(20),
-  nome_azienda VARCHAR(32),
-  indirizzo VARCHAR(128),
   messaggio VARCHAR(256),
 
   FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE

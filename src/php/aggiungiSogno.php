@@ -102,6 +102,9 @@
             }
 
         }
+        $bottone = "Aggiungi sogno";
+        $pagina->modificaHTML("{bottone}", $bottone);
+
         $pagina->modificaHTML("{titolo}", $tit);
 		$pagina->modificaHTML("{descrizione}", $desc);
 		$pagina->modificaHTML("{prezzo}", $price);
