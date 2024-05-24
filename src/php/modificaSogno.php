@@ -119,6 +119,8 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                     }
                 }
             }
+            $bottone = "Conferma modifica";
+            $pagina->modificaHTML("{bottone}", $bottone);
 
 			$pagina->modificaHTML("{link}", $link);
 

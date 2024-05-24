@@ -75,6 +75,7 @@
                     if($_SESSION['user_name'] === "admin"){
                         $titolo=urlencode($row['titolo']);
                         $bottone = "<a href=\"modificaSogno.php?sogno={$titolo}\" role=\"button\">Modifica</a>";
+                        $bottone .= "<a href=\"cancellaSogno.php?sogno={$titolo}\" role=\"button\">Cancella</a>";
                     } //Se sono admin
                     else{ //Se sono un utente
                         $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti WHERE user_name=? AND articolo=?");

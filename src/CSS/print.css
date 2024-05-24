@@ -1,0 +1,47 @@
+html{
+  margin: 50px;
+}
+.menu{
+  display:none;
+}
+
+#logo{
+  /* width: 100px; */
+  display: none; 
+}
+#logo_stampa{
+  width: 100px;
+}
+
+.titolo{
+  /* background-image: "../assets/logo_small.svg"; */
+  text-align:center;
+}
+
+.nascondi{
+  display:none;
+}
+
+.hideOnDesktop{
+  display:none;
+}
+
+#breadcrump { 
+display: none;
+}
+
+.aiutoNavigazione{
+  display:none;
+}
+
+.tornasu{
+  display:none;
+}
+
+footer{
+  display:none;
+}
+
+.thumbnail > img{
+  width: 200px;
+}

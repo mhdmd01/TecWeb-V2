@@ -41,7 +41,8 @@ class newPage{
 
         if($currentPage == "../html/index.html"){
             $navBar = str_replace("{homeLink}", "<li>Home</li>", $navBar);
-            $navBar = str_replace("{logo}", "<img id=\"logo\" alt=\"logo dell'azienda : DESCRIZIONE?\" src=\"../assets/logo.svg\">", $navBar);
+            $navBar = str_replace("{logo}", "<img id=\"logo\" alt=\"logo dell'azienda : DESCRIZIONE?\" src=\"../assets/logo.svg\">
+                <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo_small.svg\">", $navBar);
             $navBar = str_replace("{breadcrumb}", "<span lang=\"en\">Home</span>", $navBar);
 
         }else if($currentPage == "../html/servizi.html"){
@@ -99,7 +100,7 @@ class newPage{
         }else if($currentPage == "../html/acquistoGiaEffettuato.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt Acquisto già effettuato", $navBar);
 
-        }else if($currentPage == "../html/formChip.html"){
+        }else if($currentPage == "../html/calendario.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"servizi.php\">Servizi</a> &gt&gt Prenotazione", $navBar);
 
         }else if($currentPage == "../html/prenotazione.html"){
@@ -119,6 +120,9 @@ class newPage{
 
         }else if($currentPage == "../html/registroRecensioni.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro recensioni", $navBar);
+
+        }else if($currentPage == "../html/cancellaSogno.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt {titolo} &gt&gt cancella", $navBar);
 
         }
 
@@ -143,7 +147,8 @@ class newPage{
             session_destroy();
         }
 
-        $navBar = str_replace("{logo}", "<a href=\"../php/index.php\"><img id=\"logo\" alt=\"logo dell'azienda : DESCRIZIONE?\" src=\"../assets/logo.svg\"></a>", $navBar);
+        $navBar = str_replace("{logo}", "<a href=\"../php/index.php\"><img id=\"logo\" alt=\"logo dell'azienda : DESCRIZIONE?\" src=\"../assets/logo.svg\"></a>
+            <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo_small.svg\">", $navBar);
         $navBar = str_replace("{homeLink}", "<li><a href=\"index.php\">Home</a></li>", $navBar);
         $navBar = str_replace("{serviziLink}", "<li><a href=\"servizi.php\">Servizi</a></li>", $navBar);
         $navBar = str_replace("{sogniLink}", "<li><a href=\"sogni.php\">Sogni</a></li>", $navBar);
