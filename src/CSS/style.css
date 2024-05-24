@@ -855,8 +855,9 @@ footer{
     gap: 2em;
 }
 
-.elencoDate > li{
+.elencoDate > a{
     background-color: var(--colorSlide);
+    text-decoration:none;
     text-align:center;
     border: 3px solid white;
     border-radius: 4px;
@@ -868,20 +869,20 @@ footer{
     /* font-size: 1.15em; */
 }
 
-.elencoDate > li:hover{
+.elencoDate > a:hover{
     background-color: red;
 }
 
-.elencoDate > li > a {
+.elencoDate > a > li {
     text-decoration:none;
     font-size:4em;
     font-family: "Lucida Handwriting";
 }
 
-.elencoDate > li > a:hover{
-    opacity: 100%;
-    color: white;
-}
+/* .elencoDate > a > li:hover{ */
+/*     opacity: 100%; */
+/*     color: white; */
+/* } */
 
 /*Dashboard Admin*/
 .sectionDash{
