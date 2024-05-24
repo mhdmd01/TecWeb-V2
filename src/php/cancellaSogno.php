@@ -45,7 +45,7 @@
                     $messaggio= "Hai cancellato correttamente";
 
                     if($res == 0){
-                        $bottone="<a href=\"sogni.php\" >Torna ai sogni </a>";
+                        $bottone="<a href=\"sogni.php\" >Torna ai sogni</a>";
                     }else{
                         $messaggioSuccesso = "Errore durante la cancellazione";
                         $bottone="<a href=\"sogni.php\" >Torna ai sogni</a>";
