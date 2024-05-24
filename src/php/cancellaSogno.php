@@ -27,11 +27,10 @@
             $messaggio= "Stai per cancellare questo articolo";
             $bottone="";
     
-            if($risultato && $risultato->num_rows > 0) {
-    
+            if($risultato && $risultato->num_rows > 0) { 
 
-                $bottone = "<a href=\"sognoSingolo.php?sogno={$sogno}\" role=\"button\">Annulla</a>";
-                $bottone .= "<a href=\"cancellaSogno.php?sogno={$sogno}&conferma=1\" role=\"button\"> Conferma</a>";
+                $bottone = "<a href=\"sognoSingolo.php?sogno=".urlencode($sogno). "\" role=\"button\">Annulla</a>";
+                $bottone .= "<a href=\"cancellaSogno.php?sogno=".urlencode($sogno). "&conferma=1\" role=\"button\"> Conferma</a>";
         
 
                  if (isset($_GET['conferma'])){
@@ -42,12 +41,13 @@
                     $stmt->execute();
                     $res = $stmt->get_result();
                     $functions->closeConnection();
-                    
-                    if($res){
-                        $bottone="<a href=\"sogni.php\" >Torna ai sogni</a>";
-                        $messaggio= "Hai cancellato correttamente";
+
+                    $messaggio= "Hai cancellato correttamente";
+
+                    if($res == 0){
+                        $bottone="<a href=\"sogni.php\" >Torna ai sogni </a>";
                     }else{
-                        $errorMsg = "Errore durante la cancellazione";
+                        $messaggioSuccesso = "Errore durante la cancellazione";
                         $bottone="<a href=\"sogni.php\" >Torna ai sogni</a>";
                     }
 
@@ -61,7 +61,6 @@
                 $pagina->modificaHTML("{messaggio}", $messaggio);
     
                 $pagina->modificaHTML("{messaggioSuccesso}", $messaggioSuccesso);
-                $pagina->modificaHTML("{Error}", $errorMsg);
 
             } else {
                 $pagina->printErrorPage("Non esiste un sogno con questo titolo <a href=\"sogni.php\">torna a sogni<a>");
