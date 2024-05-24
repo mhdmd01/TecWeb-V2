@@ -221,6 +221,9 @@ ul.listaNavBar > li:nth-last-child(1){
     z-index: 10;
 }
 
+#logo_stampa{
+    display:none;
+}
 
 #logo:hover{
     animation: rotate-animation 3s infinite linear;
@@ -285,7 +288,7 @@ main{
     font-family: 'Tahoma', sans-serif;
 }
 
-.tornasu{
+nav.tornasu{
     margin-top:1em;
     margin-bottom:1em;
 }
