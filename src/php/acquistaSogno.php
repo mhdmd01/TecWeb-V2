@@ -31,6 +31,9 @@
                 if(isset($_SESSION['user_name']) && $_SESSION['user_name'] != "admin"){ //Se sono loggato e sono un utente 
                     $bottone = "<a href=\"confermaAcquisto.php?sogno={$row['titolo']}\" role=\"button\">Conferma acquisto</a>";
                     $pagina->modificaHTML("{bottoneCompra}",  $bottone);
+                }else{
+                    $bottone = "<a href=\"login.php\" role=\"button\">Accedi</a>";
+                    $pagina->modificaHTML("{bottoneCompra}",  $bottone);
                 }
                 
             }
