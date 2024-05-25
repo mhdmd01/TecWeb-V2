@@ -13,6 +13,18 @@ html{
   width: 100px;
 }
 
+.elencoSogni > ul{
+    display: flex; /*secondo flex*/
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    margin-bottom: 1em;
+}
+
+.elencoSogni > ul > li{
+  list-style: none;
+}
+
 .titolo{
   /* background-image: "../assets/logo_small.svg"; */
   text-align:center;
@@ -44,4 +56,14 @@ footer{
 
 .thumbnail > img{
   width: 200px;
+}
+
+.section{
+  border:solid black;
+  border-width:thin;
+  margin-top:5px;
+  margin-bottom:5px;
+  padding-left:10px;
+  padding-top:3px;
+  padding-bottom:3px;
 }
