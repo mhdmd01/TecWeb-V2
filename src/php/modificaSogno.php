@@ -10,6 +10,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
     $errorMsg = "";
     $messaggioSuccesso = "";
     $options= "";
+    $fileName = null;
 
     // Carico le categorie
     $categorie = $functions->executeQuery("SELECT * FROM categorie;");
@@ -37,17 +38,19 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                 $tit = $row['titolo'];
                 $desc = $row['descrizione'];
                 $price = $row['prezzo'];
+                //salvo nome file
+                $fileName = $row['nomeFile'];
                 //$pagina->modificaHTML("{pathImg}",  "\"../assets/sogni/".$row['nomeFile']."\"");
             }
 
             $link = "modificaSogno.php?sogno=" . urlencode($sogno);
 
             if($_SERVER['REQUEST_METHOD'] == "POST") {
-                $titoloSogno = $sogno; // Default to current title
+                $titoloSogno = $sogno; 
                 $categoria = null;
                 $prezzo = null;
                 $descrizione = null;
-                $fileName = null; // Add this if file handling is necessary
+                //$fileName = null; 
 
                 if(isset($_POST['titoloSogno']) && strlen($_POST['titoloSogno']) != 0)
                     $titoloSogno = $functions->pulisciInput($_POST['titoloSogno']);
@@ -76,12 +79,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                     $desc = $descrizione;
                     $price = $prezzo;
 
-                    $functions->openDBConnection();
-                    $stmt = $functions->getConnection()->prepare("UPDATE sogni SET titolo=?, descrizione=?, prezzo=?, nomeFile=?, categoria=? WHERE titolo=?");
-                    $stmt->bind_param("ssdsss", $titoloSogno, $descrizione, $prezzo, $fileName, $categoria, $sogno);
-                    $ris = $stmt->execute();
-                    $stmt->close();
-                    $functions->closeConnection();
+                    
 
                     // Controlli
                     if (isset($_FILES['immagineSogno']) && $_FILES['immagineSogno']['error'] == UPLOAD_ERR_OK) {
@@ -97,25 +95,29 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                         $allowTypes = array("jpg", "jpeg", "png");
                         if (in_array($fileType, $allowTypes)) {
                             if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {            
-                                if($ris) {
-                                    $messaggioSuccesso = "Modifica effettuata con successo";
-                                    $link = "modificaSogno.php?sogno=" . urlencode($titoloSogno);
-                                } else {
-                                    $errorMsg = "Errore nella modifica";
-                                }
+                                $messaggioSuccesso = "Immagine caricata con successo";
                             } else {
-                                $errorMsg = "Si è verificato un errore durante il caricamento.";
+                                $errorMsg = "Si è verificato un errore durante il caricamento dell'immagine.";
                             }
                         } else {
                             $errorMsg = "Sono consentiti solo file di tipo JPG, JPEG e PNG o non hai caricato nessuna immagine";
                         }
                     } else {
-                        if ($ris) {
-                            $messaggioSuccesso = "Modifica effettuata con successo";
-                            $link = "modificaSogno.php?sogno=" . urlencode($titoloSogno);
-                        } else {
-                            $errorMsg = "Errore nella modifica";
-                        }
+                        $errorMsg = "Non hai modificato l'immagine";
+                    }
+
+                    $functions->openDBConnection();
+                    $stmt = $functions->getConnection()->prepare("UPDATE sogni SET titolo=?, descrizione=?, prezzo=?, nomeFile=?, categoria=? WHERE titolo=?");
+                    $stmt->bind_param("ssdsss", $titoloSogno, $descrizione, $prezzo, $fileName, $categoria, $sogno);
+                    $ris = $stmt->execute();
+                    $stmt->close();
+                    $functions->closeConnection();
+
+                    if ($ris) {
+                        $messaggioSuccesso = "Modifica effettuata con successo";
+                        $link = "modificaSogno.php?sogno=" . urlencode($titoloSogno);
+                    } else {
+                        $errorMsg = "Errore nella modifica";
                     }
                 }
             }
