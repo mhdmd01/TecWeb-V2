@@ -41,7 +41,7 @@
         foreach( $recenz as $row){
             $rec .= file_get_contents("../html/recensioneTemp.html");
 
-            $rec = str_replace("{utente}", $row['user_name'], $rec);
+            $rec = str_replace("{utente}", "<span class='titoletto'>Scritto da: </span>" . $row['user_name'], $rec);
             $rec = str_replace("{stelle}", $row['stelle'], $rec);
             $rec = str_replace("{sogno}", $row['articolo'], $rec);
             //$rec = str_replace("{testo}", $row['testo'], $rec);

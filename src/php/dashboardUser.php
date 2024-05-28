@@ -36,6 +36,35 @@
                 }
 
                 //RECENSIONI
+                $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE user_name=? ORDER BY data;");
+                        $recenz->bind_param("s", $_SESSION['user_name']);
+                        $recenz->execute();
+                        $recenz = $recenz->get_result();
+
+                if($recenz == null){
+                    $rec = "Ancora nessuna recensione";
+                    $pagina->modificaHTML("{recensioni}", $rec);
+                }        
+                else{
+                    $rec = "";
+
+                    foreach( $recenz as $row){
+                        $rec .= file_get_contents("../html/recensioneTemp.html");
+
+                        $rec = str_replace("{utente}", "<span class='titoletto'>Sogno: </span>" . $row['articolo'], $rec);
+                        $rec = str_replace("{stelle}", $row['stelle'], $rec);
+                        //$rec = str_replace("{sogno}", $row['articolo'], $rec);
+
+                        $text = $row['testo'];
+                        $maxLength=20;
+                        if (strlen($text) > $maxLength) {
+                            $text = substr($text, 0, $maxLength) . '<a href="#" class="read-more" onclick="espandi(event)">...leggi tutto</a><span class="full-description hidden">' . substr($text, $maxLength) . '</span>';
+                        }
+                        $rec = str_replace("{testo}", $text, $rec);
+                    }
+
+                    $pagina->modificaHTML("{recensioni}", $rec);
+                }
                 //DA FARE
 
             }else{
