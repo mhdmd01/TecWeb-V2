@@ -62,7 +62,7 @@
                             $giorno = substr($row['data'], 8, 2);
                             // commentare riga seguente per ripristinare gli zeri nelle date 1..9
                             $giorno = ltrim($giorno, '0');
-                            $placeHolderData .= "<a href=\"confermaPrenotazione.php?data=".$row['data']."\"><li>".$giorno ."</li></a>";
+                            $placeHolderData .= "<li><a href=\"confermaPrenotazione.php?data=".$row['data']."\">".$giorno ."</a></li>";
                         }
                         $pagina->modificaHTML("{data}", $placeHolderData);
                     }else{
