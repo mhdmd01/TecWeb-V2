@@ -115,7 +115,7 @@
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
                     foreach( $risultato as $row){
-                        $output .= "<div class = \"section\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</div>";
+                        $output .= "<div class = \"sectionRecAc\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</div>";
                     }
                     $pagina->modificaHTML("{acquisto}", $output);
                 }
