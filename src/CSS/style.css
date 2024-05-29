@@ -855,7 +855,7 @@ footer{
     gap: 2em;
 }
 
-.elencoDate > li > a > div{
+.elencoDate > li > a{
     background-color: var(--colorSlide);
     text-decoration:none;
     text-align:center;
@@ -866,14 +866,15 @@ footer{
     font-weight: bold;
     font-style: italic;
     min-width: 4em;
+    display: block;
     /* font-size: 1.15em; */
 }
 
-.elencoDate > li > a > div:hover{
+.elencoDate > li > a:hover{
     background-color: red;
 }
 
-.elencoDate > li > a > div {
+.elencoDate > li > a {
     text-decoration:none;
     font-size:4em;
     font-family: "Lucida Handwriting";
