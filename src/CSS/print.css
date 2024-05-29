@@ -1,8 +1,19 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
 html{
-  margin: 50px;
+  font-size: 12pt;
+  font-family: "Times New Roman", serif;
+  margin:auto;
 }
 .menu{
   display:none;
+}
+
+main#contenuto{
+  text-rendering: optimizeLegibility;
 }
 
 #logo{
@@ -19,6 +30,19 @@ html{
     justify-content: space-evenly;
     align-content: space-between;
     margin-bottom: 1em;
+}
+
+#breadcrump{
+  padding: 0.5em 0 0.5em 0;
+  margin-top: 0.5em;
+  border-top: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  font-weight: bold;
+}
+
+#breadcrump p{
+  max-width: 1024px;
+  margin: auto
 }
 
 .elencoSogni > ul > li{
@@ -38,10 +62,6 @@ html{
   display:none;
 }
 
-#breadcrump { 
-display: none;
-}
-
 .aiutoNavigazione{
   display:none;
 }
@@ -51,11 +71,20 @@ display: none;
 }
 
 footer{
+  text-align: center;
+  font-size: 10pt;
+  font-style: italic;
+  padding: 1.3em 0.5em 0.5em;
+  border-top: 1px solid #DDD;
+}
+
+footer > p > a{
   display:none;
 }
 
 .thumbnail > img{
-  width: 200px;
+  width: 384px;
+  height: 216px;
 }
 
 .section{
@@ -67,3 +96,63 @@ footer{
   padding-top:3px;
   padding-bottom:3px;
 }
+
+.loghino{
+  display: none;
+}
+
+/*sogno singolo*/
+.titoloSogno{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20pt;
+  margin: 2pt;
+}
+
+.sognoImmagine{
+  width: 480px;
+  height: 270px;
+  text-align: center;
+}
+
+.titoletto{
+  font-weight: bold;
+}
+
+.elencoRecensioni{
+  margin-top: 3pt;
+  border: 1px solid #DDD;
+}
+
+.containerRecensione{
+  margin-top: 2pt;
+  border-top: 1px dotted #DDD;
+}
+
+ul.elencoDate > li > a{
+  font-size: 12pt;
+  margin: 1em;
+  line-height: 1.5em;
+}
+
+/*dashboard*/
+div.welcomeDash{
+  display: none;
+}
+
+.sectionDash{
+  margin: 1pt;
+  padding: 1pt;
+  border: 2pt solid #DDD;
+}
+
+.sectionDash > p:nth-child(1){
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.read-more{
+  display: none;
+}
+
