@@ -871,17 +871,13 @@ footer{
     font-style: italic;
     min-width: 2em;
     display: block;
-    /* font-size: 1.15em; */
+    text-decoration:none;
+    font-size:4em;
+    font-family: "Lucida Handwriting";
 }
 
 .elencoDate > li > a:hover{
     background-color: red;
-}
-
-.elencoDate > li > a {
-    text-decoration:none;
-    font-size:4em;
-    font-family: "Lucida Handwriting";
 }
 
 /* .elencoDate > a > li:hover{ */

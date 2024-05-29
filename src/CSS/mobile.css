@@ -26,11 +26,10 @@
 .elencoSogni{
     flex-direction: column;
     justify-content: space-around;
-    align-items: space-around;
 }
 
 .elencoDate > li > a {
-    font-size:3em;
+    font-size:3.5em;
 }
 
 .slide-1{

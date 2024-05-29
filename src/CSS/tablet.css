@@ -100,10 +100,6 @@ ul.listaSideBar > li > a::after {
     justify-content: space-between;
 }
 
-.elencoDate > li > a {
-    font-size:3em;
-}
-
 .formPrenotazione{
     margin-bottom: 1.5em;
 }
@@ -145,4 +141,9 @@ div.sectionDash > p{
 
 .welcomeDash > p{
     font-size: 1.25em;
+}
+
+.elencoDate > li > a{
+    min-width: 2.5em;
+    font-size: 3.5em;
 }
