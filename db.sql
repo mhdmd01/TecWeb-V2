@@ -23,7 +23,7 @@ INSERT INTO utenti(user_name, password) VALUES
 
 -- Sogni
 CREATE TABLE sogni(
-  titolo VARCHAR(20) PRIMARY KEY,
+  titolo VARCHAR(50) PRIMARY KEY,
   descrizione VARCHAR(256), 
   prezzo INT NOT NULL, 
   nomeFile VARCHAR(256) NOT NULL,
