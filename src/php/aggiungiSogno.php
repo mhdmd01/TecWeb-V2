@@ -5,6 +5,7 @@
     $functions = new functions();
 
     $pagina = new newPage("../html/aggiungiSogno.html", "Nuovo sogno", "Nuovo sogno", "Aggiunta nuovo sogno");
+    $poster = "<p>Aggiungi un nuovo sogno</p>";
 
     $link="aggiungiSogno.php";
 	$pagina->modificaHTML("{link}", $link);
@@ -58,7 +59,7 @@
 
             if($risultato->num_rows == 0){ //Se non esiste già
                 //Controlli
-                if (isset($_FILES['immagineSogno'])) {
+                if (isset($_FILES['immagineSogno']) && $_FILES['immagineSogno']['error'] == UPLOAD_ERR_OK) {
 
                     $uploadDir = "../assets/sogni/";                   
                     // Verifica se la cartella di destinazione esiste, altrimenti crea la cartella
@@ -102,6 +103,8 @@
             }
 
         }
+        $pagina->modificaHTML("{poster}", $poster);
+
         $bottone = "Aggiungi sogno";
         $pagina->modificaHTML("{bottone}", $bottone);
 
