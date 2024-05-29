@@ -142,3 +142,7 @@ div.sectionDash > p{
 .SuccessoGiorni > p{
     margin:1em;
 }
+
+.welcomeDash > p{
+    font-size: 1.25em;
+}

@@ -902,7 +902,7 @@ footer{
 }
 
 .welcomeDash{
-    margin:auto;
+    margin: 1em;
     margin-bottom:1.2em;
     text-align: center;
     font-size: 1.25em;
@@ -1122,12 +1122,12 @@ img.immagineAcquista{
 
 div.apparizione{
     opacity: 0;
-    animation: apparizione 2s forwards;
+    animation: apparizione 2.5s forwards;
 }
 
 div.apparizioneLenta{
     opacity: 0;
-    animation: apparizione 3s forwards;
+    animation: apparizione 3.5s forwards;
 }
 
 div.welcomeDash{
@@ -1167,10 +1167,7 @@ div.sectionRecAc > p:nth-last-child(2){
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-}
-
-.loghino:hover{
-    animation: rotate-animation 3s infinite linear;
+    animation: rotate-animation 6s infinite linear;
 }
 
 .welcomeDash > p{
