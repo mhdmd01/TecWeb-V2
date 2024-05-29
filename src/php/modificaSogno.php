@@ -5,6 +5,7 @@ use functions\functions;
 $functions = new functions();
 
 $pagina = new newPage("../html/aggiungiSogno.html", "modifica sogno", "modifica sogno", "modifica di un sogno");
+$poster = "<p>Modifica sogno</p>";
 
 if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
     $errorMsg = "";
@@ -78,9 +79,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                     $tit = $titoloSogno;
                     $desc = $descrizione;
                     $price = $prezzo;
-
-                    
-
+          
                     // Controlli
                     if (isset($_FILES['immagineSogno']) && $_FILES['immagineSogno']['error'] == UPLOAD_ERR_OK) {
                         $uploadDir = "../assets/sogni/";                   
@@ -121,6 +120,7 @@ if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){
                     }
                 }
             }
+            $pagina->modificaHTML("{poster}", $poster);
             $bottone = "Conferma modifica";
             $pagina->modificaHTML("{bottone}", $bottone);
 
