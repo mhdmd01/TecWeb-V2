@@ -473,6 +473,7 @@ div.searchSogno{
 .formContatta > h2.titolo{
     color: var(--slideTitleTxtColor);
     font-size: 2em;
+    line-height: 1em;
     display: inline-block;
 }
 
