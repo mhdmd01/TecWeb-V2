@@ -67,6 +67,25 @@
                 }
                 //DA FARE
 
+                //RECENSIONI
+                $prenotaz = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE user_name=? ORDER BY data;");
+                $prenotaz->bind_param("s", $_SESSION['user_name']);
+                $prenotaz->execute();
+                $prenotaz = $prenotaz->get_result();
+
+                if($prenotaz == null){
+                    $rec = "<p>Non hai prentazioni, <a href=\"calendario.php\" >prenota ora</a></p>";
+                    $pagina->modificaHTML("{prenotazione}", $rec);
+                }        
+                else{
+
+                    foreach( $prenotaz as $row){
+                        $text = "Hai una prenotazione per il giorno: " . $row['data'] . ". <p>Cambia <a href=\"calendario.php\" >data</a></p>";
+                    }
+
+                    $pagina->modificaHTML("{prenotazione}", $text);
+                }
+
             }else{
                 $pagina->printErrorPage("Utente non trovato"); //Quasi impossibile accada
             }
