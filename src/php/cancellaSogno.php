@@ -29,11 +29,19 @@
     
             if($risultato && $risultato->num_rows > 0) { 
 
+                $row = $risultato->fetch_assoc();
+                $nomefile = $row['nomeFile'];               
+
                 $bottone = "<a href=\"sognoSingolo.php?sogno=".urlencode($sogno). "\" role=\"button\">Annulla</a>";
                 $bottone .= "<a href=\"cancellaSogno.php?sogno=".urlencode($sogno). "&conferma=1\" role=\"button\"> Conferma</a>";
-        
 
                  if (isset($_GET['conferma'])){
+                    //cancella foto da cartella:
+                    $filepath = "../assets/sogni/" . $nomefile;
+                    if (file_exists($filepath)) {
+                        unlink($filepath);
+                    }
+
                     $functions->openDBConnection();
                     $sogno = urldecode($_GET['sogno']);
                     $stmt = $functions->getConnection()->prepare("DELETE FROM sogni WHERE titolo=?");
@@ -41,10 +49,11 @@
                     $stmt->execute();
                     $res = $stmt->get_result();
                     $functions->closeConnection();
+                    
+                    //$messaggio= "Hai cancellato correttamente";
 
-                    $messaggio= "Hai cancellato correttamente";
-
-                    if($res == 0){
+                    if($res >= 0){
+                        $messaggio = "Hai cancellato correttamente";
                         $bottone="<a href=\"sogni.php\" >Torna ai sogni</a>";
                     }else{
                         $messaggioSuccesso = "Errore durante la cancellazione";
