@@ -993,6 +993,10 @@ div.sognoDescrizione > a{
     margin: 1em;
 }
 
+span.full-description{
+  /*overflow-wrap: anywhere combined with word-break: normal*/
+    word-break: break-all;
+}
 div.sognoDescrizione > a:hover{
     background-color: var(--linkColor);
     opacity: 1;
