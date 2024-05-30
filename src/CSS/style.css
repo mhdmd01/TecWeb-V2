@@ -869,7 +869,7 @@ textarea.casellaTesto{
 }
 
 .elencoDate > li > a:hover{
-    background-color: (var --calendarioOver);
+    background-color: var(--calendarioOver);
 }
 
 /* .elencoDate > a > li:hover{ */
