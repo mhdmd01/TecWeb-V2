@@ -748,6 +748,10 @@ footer{
     font-size: 1rem;
 }
 
+footer > p{
+    display: inline-block;
+}
+
 
 /* Inizio storia e servizi */
 

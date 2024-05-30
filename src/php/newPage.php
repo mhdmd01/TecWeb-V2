@@ -4,7 +4,7 @@
 
 class newPage{
     private $strutturaHTML = "";
-    public $testoFooter = "Saudade corporation - 2024";
+    public $testoFooter = "<p>Saudade corporation - 2024 </p>";
 
     //Parametri: link alla pagina template con contenuto, titolo della pagina, keywords, descrizione
     public function __construct($template, $titoloPagina, $keywords, $description){
@@ -21,7 +21,7 @@ class newPage{
         if($template == "../html/contatta.html"){ //Per rimuovere link circolare in contatta
             $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter, $this->strutturaHTML);
         }else{
-            $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter." Hai bisogno di aiuto? <a href=\"../php/contatta.php\">Contattaci</a>", $this->strutturaHTML);
+            $this->strutturaHTML = str_replace("{testoFooter}", $this->testoFooter."<p> Hai bisogno di aiuto? <a href=\"../php/contatta.php\">Contattaci</a></p>", $this->strutturaHTML);
         }
         
         //Sostituzione contenuto principale con il segnaposto main
