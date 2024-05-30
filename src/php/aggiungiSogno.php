@@ -12,7 +12,7 @@
 
     $tit = "";
 	$desc = "";
-	$price = "";
+	$price = "0";
     
     if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){        
         $errorMsg = "";
