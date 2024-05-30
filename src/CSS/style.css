@@ -34,6 +34,7 @@
     --slideTitleTxtColor: #FFFFFF; /* vecchio #085454 */
     --fontMenu: sans-serif;
     --errorBackground: #FF0000;
+    --calendarioOver: #2D0000;
     --errorText: #FFFFFF;
     --successBackground:#4F7A28;
 }
@@ -868,7 +869,7 @@ textarea.casellaTesto{
 }
 
 .elencoDate > li > a:hover{
-    background-color: red;
+    background-color: (var --calendarioOver);
 }
 
 /* .elencoDate > a > li:hover{ */
