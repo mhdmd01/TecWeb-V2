@@ -124,6 +124,9 @@ class newPage{
         }else if($currentPage == "../html/cancellaSogno.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt {titolo} &gt&gt cancella", $navBar);
 
+        }else if($currentPage == "../html/confermaAcquisto.html"){
+            $navBar = str_replace("{breadcrumb}", "Acquisto effettuato", $navBar);
+
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")

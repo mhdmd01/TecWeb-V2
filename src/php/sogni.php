@@ -9,6 +9,7 @@
 
     //FILTRO
     $filtro = isset($_GET['categoria']) ? ($_GET['categoria']) : '';
+
     //BARRA DI RICERCA
     $item = isset($_GET['search']) ? $functions->pulisciInput($_GET['search']) : '';
     $sql = "SELECT * FROM sogni WHERE titolo LIKE '%$item%' OR descrizione LIKE '%$item%'";
@@ -26,8 +27,14 @@
         $name= '';
         //$options .="<option value='$name'> $name</option>";
         foreach($categorie as $row){
-            $name= $row['nome'];
-            $options .= "<option value='$name'> $name</option>";
+            if($filtro != $row['nome']){
+                $name= $row['nome'];
+                $options .= "<option value='$name'> $name</option>";
+            }else{
+                $name= $row['nome'];
+                $options .= "<option value='$name' disabled selected> $name</option>";
+            }
+
         }
         $pagina->modificaHTML("{chosen}", $filtro);
         $pagina->modificaHTML("{options}", $options);

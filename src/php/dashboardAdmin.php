@@ -7,7 +7,6 @@
         if($_SESSION['user_name'] === "admin") { 
             $pagina->modificaHTML("{aggiungiSogno}",  "<div><a href='aggiungiSogno.php'>Aggiungi sogno</a></div>"); 
             $pagina->modificaHTML("{aggiungiDate}",  "<div><a href='aggiungiDate.php'>Aggiungi una settimana</a></div>");
-            $pagina->modificaHTML("{eliminaDate}",  "<div><a href='eliminaDate.php'>Elimina una settimana</a></div>");
 
         }else{
             $pagina->printErrorPage("Pagina riservata. Torna alla <a href=\"index.php\">home</a> o alla tua <a href=\"dashboardUser.php\">area personale</a>");
