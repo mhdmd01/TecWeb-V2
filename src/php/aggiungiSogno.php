@@ -12,7 +12,7 @@
 
     $tit = "";
 	$desc = "";
-	$price = "";
+	$price = "0";
     
     if(isset($_SESSION['user_name']) && $_SESSION['user_name'] === "admin"){        
         $errorMsg = "";
@@ -74,7 +74,7 @@
                     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
                     
                     // Verifica se il file è un'immagine
-                    $allowTypes = array("jpg", "jpeg", "png");
+                    $allowTypes = array("jpg", "jpeg", "png", "JPG", "JPEG", "PNG");
                     if (in_array($fileType, $allowTypes)) {
                         // Sposta il file nella cartella di destinazione
                         if (move_uploaded_file($_FILES["immagineSogno"]["tmp_name"], $targetFilePath)) {

@@ -34,6 +34,7 @@
     --slideTitleTxtColor: #FFFFFF; /* vecchio #085454 */
     --fontMenu: sans-serif;
     --errorBackground: #FF0000;
+    --calendarioOver: #2D0000;
     --errorText: #FFFFFF;
     --successBackground:#4F7A28;
 }
@@ -473,6 +474,7 @@ div.searchSogno{
 .formContatta > h2.titolo{
     color: var(--slideTitleTxtColor);
     font-size: 2em;
+    line-height: 1em;
     display: inline-block;
 }
 
@@ -735,20 +737,6 @@ textarea.casellaTesto{
     font-size: 0.75em;
 }
 
-
-/*Inizio Footer*/
-footer{
-    /* background-color: var(--footerBgColor); */
-    background-image: linear-gradient(to top right, #000000 0%, var(--headerBgColor) 20%, #000000 100%);
-    color:var(--footerTxtColor);
-    text-align: center;
-    margin-top: auto;
-    width: 100%;
-    padding: 1em 0em 1em 0em;
-    font-size: 1rem;
-}
-
-
 /* Inizio storia e servizi */
 
 .article{
@@ -881,7 +869,7 @@ footer{
 }
 
 .elencoDate > li > a:hover{
-    background-color: red;
+    background-color: var(--calendarioOver);
 }
 
 /* .elencoDate > a > li:hover{ */
@@ -1006,6 +994,10 @@ div.sognoDescrizione > a{
     margin: 1em;
 }
 
+span.full-description{
+  /*overflow-wrap: anywhere combined with word-break: normal*/
+    word-break: break-all;
+}
 div.sognoDescrizione > a:hover{
     background-color: var(--linkColor);
     opacity: 1;
@@ -1175,4 +1167,29 @@ div.sectionRecAc > p:nth-last-child(2){
     vertical-align: middle;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+
+/*Inizio Footer*/
+footer{
+    /* background-color: var(--footerBgColor); */
+    background-image: linear-gradient(to top right, #000000 0%, var(--headerBgColor) 20%, #000000 100%);
+    color:var(--footerTxtColor);
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    padding: 1em 0em 1em 0em;
+    font-size: 1rem;
+}
+
+footer > p{
+    display: inline-block;
+}
+
+footer > p:nth-last-child(1){
+    margin-left: 0.4em;
+}
+
+#descrizione{
+    font-size: 1.2em;
 }

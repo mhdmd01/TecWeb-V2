@@ -86,7 +86,7 @@
                         if($risultato->num_rows == 0)
                             $bottone = "<a href=\"acquistaSogno.php?sogno={$row['titolo']}\" role=\"button\">Compra</a>";
                         else{
-                            $bottone = "<a role=\"button\">Aricolo già acquistato.</a>";
+                            $bottone = "<a role=\"button\">Articolo già acquistato.</a>";
                             $bottone .= "<a href=\"aggiungiRecensione.php?sogno={$row['titolo']}\" role=\"button\"> Lascia una recensione</a>";
                         }
                             
