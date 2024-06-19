@@ -384,6 +384,12 @@ div.searchSogno{
     text-align: center;
 }
 
+.cercaSogno > label{
+    font-weight: bold;
+    font-size: 2em;
+    padding-right: 0.3em;
+}
+
 .cercaSogno > input.barraRicerca{
     display: inline-block;
     font-size: 1.5em;
@@ -399,7 +405,7 @@ div.searchSogno{
 
 .cercaSogno > input.barraRicerca:focus{
     background-color: var(--linkColor);
-    width: 80%;
+    width: 70%;
 }
 
 .cercaSogno > input.barraRicerca:hover{
