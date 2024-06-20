@@ -1133,7 +1133,7 @@ div.welcomeDash{
     animation: apparizione 1s forwards;
 }
 
-/*Registro acquisti e recensioni*/
+/*Registro acquisti, recensioni e prenotazioni*/
 
 .titoloDash{
     margin: 0.5em;
@@ -1173,6 +1173,15 @@ div.sectionRecAc > p:nth-last-child(2){
     vertical-align: middle;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.sectionRegPren{
+    background-color: var(--colorSlide);
+    margin:auto;
+    margin-top:2em;
+    margin-bottom:2em;
+    padding:1em;
+    border-radius: 1em;
 }
 
 

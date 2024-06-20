@@ -68,9 +68,10 @@ INSERT INTO recensioni(user_name, testo, articolo, stelle) VALUES
 CREATE TABLE prenotazioni (
   data DATE PRIMARY KEY,
   user_name VARCHAR(20),
-
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE  ON UPDATE CASCADE
+  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE ON UPDATE CASCADE,
+  UNIQUE (user_name)
 );
+
 
 CREATE TABLE assistenza(
   data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -101,28 +102,6 @@ INSERT INTO categorie(nome) VALUES
 
 
 INSERT INTO prenotazioni (data, user_name) VALUES
-('2024-05-31', NULL),
-
-('2024-06-03', NULL),
-('2024-06-04', 'user'),
-('2024-06-05', NULL),
-('2024-06-06', NULL),
-('2024-06-07', NULL),
-('2024-06-10', 'user'),
-('2024-06-11', NULL),
-('2024-06-12', NULL),
-('2024-06-13', NULL),
-('2024-06-14', NULL),
-('2024-06-17', NULL),
-('2024-06-18', NULL),
-('2024-06-19', NULL),
-('2024-06-20', NULL),
-('2024-06-21', NULL),
-('2024-06-24', NULL),
-('2024-06-25', NULL),
-('2024-06-26', NULL),
-('2024-06-27', NULL),
-('2024-06-28', NULL),
 
 ('2024-07-01', NULL),
 ('2024-07-02', NULL),
@@ -153,7 +132,7 @@ INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-08-05', NULL),
 ('2024-08-06', NULL),
 ('2024-08-07', NULL),
-('2024-08-08', 'user'),
+('2024-08-08', NULL),
 ('2024-08-09', NULL),
 ('2024-08-12', NULL),
 ('2024-08-13', NULL),
@@ -175,7 +154,7 @@ INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-09-02', NULL),
 ('2024-09-03', NULL),
 ('2024-09-04', NULL),
-('2024-09-05', 'user'),
+('2024-09-05', NULL),
 ('2024-09-06', NULL),
 ('2024-09-09', NULL),
 ('2024-09-10', NULL),

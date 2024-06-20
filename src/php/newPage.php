@@ -127,6 +127,9 @@ class newPage{
         }else if($currentPage == "../html/confermaAcquisto.html"){
             $navBar = str_replace("{breadcrumb}", "Acquisto effettuato", $navBar);
 
+        }else if($currentPage == "../html/registroPrenotazioni.html"){
+            $navBar = str_replace("{breadcrumb}", "Registro prenotazioni", $navBar);
+
         }
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")

@@ -17,6 +17,29 @@
             $risultato = $stmt->get_result();
     
             if(mysqli_num_rows($risultato) > 0){ //Se utente esiste ed è registrato
+
+                //PRENOTAZIONE
+                $prenotaz = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE user_name=?;");
+                $prenotaz->bind_param("s", $_SESSION['user_name']);
+                $prenotaz->execute();
+                $prenotaz = $prenotaz->get_result();
+
+                if($prenotaz == NULL || mysqli_num_rows($prenotaz) == 0){
+                    $pagina->modificaHTML("{prenotazione}", "");
+
+                }else{
+                    $prenotazioni = "<div class=\"sectionDash\"><p>La tua prenotazione: </p><ul>";
+
+
+                    foreach( $prenotaz as $row){
+                        $prenotazioni .= "<p>La tua prenotazione il giorno:". $row['data']."</p>";
+                    }
+
+                    $prenotazioni .= "</ul></div>";
+
+                    $pagina->modificaHTML("{prenotazione}", $prenotazioni);
+                }
+                
                 //ACQUISTI
                 $stmt = $functions->getConnection()->prepare("SELECT * FROM acquisti WHERE user_name=?");
                 $stmt->bind_param("s", $_SESSION['user_name']);
@@ -37,12 +60,12 @@
 
                 //RECENSIONI
                 $recenz = $functions->getConnection()->prepare("SELECT * FROM recensioni WHERE user_name=? ORDER BY data;");
-                        $recenz->bind_param("s", $_SESSION['user_name']);
-                        $recenz->execute();
-                        $recenz = $recenz->get_result();
+                $recenz->bind_param("s", $_SESSION['user_name']);
+                $recenz->execute();
+                $recenz = $recenz->get_result();
 
-                if($recenz == null){
-                    $rec = "Ancora nessuna recensione";
+                if($recenz == NULL || mysqli_num_rows($recenz) == 0){
+                    $rec = "<p>Ancora nessuna recensione</p>";
                     $pagina->modificaHTML("{recensioni}", $rec);
                 }        
                 else{
@@ -64,26 +87,6 @@
                     }
 
                     $pagina->modificaHTML("{recensioni}", $rec);
-                }
-                //DA FARE
-
-                //RECENSIONI
-                $prenotaz = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE user_name=? ORDER BY data;");
-                $prenotaz->bind_param("s", $_SESSION['user_name']);
-                $prenotaz->execute();
-                $prenotaz = $prenotaz->get_result();
-
-                if($prenotaz == null){
-                    $rec = "<p>Non hai prentazioni, <a href=\"calendario.php\" >prenota ora</a></p>";
-                    $pagina->modificaHTML("{prenotazione}", $rec);
-                }        
-                else{
-
-                    foreach( $prenotaz as $row){
-                        $text = "Hai una prenotazione per il giorno: " . $row['data'] . ". <p>Cambia <a href=\"calendario.php\" >data</a></p>";
-                    }
-
-                    $pagina->modificaHTML("{prenotazione}", $text);
                 }
 
             }else{

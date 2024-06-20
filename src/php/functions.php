@@ -71,7 +71,7 @@ class Functions {
                 }            
     
                 //Unico caso in cui va tutto bene
-                if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name']) /*&& $_SESSION['user_name'] != "admin"*/){ // Lasciare possibilità ad admin di prenotare ? (magari per tenersi libero qualche giorno)
+                if(isset($_SESSION['user_name']) && !empty($_SESSION['user_name']) && $_SESSION['user_name'] != "admin"){ // Lasciare possibilità ad admin di prenotare ? (magari per tenersi libero qualche giorno)
                     $pagina->modificaHTML("{dataPrenotazione}", $data);
                     $pagina->modificaHTML("{dataFormattata}", $dataFormattata);
                     return true;

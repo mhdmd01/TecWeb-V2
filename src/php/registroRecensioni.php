@@ -10,11 +10,6 @@
 
     if(isset($_SESSION['user_name'])){
         if($_SESSION['user_name'] === "admin") {
-            isset($_GET['pagina']) ? $numPagina = urldecode($_GET['pagina']) : $numPagina = 0; //Operatore ternario, se è stato passato il num pagina usa quello, sennò 0
-            //DA IMPLEMENTARE
-            //$stmt = $functions->getConnection()->prepare("SELECT * FROM acquisto ORDER BY data_ins LIMIT ".$numPagina*20." OFFSET ".$numPagina*21.";");
-            //$stmt->bind_param("s", $numPagina);
-
             //Filtri
             $filtro = "data ASC"; //Di default
             $ordine = "data: ordine crescente";
@@ -138,12 +133,12 @@
             $risultato = $stmt->get_result();
 
             if($risultato == NULL){
-                $pagina->modificaHTML("{acquisto}", "Nessun risultato");
+                $pagina->modificaHTML("{commenti}", "Nessun risultato");
             }else{
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
                     foreach( $risultato as $row){
-                        $output .= "<div class = \"sectionRecAc\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "<p>Stelle: ".$row["stelle"]."</p>" . "<p>Testo: ".$row["testo"]."</p>" . "</div>";
+                        $output .= "<div class = \"sectionRecAc\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</p><p>Stelle: ".$row["stelle"]."</p><p>Testo: ".$row["testo"]."</p></div>";
                     }
                     $pagina->modificaHTML("{commenti}", $output);
                 }
