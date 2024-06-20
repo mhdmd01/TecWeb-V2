@@ -4,7 +4,7 @@
 
 class newPage{
     private $strutturaHTML = "";
-    public $testoFooter = "<p>Saudade corporation - 2024 </p>";
+    public $testoFooter = "<p>Saudade <span lang=\"en\">corporation</span> - 2024 </p>";
 
     //Parametri: link alla pagina template con contenuto, titolo della pagina, keywords, descrizione
     public function __construct($template, $titoloPagina, $keywords, $description){
@@ -41,7 +41,7 @@ class newPage{
         $navBar = file_get_contents("../html/navBarTemplate.html");
 
         if($currentPage == "../html/index.html"){
-            $navBar = str_replace("{homeLink}", "<li>Home</li>", $navBar);
+            $navBar = str_replace("{homeLink}", "<li><span lang=\"en\">Home</span></li>", $navBar);
             $navBar = str_replace("{logo}", "<img id=\"logo\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\">
                 <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo_small.svg\">", $navBar);
             $navBar = str_replace("{breadcrumb}", "<span lang=\"en\">Home</span>", $navBar);
