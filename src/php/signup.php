@@ -18,14 +18,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $password = $functions->pulisciInput($_POST['signupPassword']);
 
 	if(strlen($user_name) < 4)
-		$error .= "Username troppo corto. ";
+		$error .= "<span lang=\"en\">Username</span> troppo corto. ";
 	else if(strlen($user_name) > 15)
-		$error .= "Username troppo lungo. ";
+		$error .= "<span lang=\"en\">Username</span> troppo lungo. ";
 
 	if(strlen($password) < 4)
-		$error .= "Password troppo corta. ";
+		$error .= "<span lang=\"en\">Password</span> troppo corta. ";
 	else if(strlen($password) > 15)
-		$error .= "Username troppo lunga. ";
+		$error .= "<span lang=\"en\">Password</span> troppo lunga. ";
 	
 //NON FUNZIONA CON L'APOSTROFO
 	// Verifica se la password contiene solo caratteri alfanumerici, trattini bassi (_) o trattini (-)
@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 			exit;
 			
 		}else
-			$error = "Username già esistente, sceglierne un altro";
+			$error = "<span lang=\"en\">Username</span> già esistente, sceglierne un altro";
 	}else{
 		if(empty($user_name))
 			$error = "Campo <span lang='en'>username</span> vuoto, inserire dati";
