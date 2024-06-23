@@ -1144,7 +1144,6 @@ div.welcomeDash{
 
 .sectionRecAc{
     background-color: var(--colorSlide);
-    margin:auto;
     margin-top:2em;
     margin-bottom:2em;
     padding:1em;
@@ -1175,13 +1174,22 @@ div.sectionRecAc > p:nth-last-child(2){
     font-size: 1.5em;
 }
 
+.listaDash{
+    display: flex; /*3 flex*/
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
 .sectionRegPren{
     background-color: var(--colorSlide);
-    margin:auto;
-    margin-top:2em;
-    margin-bottom:2em;
     padding:1em;
     border-radius: 1em;
+}
+
+.sectionRegPren > p:nth-child(2){
+    text-align: center;
 }
 
 
