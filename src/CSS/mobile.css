@@ -109,3 +109,13 @@ div.sectionDash > p{
 .welcomeDash{
     display: none;
 }
+
+.sectionRegPren > p{
+    display: block;
+    border-right: 0px dotted var(--BgColor);
+    text-align: center;
+}
+
+.sectionRegPren >p:nth-last-child(1){
+    border-bottom: 2px dotted var(--BgColor);
+}
