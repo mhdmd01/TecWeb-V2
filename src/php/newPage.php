@@ -36,7 +36,7 @@ class newPage{
         // Avvia una sessione, se non è già attiva
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
-            $_SESSION['user_name']="user";  // VA CANCELLATA A FINE TEST
+            //$_SESSION['user_name']="user";  // VA CANCELLATA A FINE TEST TV per pagine riservate
         }
         $navBar = file_get_contents("../html/navBarTemplate.html");
 
