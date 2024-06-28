@@ -88,7 +88,7 @@
                         else{
                             $bottone = "<a role=\"button\">Articolo già acquistato</a>";
                             $titolo=urlencode($row['titolo']);
-                            $bottone .= "<a href=\"aggiungiRecensione.php?sogno={$row['titolo']}\" role=\"button\"> Lascia una recensione</a>";
+                            $bottone .= "<a href=\"aggiungiRecensione.php?sogno={$titolo}\" role=\"button\"> Lascia una recensione</a>";
                         }
                             
                     }
