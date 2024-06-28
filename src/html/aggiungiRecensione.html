@@ -11,8 +11,8 @@
     <form id="nuovaRecensione" action="aggiungiRecensione.php?sogno={titoloSogno}" method="post" enctype="multipart/form-data"> 
         <p>Nuova recensione per {titoloSogno} </p>
 
-        <label for="valutazione">Quante stelle vuoi mettere?</label>
-        <select id="valutazione" name="valutazione" required>
+        <label class="labelRecensione" for="valutazione">Quante stelle vuoi mettere?</label>
+        <select class="selectForm" id="valutazione" name="valutazione" required>
             <option value="" disabled selected> Scegli una valutazione </option>
             <option value="1"> 1 stella </option>
             <option value="2"> 2 stella </option>
@@ -20,8 +20,8 @@
             <option value="4"> 4 stella </option>
             <option value="5"> 5 stella </option>
         </select>
-
-        <label for="recensione">Scrivi cosa ne pensi:</label>
+        <br>
+        <label class="labelRecensione" for="recensione">Cosa ne pensi:</label>
         <textarea class="casellaTesto" placeholder="Recensione" id="recensione" name="recensione" maxlength="5000" required></textarea> <!--modificato max lenght da 8000 a 5000-->
         <br>
         

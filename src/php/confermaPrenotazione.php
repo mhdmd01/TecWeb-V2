@@ -28,7 +28,7 @@
                         $pagina->printErrorPage("Errore durante la procedura di prenotazione, riprovare più tardi");
                 }
             }else{
-                $pagina->printErrorPage("Hai già fissato un appuntamento, <a href=\"contatta.php\">contattaci</a> se pensi ci sia un errore");
+                $pagina->printErrorPage("<div class=\"sectionDash\"><p>Hai già fissato un appuntamento,</p> <p><a href=\"contatta.php\">contattaci</a> se pensi ci sia un errore</p></div>");
             }
     }else
         $pagina->printErrorPage("Non sei loggato, esegui il <a href=\"login.php\">login</a> per accedere");
