@@ -5,6 +5,7 @@
     $pagina = new newPage("../html/contatta.html", "Contatti", "Contatti", "Pagina contatti del sito ufficiale di Saudade");
     use functions\functions;
     $functions = new functions();
+    $successMsg="";
     $errorMsg = "";
     $email= "";
     $motivo= "";
@@ -33,7 +34,7 @@
                 $functions->closeConnection();
 
                 if($ris)
-                    $errorMsg = "Messaggio mandato con successo";
+                    $successMsg = "Messaggio mandato con successo";
                 else
                     $errorMsg = "Errore nel caricamento del messaggio";
             }else{
@@ -42,5 +43,6 @@
     } 
                                               
     $pagina->modificaHTML("{Error}", $errorMsg);
+    $pagina->modificaHTML("{messaggioSuccesso}", $successMsg);
 
     $pagina->printPage();
