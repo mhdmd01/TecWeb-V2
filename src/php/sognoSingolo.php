@@ -92,7 +92,7 @@
                             
                     }
                 }else{   //Se non sono loggato
-                    $bottone = "<a href=\"login.php\" role=\"button\">Esegui il login per acquistare</a>";
+                    $bottone = "<a href=\"login.php\" role=\"button\">Esegui il <span lang=\"en\">login</span> per acquistare</a>";
                 }
                 
                 $pagina->modificaHTML("{bottoneCompra}",  $bottone);

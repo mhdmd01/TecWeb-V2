@@ -20,7 +20,7 @@
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
                     foreach( $risultato as $row){
-                        $output .= "<div class = \"sectionRegPren\"><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</p></div>";
+                        $output .= "<div class = \"sectionRegPren\"><p><span class=\"titoletto\" lang=\"en\">User</span>: " . $row["user_name"] . "</p><p><span class=\"titoletto\">Data</span>: " . $row["data"] . "</p></div>";
                     }
                     
                     $pagina->modificaHTML("{prenotazioni}", $output);

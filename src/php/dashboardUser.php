@@ -32,7 +32,7 @@
 
 
                     foreach( $prenotaz as $row){
-                        $prenotazioni .= "<p>La tua prenotazione il giorno:". $row['data']."</p>";
+                        $prenotazioni .= "<li>La tua prenotazione il giorno:". $row['data']."</li>";
                     }
 
                     $prenotazioni .= "</ul></div>";

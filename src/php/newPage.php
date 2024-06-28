@@ -36,7 +36,7 @@ class newPage{
         // Avvia una sessione, se non è già attiva
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
-            // $_SESSION['user_name']="admin";  // VA CANCELLATA A FINE TEST
+            $_SESSION['user_name']="user";  // VA CANCELLATA A FINE TEST
         }
         $navBar = file_get_contents("../html/navBarTemplate.html");
 
@@ -117,10 +117,10 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Area personale admin</a> &gt&gt Aggiungi date", $navBar);
 
         }else if($currentPage == "../html/registroAcquisti.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro acquisti", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\"><span lang=\"en\">Dashboard admin</span></a> &gt&gt Registro acquisti", $navBar);
 
         }else if($currentPage == "../html/registroRecensioni.html"){
-            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\">Dashboard admin</a> &gt&gt Registro recensioni", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\"><span lang=\"en\">Dashboard admin</span></a> &gt&gt Registro recensioni", $navBar);
 
         }else if($currentPage == "../html/cancellaSogno.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"sogni.php\">Sogni</a> &gt&gt {titolo} &gt&gt cancella", $navBar);
@@ -145,7 +145,7 @@ class newPage{
 
             $navBar = str_replace("{signupLink}", "", $navBar);
 
-            $navBar = str_replace("{logoutLink}", "<li><a href=\"../php/logout.php\">Logout</a></li>", $navBar);
+            $navBar = str_replace("{logoutLink}", "<li><a href=\"../php/logout.php\"><span lang=\"en\">Logout</span></a></li>", $navBar);
         }else{
             $navBar = str_replace("{logoutLink}", "", $navBar);
             $navBar = str_replace("{loginLink}", "<li class=\"spostaSign\"><a href=\"../php/login.php\">Accedi</a></li>", $navBar);
