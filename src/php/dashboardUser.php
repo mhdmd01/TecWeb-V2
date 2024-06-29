@@ -51,7 +51,7 @@
                     while ($row = $ris->fetch_assoc()) {
                         $acquisti .= "<li>" . $row['articolo'] . " ";
                         $acquisti .= $row['data'] . " ";
-                        $acquisti .= "<a href=\"aggiungiRecensione.php?sogno=".urldecode($row['articolo'])."\">Lascia una recensione</a> </li>";
+                        $acquisti .= "<a href=\"aggiungiRecensione.php?sogno=".urlencode($row['articolo'])."\">Lascia una recensione</a> </li>";
                     }
                     $pagina->modificaHTML("{elencosogni}", $acquisti);
                 }else{
