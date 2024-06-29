@@ -8,16 +8,18 @@
     <form id="signupForm" action="signup.php" method="post">
         <p class="signupTitle">Registrati</p>
         <p class="avviso"><span lang="en">Username</span> e <span lang="en">password</span> devono essere di una lunghezza compresa tra 4 e 15 caratteri e composti da numeri, lettere o caratteri speciali</p>
+        <fieldset>
         <label for="signupUsername"><span lang="en">Username:</span></label>
         <input class="casellaTesto" placeholder="Username" id="signupUsername" type="text" name="signupUsername" maxlength="50">
-        <br>
+        </fieldset>
+        <fieldset>
         <label for="signupPassword"><span lang="en">Password:</span></label>
         <input class="casellaTesto" placeholder="Password" id="signupPassword" type="password" name="signupPassword" maxlength="50">
-        <br>
+        </fieldset>
         <input id="button" type="submit" value="Registrati">
-        <br>
-        <a class="avviso" href="login.php">Clicca qui fare <span lang="en">login</span></a>
-    </form>    
+        
+    </form>
+    <a class="avviso" href="login.php">Clicca qui fare <span lang="en">login</span></a>  
 </div>
 
 <script src="../js/functions.js"></script>

@@ -8,13 +8,17 @@
     <form id="loginForm" action="login.php" method="post"> 
         <h2 class="loginTitle">Accedi</h2>
         <p>Inserisci i tuoi dati</p>
+        <fieldset>
         <label for="loginUsername"><span lang="en">Username:</span></label>
-        <input class="casellaTesto" placeholder="Username" id="loginUsername" type="text" name="loginUsername" maxlength="50"><br>
+        <input class="casellaTesto" placeholder="Username" id="loginUsername" type="text" name="loginUsername" maxlength="50">
+        </fieldset>
+        <fieldset>
         <label for="loginPassword"><span lang="en">Password:</span></label>
-        <input class="casellaTesto" placeholder="Password" id="loginPassword" type="password" name="loginPassword" maxlength="50"><br>
-        <input id="button" type="submit" value="Accedi"><br>
-        <a href="signup.php">Clicca qui per registrarti</a>
+        <input class="casellaTesto" placeholder="Password" id="loginPassword" type="password" name="loginPassword" maxlength="50">
+        </fieldset>
+        <input id="button" type="submit" value="Accedi">
     </form>
+    <a href="signup.php">Clicca qui per registrarti</a>
 </div>
 
 <script src="../js/functions.js"></script>

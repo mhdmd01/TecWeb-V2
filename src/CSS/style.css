@@ -84,6 +84,11 @@ body{
     background-color: var(--BgColor);
 }
 
+fieldset{
+    border:none;
+    margin-top: 0.2em;
+}
+
 select.formListaSogni{
     appearance: none;
     /* safari */
