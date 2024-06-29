@@ -25,6 +25,10 @@ main#contenuto{
   filter:invert(100%)
 }
 
+p{
+  line-height: 1.5em;
+}
+
 .elencoSogni > ul{
     display: flex; /*secondo flex*/
     flex-wrap: wrap;
@@ -91,7 +95,7 @@ footer > p > a{
 }
 
 .section{
-  border:solid black;
+  border: 2pt solid black;
   border-width:thin;
   margin-top:5px;
   margin-bottom:5px;
@@ -159,3 +163,27 @@ div.welcomeDash{
   display: none;
 }
 
+div.sectionRecAc{
+  border-top: 0.5pt solid black;
+  border-bottom: 0.5pt solid black;
+  border-left: 1pt solid black;
+  border-right: 1pt solid black;
+  padding: 3pt;
+}
+
+div.sectionRecAc > p:nth-last-child(2){
+  border-top: 1pt dotted #9c9898;
+}
+
+div.sectionRegPren{
+  border-top: 0.5pt solid black;
+  border-bottom: 0.5pt solid black;
+  border-left: 1pt solid black;
+  border-right: 1pt solid black;
+  padding: 3pt;
+}
+
+textarea{
+  height: 200pt;
+  width: 300pt;
+}
