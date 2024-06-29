@@ -43,7 +43,7 @@ class newPage{
         if($currentPage == "../html/index.html"){
             $navBar = str_replace("{homeLink}", "<li><span lang=\"en\">Home</span></li>", $navBar);
             $navBar = str_replace("{logo}", "<img id=\"logo\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\">
-                <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo_small.svg\">", $navBar);
+                <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\">", $navBar);
             $navBar = str_replace("{breadcrumb}", "<span lang=\"en\">Home</span>", $navBar);
             
             $this->strutturaHTML = str_replace("{langPlaceholder}", "lang=\"en\"", $this->strutturaHTML);

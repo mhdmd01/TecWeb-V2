@@ -154,3 +154,12 @@ div.sectionDash > p{
 input.casellaTesto{
     width: 50%;
 }
+
+.sectionRegPren > p:nth-child(2){
+    padding-left: 4%;
+    margin-right: 7%;
+}
+
+.sectionRegPren > p:nth-child(1){
+    margin-left: 5%;
+}

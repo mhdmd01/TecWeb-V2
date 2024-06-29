@@ -1213,9 +1213,22 @@ div.sectionRecAc > p:nth-last-child(2){
 }
 
 .sectionRegPren > p{
-    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5em;
+    line-height: normal; /* Resetta l'altezza della linea del paragrafo */
 }
 
+.sectionRegPren > p:nth-child(1){
+    margin-left: 15%;
+}
+
+.sectionRegPren > p:nth-child(2){
+    float: right; /* Sposta il paragrafo a sinistra */
+    margin-right: 15%; /* Rimuove il margine sinistro */
+    border-left: 2px dotted var(--BgColor);
+    padding-left: 20%;
+}
 
 /*Inizio Footer*/
 footer{

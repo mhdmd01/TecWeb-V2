@@ -110,15 +110,27 @@ div.sectionDash > p{
     display: none;
 }
 
-.sectionRegPren > p{
-    display: block;
-    text-align: center;
-}
-
 #nuovoSognoForm > p{
     line-height: 1.25em;
 }
 
 input.casellaTesto{
     width: 50%;
+}
+
+.sectionRegPren > p{
+    font-size: 1.15em;
+    display: block;
+    text-align: center;
+}
+
+.sectionRegPren > p:nth-child(1){
+    margin-left: 0;
+}
+
+.sectionRegPren > p:nth-child(2){
+    border-left: 0px;
+    margin-right: 0;
+    padding-left: 0;
+    float: none;
 }
