@@ -83,9 +83,10 @@
                         $stmt->execute();
                         $risultato = $stmt->get_result();
 
-                        if($risultato->num_rows == 0)
+                        if($risultato->num_rows == 0){
+                            $titolo=urlencode($row['titolo']);
                             $bottone = "<a href=\"acquistaSogno.php?sogno={$row['titolo']}\" role=\"button\">Compra</a>";
-                        else{
+                        }else{
                             $bottone = "<a role=\"button\">Articolo già acquistato</a>";
                             $titolo=urlencode($row['titolo']);
                             $bottone .= "<a href=\"aggiungiRecensione.php?sogno={$titolo}\" role=\"button\"> Lascia una recensione</a>";
