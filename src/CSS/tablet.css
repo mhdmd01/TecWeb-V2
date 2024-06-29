@@ -150,3 +150,7 @@ div.sectionDash > p{
     min-width: 2.5em;
     font-size: 3.5em;
 }
+
+input.casellaTesto{
+    width: 50%;
+}

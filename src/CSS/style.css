@@ -86,7 +86,12 @@ body{
 
 fieldset{
     border:none;
-    margin-top: 0.2em;
+    margin-top: 0.3em;
+}
+
+fieldset > label{
+    font-weight: bold;
+    font-size: 1.25em;
 }
 
 select.formListaSogni{
@@ -133,7 +138,7 @@ select.selectForm{
     -webkit-appearance: none;
     /* other styles for aesthetics */
     height: 42px;
-    width: 25%;
+    width: 50%;
     font-size: 1rem;
     background-color: var(--BgTxtColor);
     border: 1px solid #caced1;
@@ -749,8 +754,8 @@ form#nuovaRecensione > label.labelRecensione{
     background-color: white;
     color: #000000;
     font-size: 1.5em;
-    margin-top: 2em;
-    margin-bottom: 0.7em; 
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; 
 }
 
 #button-lungo:hover{
@@ -1234,4 +1239,8 @@ footer > p:nth-last-child(1){
 
 #descrizione{
     font-size: 1.2em;
+}
+
+input.casellaTesto{
+    width: 50%;
 }

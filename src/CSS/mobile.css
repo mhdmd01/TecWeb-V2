@@ -114,3 +114,11 @@ div.sectionDash > p{
     display: block;
     text-align: center;
 }
+
+#nuovoSognoForm > p{
+    line-height: 1.25em;
+}
+
+input.casellaTesto{
+    width: 50%;
+}
