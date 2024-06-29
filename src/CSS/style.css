@@ -1147,6 +1147,18 @@ div.sectionRecAc > p:nth-last-child(2){
     border-top: 2px dotted var(--BgColor);
 }
 
+.sectionMessg{
+    background-color: var(--colorSlide);
+    margin-top:2em;
+    margin-bottom:2em;
+    padding:1em;
+    border-radius: 1em;
+}
+
+div.sectionMessg > p:nth-last-child(1){
+    border-top: 2px dotted var(--BgColor);
+}
+
 .loghino{
     width: 70px;
     height: 70px;

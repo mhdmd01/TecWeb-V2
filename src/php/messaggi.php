@@ -30,10 +30,10 @@
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
                     foreach( $risultato as $row){
-                        $output .= "<div class = \"sectionRecAc\"><p><span class=\"titoletto\" lang=\"en\"></span> " . $row["data_ins"] . 
-                        "</p><p><span class=\"titoletto\"></span> " . $row["email"] . 
-                        "</p><p><span class=\"titoletto\"></span> " . $row["motivo"] .
-                        "</p><p><span class=\"titoletto\"></span> " . $row["descrizione"] ."</p></div>";
+                        $output .= "<div class = \"sectionMessg\"><p><span class=\"titoletto\">Data</span> " . $row["data_ins"] . 
+                        "</p><p><span class=\"titoletto\" lang=\"en\">Email:</span> " . $row["email"] . 
+                        "</p><p><span class=\"titoletto\">Motivo:</span> " . $row["motivo"] .
+                        "</p><p><span class=\"titoletto\">Descrizione:</span> " . $row["descrizione"] ."</p></div>";
                     }
                     
                     $pagina->modificaHTML("{messaggi}", $output);
