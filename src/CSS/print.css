@@ -183,6 +183,18 @@ div.sectionRegPren{
   padding: 3pt;
 }
 
+.sectionMessg{
+  border-top: 0.5pt solid black;
+  border-bottom: 0.5pt solid black;
+  border-left: 1pt solid black;
+  border-right: 1pt solid black;
+  padding: 3pt;
+}
+
+div.sectionMessg > p:nth-last-child(1){
+  border-top: 1pt dotted #9c9898;
+}
+
 textarea{
   height: 200pt;
   width: 300pt;
