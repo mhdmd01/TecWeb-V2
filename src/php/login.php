@@ -7,9 +7,9 @@
 	$error = "";
 	
 	$paginaObj = new newPage("../html/login.html", 
-								"Login", 
-								"Login - accesso", 
-								"Pagina di login");
+								"Accedi", 
+								"Accedi - accesso", 
+								"Pagina di accesso");
 
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 

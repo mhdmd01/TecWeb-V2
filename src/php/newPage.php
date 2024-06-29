@@ -45,6 +45,8 @@ class newPage{
             $navBar = str_replace("{logo}", "<img id=\"logo\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\">
                 <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo_small.svg\">", $navBar);
             $navBar = str_replace("{breadcrumb}", "<span lang=\"en\">Home</span>", $navBar);
+            
+            $this->strutturaHTML = str_replace("{langPlaceholder}", "lang=\"en\"", $this->strutturaHTML);
 
         }else if($currentPage == "../html/servizi.html"){
             $navBar = str_replace("{serviziLink}", "<li>Servizi</li>", $navBar);
@@ -132,6 +134,9 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Registro prenotazioni", $navBar);
 
         }
+
+        //Se non è stato modificato il tag title in inglese allora lo rimuovo perchè non servirà
+        $this->strutturaHTML = str_replace("{langPlaceholder}", "", $this->strutturaHTML);
 
         if($currentPage == "../html/sognoSingolo.html" || $currentPage == "../html/sogni.html" || $currentPage == "../html/acquistaSogno.html" || $currentPage == "../html/confermaAcquisto.html")
             $navBar = str_replace("{sogniLink}", "<li>Sogni</li>", $navBar);
