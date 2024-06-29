@@ -133,6 +133,8 @@ class newPage{
         }else if($currentPage == "../html/registroPrenotazioni.html"){
             $navBar = str_replace("{breadcrumb}", "Registro prenotazioni", $navBar);
 
+        }else if($currentPage == "../html/messaggi.html"){
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\"><span lang=\"en\">Dashboard admin</span></a> &gt&gt Messaggi", $navBar);
         }
 
         //Se non è stato modificato il tag title in inglese allora lo rimuovo perchè non servirà
