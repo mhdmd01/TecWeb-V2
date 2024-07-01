@@ -51,7 +51,7 @@
             //Date passate da rimuovere ?
         }
     }else{
-        $pagina->printErrorPage("Pagina riservata all'admin");
+        $pagina->printErrorPage("<p>Pagina riservata all'admin</p>");
     }    
 
     $pagina->modificaHTML("{errore}", "");
