@@ -49,10 +49,7 @@
 - confermaAcquisto
 - dashboardUser
 - modificaSogno
---
-
-# 1 errore php
 - aggiungiRecensione
 - confermaPrenotazione
 
-**Ultimo aggiornamento:** _01/07/24 15:39_
+**Ultimo aggiornamento:** _01/07/24 15:55_
