@@ -9,7 +9,7 @@
     $functions->openDBConnection();
 
     //QUERY SE GIA' PRENOTATO
-    if($_SESSION['user_name'] != "admin") {
+    if(isset($_SESSION['user_name']) && $_SESSION['user_name'] != "admin") {
         $stmt = $functions->getConnection()->prepare("SELECT * FROM prenotazioni WHERE user_name=?");
         $stmt->bind_param("s", $_SESSION['user_name']);
         $stmt->execute();

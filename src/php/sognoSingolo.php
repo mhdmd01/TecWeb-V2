@@ -14,7 +14,9 @@
         $stmt->execute();
         $risultato = $stmt->get_result();
     } else {
-        echo "Errore passaggio parametri, riprovare"; // Da migliorare
+        $pagina->printErrorPage("Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova");
+        $pagina->printPage();
+        die;
     }
 
     
