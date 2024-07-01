@@ -82,10 +82,10 @@ class Functions {
                 }
     
             } else { //Se non esiste la data
-                $pagina->printErrorPage("Data specificata non disponibile (".$dataFormattata."), <a href=\"calendario.php\">torna alla pagina di prenotazione</a> o alla <a href=\"index.php\">pagina <span lang=\"en\">home</span></a>");
+                $pagina->printErrorPage("<p>Data specificata non disponibile (".$dataFormattata."), <a href=\"calendario.php\">torna alla pagina di prenotazione</a> o alla <a href=\"index.php\">pagina <span lang=\"en\">home</span></a></p>");
             }
         } else {
-            $pagina->printErrorPage("Non risulta selezionata nessuna data , <a href=\"calendario.php\">ritornare alla pagina di prenotazione</a> e riprovare");
+            $pagina->printErrorPage("<p>Non risulta selezionata nessuna data , <a href=\"calendario.php\">ritornare alla pagina di prenotazione</a> e riprovare</p>");
         }
         return false;
     }

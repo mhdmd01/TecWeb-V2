@@ -80,7 +80,7 @@
         
     
     } else {
-        $pagina->printErrorPage("Pagina riservata all'<a href=\"login.php\">admin<a>");
+        $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata all'<a href=\"login.php\"><span lang=\"en\">admin</span></a></div>");
     }
 
     $pagina->printPage();

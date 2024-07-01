@@ -31,7 +31,7 @@
                 $pagina->printErrorPage("<div class=\"sectionDash\"><p>Hai già fissato un appuntamento,</p> <p><a href=\"contatta.php\">contattaci</a> se pensi ci sia un errore</p></div>");
             }
     }else
-        $pagina->printErrorPage("Non sei loggato, esegui il <a href=\"login.php\">login</a> per accedere");
+        $pagina->printErrorPage("<div class=\"sectionDash\">Non sei loggato, esegui il <a href=\"login.php\"><span lang=\"en\">login</span></a> per accedere</div>");
 
     
 

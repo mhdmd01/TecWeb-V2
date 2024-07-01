@@ -34,7 +34,7 @@
         $pagina->modificaHTML("{Errore}", $errorMsg);
     }else{
 
-        $pagina->printErrorPage("Pagina riservata ad utenti loggati, esegui il <a href=\"login.php\">login</a> per accedere");
+        $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata ad utenti loggati, esegui il <a href=\"login.php\"><span lang=\"en\">login</span></a> per accedere</div>");
     }    
     
     $pagina->modificaHTML("{messaggioSuccesso}", $successMsg);                    
