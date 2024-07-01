@@ -93,7 +93,7 @@
                 $pagina->printErrorPage("Utente non trovato"); //Quasi impossibile accada
             }
         }else{
-            $pagina->printErrorPage("Pagina riservata agli utenti");
+            $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata agli utenti</div>");
         }
     }else{
         $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata ad utenti loggati, esegui il <a href=\"login.php\"><span lang=\"en\">login</span></a> per accedere</div>");
