@@ -59,7 +59,7 @@
 
 
     if($risultato == null)
-        $pagina->printErrorPage("Sogno non trovato, tornare alla pagina <a href=\"sogni.php\">Sogni</a> e provare a riselezionare il sogno desiderato");                            
+        $pagina->printErrorPage("<p>Sogno non trovato, tornare alla pagina <a href=\"sogni.php\">Sogni</a> e provare a riselezionare il sogno desiderato</p>");                            
     else{
         if(mysqli_num_rows($risultato) > 0){
             foreach( $risultato as $row){
