@@ -22,13 +22,13 @@
 
 
         if(mysqli_num_rows($risultato) == 0){
-            $pagina->printErrorPage("<p>Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova</p>");
+            $pagina->printErrorPage("<div class=\"sectionDash\">Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova</d>");
             $pagina->printPage();
             die;
         }
 
     }else{
-        $pagina->printErrorPage("<p>Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova</p>");
+        $pagina->printErrorPage("<div class=\"sectionDash\">Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova</div>");
         $pagina->printPage();
         die;
     }
