@@ -61,7 +61,7 @@ a:hover{
 }
 
 body{
-    display: flex; /*Primo flex*/
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.5;
@@ -326,7 +326,7 @@ div.containerSogni{
 }
 
 .elencoSogni > ul{
-    display: flex; /*secondo flex*/
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-evenly;
