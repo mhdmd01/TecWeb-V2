@@ -16,6 +16,7 @@
 - registrati
 - accedi
 --
+
 # Pagine private:
 ## ADMIN 0 errori
 - dashboard
@@ -27,6 +28,7 @@
 - modifica sogno
 - messaggi assistenza
 --
+
 ## USER 0 errori
 - acquisto articolo
 - conferma acquisto
@@ -35,6 +37,7 @@
 - aggiungi recensione
 - dashboardUser
 --
+
 ##corrette pagine di errore
 - registroRecensioni
 - registroPrenotazioni
@@ -47,7 +50,8 @@
 - dashboardUser
 - modificaSogno
 --
-#1 errore php
+
+# 1 errore php
 - aggiungiRecensione
 - confermaPrenotazione
 
