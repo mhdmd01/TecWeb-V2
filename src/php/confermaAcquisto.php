@@ -49,7 +49,7 @@ if(isset($_SESSION['user_name'])){
     }
 
 }else{
-    $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata <a href=\"login.php\">accedi prima<a></div>");
+    $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata <a href=\"login.php\">accedi prima</a></div>");
 }
 
 
