@@ -11,13 +11,15 @@
     if(isset($_SESSION['user_name'])){
         if($_SESSION['user_name'] === "admin") {
 
-            if(isset($_GET['filtro'])){
+            if(isset($_GET['filtro']) && $_GET['filtro']!="tutto"){
                 $filtro = $_GET['filtro'];
                 $stmt = $functions->getConnection()->prepare("SELECT * FROM assistenza WHERE motivo=? ORDER BY data_ins;");
                 $stmt->bind_param("s", $filtro);
             }else{
                 $stmt = $functions->getConnection()->prepare("SELECT * FROM assistenza ORDER BY data_ins;");
             }
+
+            $output="";
             
             $stmt->execute();
             $risultato = $stmt->get_result();
@@ -35,10 +37,12 @@
                         "</p><p><span class=\"titoletto\">Motivo:</span> " . $row["motivo"] .
                         "</p><p><span class=\"titoletto\">Descrizione:</span> " . $row["descrizione"] ."</p></div>";
                     }
-                    
-                    $pagina->modificaHTML("{messaggi}", $output);
+                }else{
+                $output="<p>Nessun messaggio</p>";
                 }
             }
+
+            $pagina->modificaHTML("{messaggi}", $output);
 
         }else{
             $pagina->printErrorPage("<div class=\"sectionDash\">Pagina riservata. Torna alla <a href=\"index.php\">home</a> o alla tua <a href=\"dashboardUser.php\">area personale</a></div>");
