@@ -8,7 +8,30 @@
     $errorMsg = "";
     $successMsg = "";
 
-    $sogno = urldecode($_GET['sogno']);
+    //Controlli
+    if(isset($_GET['sogno'])){
+        $sogno = urldecode($_GET['sogno']);
+
+        $functions->openDBConnection();
+        // Esegue la query utilizzando uno statement preparato
+        $stmt = $functions->getConnection()->prepare("SELECT * FROM sogni WHERE titolo=?");
+        $stmt->bind_param("s", $sogno);
+        $stmt->execute();
+        $risultato = $stmt->get_result();
+        $functions->closeConnection();
+
+
+        if(mysqli_num_rows($risultato) == 0){
+            $pagina->printErrorPage("Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova");
+            $pagina->printPage();
+            die;
+        }
+
+    }else{
+        $pagina->printErrorPage("Sogno non trovato, torna alla <a href=\"sogni.php\">lista sogni</a> e riprova");
+        $pagina->printPage();
+        die;
+    }
 
     
     if(isset($_SESSION['user_name'])){
