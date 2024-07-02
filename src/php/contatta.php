@@ -14,13 +14,13 @@
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST['email']) && $functions->pulisciinput(strlen($_POST['email'])) != 0)
-            $email = $functions->pulisciinput(strlen($_POST['email']));
+            $email = $functions->pulisciinput(($_POST['email']));
 
         if(isset($_POST['motivo']) && strlen($_POST['motivo']) != 0)
             $motivo = $_POST['motivo'];
 
         if(isset($_POST['messaggio']) && $functions->pulisciinput(strlen($_POST['messaggio'])) != 0)
-            $messaggio = $functions->pulisciinput(strlen($_POST['messaggio']));
+            $messaggio = $functions->pulisciinput(($_POST['messaggio']));
 
             $sql = "SELECT * FROM assistenza WHERE email LIKE '%$email%' AND descrizione LIKE '%$messaggio%'";
             $risultato = $functions->executeQuery($sql);
