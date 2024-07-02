@@ -138,7 +138,7 @@
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
                     foreach( $risultato as $row){
-                        $output .= "<div class = \"sectionRecAc\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</p><p>Stelle: ".$row["stelle"]."</p><p>Testo: ".$row["testo"]."</p></div>";
+                        $output .= "<div class = \"sectionRecAc\"><p>Articolo: " . $row["articolo"] . "</p><p>User: " . $row["user_name"] . "</p><p>Data: " . $row["data"] . "</p><p>Stelle: ".$row["stelle"]."</p><p>Testo:<span class=\"full-description\"> ".$row["testo"]."</span></p></div>";
                     }
                     $pagina->modificaHTML("{commenti}", $output);
                 }
