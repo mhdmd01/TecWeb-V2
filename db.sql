@@ -19,11 +19,11 @@ CREATE TABLE utenti (
 INSERT INTO utenti(user_name, password) VALUES
   ('admin', 'admin'),
   ('user', 'user'),
-  ('mario_rossi', 'password1'),
-  ('luigi_verdi', 'password2'),
-  ('giulia_bianchi', 'password3'),
-  ('anna_neri', 'password4'),
-  ('marco_gialli', 'password5');
+  ('mario_rossi', 'mario_rossi'),
+  ('luigi_verdi', 'luigi_verdi'),
+  ('giulia_bianchi', 'giulia_bianchi'),
+  ('anna_neri', 'anna_neri'),
+  ('marco_gialli', 'marco_gialli');
 
 
 -- Sogni
@@ -56,7 +56,7 @@ INSERT INTO sogni(titolo, descrizione, prezzo, nomeFile, categoria) VALUES
 -- Acquisti
 CREATE TABLE acquisti(
   user_name VARCHAR(20) NOT NULL,
-  articolo VARCHAR(20) NOT NULL,
+  articolo VARCHAR(50) NOT NULL,
   data DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (user_name, articolo),
 
@@ -213,19 +213,3 @@ INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-09-25', NULL),
 ('2024-09-26', NULL),
 ('2024-09-27', NULL);
-
-
-/*
--- Ordini dei chip
-CREATE TABLE chipOrders(
-  user_name VARCHAR(20) PRIMARY KEY,
-  nome VARCHAR(20) NOT NULL,
-  cognome VARCHAR(20) NOT NULL,
-  eta INT NOT NULL,
-  mail VARCHAR(20) NOT NULL,
-  telefono VARCHAR(20),
-  messaggio VARCHAR(256),
-
-  FOREIGN KEY (user_name) REFERENCES utenti(user_name) ON DELETE CASCADE
-);
-*/
