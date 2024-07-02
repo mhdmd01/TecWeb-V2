@@ -105,7 +105,7 @@
             $risultato = $stmt->get_result();
 
             if($risultato == NULL || mysqli_num_rows($risultato) == 0){
-                $pagina->modificaHTML("{acquisto}", "Nessun risultato");
+                $pagina->modificaHTML("{acquisto}", "<p>Nessun risultato</p>");
             }else{
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
