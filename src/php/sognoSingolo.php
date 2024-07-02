@@ -34,7 +34,7 @@
                         $recenz = $recenz->get_result();
 
     if(mysqli_num_rows($recenz) == 0){
-        $rec = "Ancora nessuna recensione";
+        $rec = "<p>Ancora nessuna recensione</p>";
         $pagina->modificaHTML("{recensioni}", $rec);
         
     }        
