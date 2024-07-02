@@ -115,11 +115,11 @@ CREATE TABLE prenotazioni (
 );
 
 
-CREATE TABLE assistenza(
+CREATE TABLE assistenza (
   data_ins TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   email VARCHAR(256),
   motivo VARCHAR(20),
-  descrizione VARCHAR(256),
+  descrizione VARCHAR(500),
   PRIMARY KEY (email, descrizione)
 );
 
