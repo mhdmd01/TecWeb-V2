@@ -133,7 +133,7 @@
             $risultato = $stmt->get_result();
 
             if($risultato == NULL){
-                $pagina->modificaHTML("{commenti}", "Nessun risultato");
+                $pagina->modificaHTML("{commenti}", "<p>Nessun risultato</p>");
             }else{
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";

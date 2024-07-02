@@ -15,7 +15,7 @@
             $risultato = $stmt->get_result();
 
             if($risultato == NULL){
-                $pagina->modificaHTML("{prenotazioni}", "Nessun risultato");
+                $pagina->modificaHTML("{prenotazioni}", "<p>Nessun risultato</p>");
             }else{
                 if(mysqli_num_rows($risultato) > 0){
                     $output = "";
