@@ -32,8 +32,20 @@ CREATE TABLE sogni(
 );
 
 INSERT INTO sogni(titolo, descrizione, prezzo, nomeFile, categoria) VALUES
-  ('Sogno 1', 'Il primo sogno di prova', 23, 'sogno1.jpg', 'Avventura'),
-  ('Sogno 2', 'Il secondo sogno di prova', 123, 'sogno2.png', 'Avventura');
+('Il pazzo veliero del capitano', 'Vivi questa avventura a bordo di un grande veliero in giro per l’america del 1700. Sarai tu il capitano e dovrai gestire questa ciurma. Il tuo obiettivo è quello di esplorare nuove terre e nuovi mari in cerca di un grande tesoro lasciato in eredità dal re dei pirati.', 50, 'veliero.jpg', 'Avventura'),
+('Impara le arti marziali', 'In questo sogno dovrai affrontare diversi agenti vestiti di nero sotto la pioggia a suoni di pugni. È disponibile anche una modalità allenamento per imparare al meglio tutte le arti marziali.', 40, 'arti_marziali.jpg', 'Azione'),
+('I valzer Viennesi', 'In questo sogno puoi ballare nei valzer viennesi e ascoltare storie divertente come si usava fare nei salotti viennesi.', 30, 'valzer.jpg', 'Comico'),
+('La vita di un Lamantino', 'In questo sogno puoi simularti in un lamantino per vivere la sua vita dal suo punto di vista. Questo documentario offre un’esperienza del tutto nuova sulla prospettiva di un animale, fornisce anche dei filtri per simulare la visione e la percezione dell’animale.', 45, 'lamantino.jpg', 'Documentario'),
+('Parola Chiave', 'Vieni invitato in una villa insieme ad un gruppo di amici. Una volta entrati nella villa le porte vengono blindate dall’esterno e rimanete tutti intrappolati per tutta la notte. In questo lasso di tempo tocca trovare una via di fuga. Ciò che fa più inquietudine è che per ogni ostacolo ci sarà una rivelazione… Sarai ancora in grado di fidarti dei tuoi amici e superare i vari traumi.', 60, 'parola_chiave.jpg', 'Drammatico'),
+('Come funzionano i motori di ricerca?', 'In questo sogno assisterai ad un corso universitario che ti insegnerà il funzionamento delle Tecnologie dietro i motori di ricerca più famosi.', 35, 'motori_di_ricerca.jpg', 'Educativo'),
+('Ricomincia', 'Sei stato selezionato per un collaudo di un esperimento di Saudade. A quanto pare l’azienda ha inventato questo orologio che permette di tornare indietro nel tempo di 1 minuto. Riuscirai ad utilizzarlo correttamente senza rompere lo spazio tempo.', 55, 'ricomincia.jpg', 'Fantascienza'),
+('Simulatore di Magia', 'In questo sogno puoi sperimentare alcuni incantesimi proposti dal team saudade su ambienti reali e simulati. Inoltre è presente una modalità allenamento per diventare il miglior mago in circolazione.', 50, 'magia.jpg', 'Fantasia'),
+('Ci scommettiamo la vita', 'Hai trovato un vecchio dischetto nella cantina del nonno, inserendolo nel tuo pc prendi la scossa e ti risvegli in mondo digitale dove dei robot ti sfidano per ottenere la tua anima. Se vuoi sopravvivere allora inizia vincendo giochi di carte e la roulette russa contro robot assassini.', 65, 'scommessa.jpg', 'Horror'),
+('Iscrizione', 'Trovi su una parete delle cordinate che potrebbero rappresentare qualcosa di molto molto grande. Ad ogni nuova scoperta se ne sussegue un altra dilettati quindi a risolvere ogni singolo puzzle per giungere alla conclusione o alla torta… se esiste.', 45, 'iscrizione.jpg', 'Mistero'),
+('I treni per Vienna', 'In questo sogno incontri l’amore della tua vita nel vagone vicino al tuo, vivi un avventura di una settimana in un vecchio treno diretto per la meravigliosa città europea esplorando la bellissima nazione dell’austria insieme alla tua anima gemella.', 70, 'treni_vienna.jpg', 'Romantico'),
+('Vivi il medioevo', 'In questo sogno puoi simulare di essere un RE, un Nobile o un plebeo. Cammina per le nostre ricostruzione storiche di città medievale e sentiti come una persona che viveva nel 1300.', 60, 'medioevo.jpg', 'Storico'),
+('La caduta', 'In questo sogno immagini di cadere… Solo che la caduta è infinita e tanto lunga che prima di schiantarti a terra avrai tempo per riflettere sulle tue scelte di vita e riflettere sui tuoi errori. Infatti i nostri studi dimostrano che per una riflessione migliore c’è bisogno di un adrenalina molto molto alta.', 55, 'caduta.jpg', 'Surreale/Spirituale');
+
 
 
 -- Acquisti
@@ -60,9 +72,7 @@ CREATE TABLE recensioni (
   FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE  ON UPDATE CASCADE
 );
 
-INSERT INTO recensioni(user_name, testo, articolo, stelle) VALUES 
-  ('user', 'Recensione di prova', 'Sogno 1', '5'),
-  ('user', 'No vabbe bellissimo !!! Incredibile !!!', 'Sogno 1', '4');
+-- INSERT INTO recensioni(user_name, testo, articolo, stelle) VALUES  ;
 
 
 CREATE TABLE prenotazioni (
