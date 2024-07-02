@@ -23,7 +23,13 @@ INSERT INTO utenti(user_name, password) VALUES
   ('luigi_verdi', 'luigi_verdi'),
   ('giulia_bianchi', 'giulia_bianchi'),
   ('anna_neri', 'anna_neri'),
-  ('marco_gialli', 'marco_gialli');
+  ('marco_gialli', 'marco_gialli'),
+
+  ('simone_bellucci', 'simone_bellucci'),
+  ('laura_conti', 'laura_conti'),
+  ('andrea_ferri', 'andrea_ferri'),
+  ('sofia_greco', 'sofia_greco'),
+  ('elena_lombardi', 'elena_lombardi');
 
 
 -- Sogni
@@ -64,6 +70,35 @@ CREATE TABLE acquisti(
   FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE  ON UPDATE CASCADE
 );
 
+INSERT INTO acquisti (user_name, articolo) VALUES
+('user', 'Il pazzo veliero del capitano'),
+('user', 'Impara le arti marziali'),
+('user', 'I valzer Viennesi'),
+('mario_rossi', 'La vita di un Lamantino'),
+('luigi_verdi', 'Parola Chiave'),
+('giulia_bianchi', 'Come funzionano i motori di ricerca?'),
+('anna_neri', 'Ricomincia'),
+('marco_gialli', 'Simulatore di Magia'),
+('mario_rossi', 'Ci scommettiamo la vita'),
+('luigi_verdi', 'Iscrizione'),
+('giulia_bianchi', 'I treni per Vienna'),
+('anna_neri', 'Vivi il medioevo'),
+('marco_gialli', 'La caduta'),
+('mario_rossi', 'Il pazzo veliero del capitano'),
+('luigi_verdi', 'Impara le arti marziali'),
+('giulia_bianchi', 'I valzer Viennesi'),
+('anna_neri', 'La vita di un Lamantino'),
+('marco_gialli', 'Parola Chiave'),
+('mario_rossi', 'Come funzionano i motori di ricerca?'),
+('luigi_verdi', 'Ricomincia'),
+('giulia_bianchi', 'Simulatore di Magia'),
+('anna_neri', 'Ci scommettiamo la vita'),
+('marco_gialli', 'Iscrizione'),
+('mario_rossi', 'I treni per Vienna'),
+('luigi_verdi', 'Vivi il medioevo'),
+('giulia_bianchi', 'La caduta');
+
+
 -- Recensioni
 CREATE TABLE recensioni (
   id SERIAL PRIMARY KEY,
@@ -82,13 +117,13 @@ INSERT INTO recensioni (user_name, testo, articolo, stelle) VALUES
 ('user', 'Le arti marziali sono davvero ben rappresentate, mi sono divertita molto.', 'Impara le arti marziali', 4),
 ('user', 'Una bellissima esperienza di danza. Molto rilassante.', 'I valzer Viennesi', 4),
 ('mario_rossi', 'È stato incredibile vedere il mondo dal punto di vista di un lamantino.', 'La vita di un Lamantino', 5),
-('luigi_verdi', 'Tensione costante e colpi di scena incredibili. Consigliato!', 'Parola Chiave', 5),
+('luigi_verdi', 'Non mi è piaciuto', 'Parola Chiave', 1),
 ('giulia_bianchi', 'Un sogno educativo e ben strutturato. Ho imparato molto.', 'Come funzionano i motori di ricerca?', 4),
-('anna_neri', 'Un viaggio nel tempo emozionante e pieno di adrenalina.', 'Ricomincia', 5),
-('marco_gialli', 'Magia e incantesimi ben realizzati. Un sogno davvero unico.', 'Simulatore di Magia', 4),
-('mario_rossi', 'Un’esperienza horror che mi ha tenuto con il fiato sospeso.', 'Ci scommettiamo la vita', 5),
+('anna_neri', 'Un viaggio nel tempo emozionante e pieno di adrenalina.', 'Ricomincia', 4),
+('marco_gialli', 'Magia e incantesimi ben realizzati. Un sogno davvero unico.', 'Simulatore di Magia', 3),
+('mario_rossi', 'Un’esperienza horror che mi ha tenuto con il fiato sospeso.', 'Ci scommettiamo la vita', 3),
 ('luigi_verdi', 'Puzzle intriganti e ben progettati. Mi sono divertito molto.', 'Iscrizione', 4),
-('giulia_bianchi', 'Un sogno romantico che mi ha fatto innamorare della città.', 'I treni per Vienna', 5),
+('giulia_bianchi', 'Un sogno romantico che mi ha fatto innamorare della città.', 'I treni per Vienna', 4),
 ('anna_neri', 'Una ricostruzione storica impeccabile. Mi sono sentita nel medioevo.', 'Vivi il medioevo', 5),
 ('marco_gialli', 'Un’esperienza spirituale e riflessiva. Davvero unica.', 'La caduta', 4),
 ('mario_rossi', 'Un’avventura mozzafiato sul veliero. Mi sono sentito un vero pirata.', 'Il pazzo veliero del capitano', 5),
@@ -102,7 +137,7 @@ INSERT INTO recensioni (user_name, testo, articolo, stelle) VALUES
 ('anna_neri', 'Un’esperienza horror intensa e coinvolgente.', 'Ci scommettiamo la vita', 5),
 ('marco_gialli', 'Puzzle ben fatti e divertenti. Ottimo mistero.', 'Iscrizione', 4),
 ('mario_rossi', 'Un viaggio romantico indimenticabile. Mi è piaciuto molto.', 'I treni per Vienna', 5),
-('luigi_verdi', 'Ottima ricostruzione storica. Mi sono sentito nel medioevo.', 'Vivi il medioevo', 5),
+('luigi_verdi', 'Ottima ricostruzione storica. Mi sono sentito nel medioevo.', 'Vivi il medioevo', 2),
 ('giulia_bianchi', 'Un’esperienza riflessiva molto intensa. Davvero unica.', 'La caduta', 4);
 
 
@@ -123,13 +158,21 @@ CREATE TABLE assistenza (
   PRIMARY KEY (email, descrizione)
 );
 
+INSERT INTO assistenza (data_ins, email, motivo, descrizione) VALUES
+("2024-07-02 21:12:50", "davide@gmail.com", "sogni", "Ho riscontrato un problema con il pagamento, contattatemi al più presto."),
+("2024-07-03 15:45:22", "laura_conti@gmail.com", "chip", "Il chip che ho ricevuto non funziona correttamente, necessito di assistenza."),
+("2024-07-04 10:23:17", "simone_bellucci@gmail.com", "sogni", "Non riesco ad accedere al sogno acquistato, continua a darmi errore."),
+("2024-07-05 14:37:09", "elena_lombardi@gmail.com", "chip", "Vorrei maggiori informazioni sui chip disponibili, grazie."),
+("2024-07-06 09:18:33", "andrea_ferri@gmail.com", "sogni", "Il sogno che ho acquistato non corrisponde alla descrizione, desidero un rimborso.");
+
+
 CREATE TABLE categorie(
   nome VARCHAR(20) PRIMARY KEY
 );
 
 INSERT INTO categorie(nome) VALUES
-('Avventura'),
- ('Fantasia'),
+  ('Avventura'),
+  ('Fantasia'),
   ('Romantico'),
   ('Horror'),
   ('Fantascienza'),
@@ -147,7 +190,7 @@ INSERT INTO prenotazioni (data, user_name) VALUES
 
 ('2024-07-01', NULL),
 ('2024-07-02', NULL),
-('2024-07-03', 'user'),
+('2024-07-03', NULL),
 ('2024-07-04', NULL),
 ('2024-07-05', NULL),
 ('2024-07-08', NULL),
@@ -162,19 +205,19 @@ INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-07-19', NULL),
 ('2024-07-22', NULL),
 ('2024-07-23', NULL),
-('2024-07-24', NULL),
+('2024-07-24', 'simone_bellucci'),
 ('2024-07-25', NULL),
 ('2024-07-26', NULL),
-('2024-07-29', NULL),
+('2024-07-29', 'laura_conti'),
 ('2024-07-30', NULL),
 ('2024-07-31', NULL),
 
 ('2024-08-01', NULL),
-('2024-08-02', NULL),
+('2024-08-02', 'andrea_ferri'),
 ('2024-08-05', NULL),
 ('2024-08-06', NULL),
 ('2024-08-07', NULL),
-('2024-08-08', NULL),
+('2024-08-08', 'sofia_greco'),
 ('2024-08-09', NULL),
 ('2024-08-12', NULL),
 ('2024-08-13', NULL),
@@ -198,7 +241,7 @@ INSERT INTO prenotazioni (data, user_name) VALUES
 ('2024-09-04', NULL),
 ('2024-09-05', NULL),
 ('2024-09-06', NULL),
-('2024-09-09', NULL),
+('2024-09-09', 'elena_lombardi'),
 ('2024-09-10', NULL),
 ('2024-09-11', NULL),
 ('2024-09-12', NULL),

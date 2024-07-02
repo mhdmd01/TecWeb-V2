@@ -34,11 +34,11 @@
                 $functions->closeConnection();
 
                 if($ris)
-                    $successMsg = "Messaggio mandato con successo";
+                    $successMsg = "Messaggio inviato con successo";
                 else
                     $errorMsg = "Errore nel caricamento del messaggio";
             }else{
-                $errorMsg = "Errore, hai già mandato questo messaggio";
+                $errorMsg = "Errore, hai già inviato questo messaggio";
             }
     } 
                                               

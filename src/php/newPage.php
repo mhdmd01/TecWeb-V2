@@ -131,7 +131,7 @@ class newPage{
             $navBar = str_replace("{breadcrumb}", "Acquisto effettuato", $navBar);
 
         }else if($currentPage == "../html/registroPrenotazioni.html"){
-            $navBar = str_replace("{breadcrumb}", "Registro prenotazioni", $navBar);
+            $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\"><span lang=\"en\">Dashboard admin</span></a> &gt&gt Registro prenotazioni", $navBar);
 
         }else if($currentPage == "../html/messaggi.html"){
             $navBar = str_replace("{breadcrumb}", "<a href=\"dashboardAdmin.php\"><span lang=\"en\">Dashboard admin</span></a> &gt&gt Messaggi", $navBar);
