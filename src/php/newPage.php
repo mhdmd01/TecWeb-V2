@@ -161,7 +161,7 @@ class newPage{
             session_destroy();
         }
 
-        $navBar = str_replace("{logo}", "<a href=\"../php/index.php\"><img id=\"logo\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\" tabindex=\"1\"></a>
+        $navBar = str_replace("{logo}", "<a href=\"../php/index.php\"><img id=\"logo\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\"></a>
             <img id=\"logo_stampa\" alt=\"logo dell'azienda\" src=\"../assets/logo.svg\">", $navBar);
         $navBar = str_replace("{homeLink}", "<li><a href=\"index.php\"><span lang=\"en\">Home</span></a></li>", $navBar);
         $navBar = str_replace("{serviziLink}", "<li><a href=\"servizi.php\">Servizi</a></li>", $navBar);
