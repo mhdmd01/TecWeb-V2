@@ -18,7 +18,12 @@ CREATE TABLE utenti (
 
 INSERT INTO utenti(user_name, password) VALUES
   ('admin', 'admin'),
-  ('user', 'user');
+  ('user', 'user'),
+  ('mario_rossi', 'password1'),
+  ('luigi_verdi', 'password2'),
+  ('giulia_bianchi', 'password3'),
+  ('anna_neri', 'password4'),
+  ('marco_gialli', 'password5');
 
 
 -- Sogni
@@ -32,19 +37,19 @@ CREATE TABLE sogni(
 );
 
 INSERT INTO sogni(titolo, descrizione, prezzo, nomeFile, categoria) VALUES
-('Il pazzo veliero del capitano', 'Vivi questa avventura a bordo di un grande veliero in giro per l’america del 1700. Sarai tu il capitano e dovrai gestire questa ciurma. Il tuo obiettivo è quello di esplorare nuove terre e nuovi mari in cerca di un grande tesoro lasciato in eredità dal re dei pirati.', 50, 'veliero.jpg', 'Avventura'),
-('Impara le arti marziali', 'In questo sogno dovrai affrontare diversi agenti vestiti di nero sotto la pioggia a suoni di pugni. È disponibile anche una modalità allenamento per imparare al meglio tutte le arti marziali.', 40, 'arti_marziali.jpg', 'Azione'),
-('I valzer Viennesi', 'In questo sogno puoi ballare nei valzer viennesi e ascoltare storie divertente come si usava fare nei salotti viennesi.', 30, 'valzer.jpg', 'Comico'),
-('La vita di un Lamantino', 'In questo sogno puoi simularti in un lamantino per vivere la sua vita dal suo punto di vista. Questo documentario offre un’esperienza del tutto nuova sulla prospettiva di un animale, fornisce anche dei filtri per simulare la visione e la percezione dell’animale.', 45, 'lamantino.jpg', 'Documentario'),
-('Parola Chiave', 'Vieni invitato in una villa insieme ad un gruppo di amici. Una volta entrati nella villa le porte vengono blindate dall’esterno e rimanete tutti intrappolati per tutta la notte. In questo lasso di tempo tocca trovare una via di fuga. Ciò che fa più inquietudine è che per ogni ostacolo ci sarà una rivelazione… Sarai ancora in grado di fidarti dei tuoi amici e superare i vari traumi.', 60, 'parola_chiave.jpg', 'Drammatico'),
-('Come funzionano i motori di ricerca?', 'In questo sogno assisterai ad un corso universitario che ti insegnerà il funzionamento delle Tecnologie dietro i motori di ricerca più famosi.', 35, 'motori_di_ricerca.jpg', 'Educativo'),
-('Ricomincia', 'Sei stato selezionato per un collaudo di un esperimento di Saudade. A quanto pare l’azienda ha inventato questo orologio che permette di tornare indietro nel tempo di 1 minuto. Riuscirai ad utilizzarlo correttamente senza rompere lo spazio tempo.', 55, 'ricomincia.jpg', 'Fantascienza'),
-('Simulatore di Magia', 'In questo sogno puoi sperimentare alcuni incantesimi proposti dal team saudade su ambienti reali e simulati. Inoltre è presente una modalità allenamento per diventare il miglior mago in circolazione.', 50, 'magia.jpg', 'Fantasia'),
-('Ci scommettiamo la vita', 'Hai trovato un vecchio dischetto nella cantina del nonno, inserendolo nel tuo pc prendi la scossa e ti risvegli in mondo digitale dove dei robot ti sfidano per ottenere la tua anima. Se vuoi sopravvivere allora inizia vincendo giochi di carte e la roulette russa contro robot assassini.', 65, 'scommessa.jpg', 'Horror'),
-('Iscrizione', 'Trovi su una parete delle cordinate che potrebbero rappresentare qualcosa di molto molto grande. Ad ogni nuova scoperta se ne sussegue un altra dilettati quindi a risolvere ogni singolo puzzle per giungere alla conclusione o alla torta… se esiste.', 45, 'iscrizione.jpg', 'Mistero'),
-('I treni per Vienna', 'In questo sogno incontri l’amore della tua vita nel vagone vicino al tuo, vivi un avventura di una settimana in un vecchio treno diretto per la meravigliosa città europea esplorando la bellissima nazione dell’austria insieme alla tua anima gemella.', 70, 'treni_vienna.jpg', 'Romantico'),
-('Vivi il medioevo', 'In questo sogno puoi simulare di essere un RE, un Nobile o un plebeo. Cammina per le nostre ricostruzione storiche di città medievale e sentiti come una persona che viveva nel 1300.', 60, 'medioevo.jpg', 'Storico'),
-('La caduta', 'In questo sogno immagini di cadere… Solo che la caduta è infinita e tanto lunga che prima di schiantarti a terra avrai tempo per riflettere sulle tue scelte di vita e riflettere sui tuoi errori. Infatti i nostri studi dimostrano che per una riflessione migliore c’è bisogno di un adrenalina molto molto alta.', 55, 'caduta.jpg', 'Surreale/Spirituale');
+('Il pazzo veliero del capitano', 'Vivi questa avventura a bordo di un grande veliero in giro per l’america del 1700. Sarai tu il capitano e dovrai gestire questa ciurma. Il tuo obiettivo è quello di esplorare nuove terre e nuovi mari in cerca di un grande tesoro lasciato in eredità dal re dei pirati.', 50, 'Veliero.jpeg', 'Avventura'),
+('Impara le arti marziali', 'In questo sogno dovrai affrontare diversi agenti vestiti di nero sotto la pioggia a suoni di pugni. È disponibile anche una modalità allenamento per imparare al meglio tutte le arti marziali.', 40, 'ArtiMarziali.jpeg', 'Azione'),
+('I valzer Viennesi', 'In questo sogno puoi ballare nei valzer viennesi e ascoltare storie divertente come si usava fare nei salotti viennesi.', 30, 'ViennaValzer.jpeg', 'Comico'),
+('La vita di un Lamantino', 'In questo sogno puoi simularti in un lamantino per vivere la sua vita dal suo punto di vista. Questo documentario offre un’esperienza del tutto nuova sulla prospettiva di un animale, fornisce anche dei filtri per simulare la visione e la percezione dell’animale.', 45, 'Lamantino.jpeg', 'Documentario'),
+('Parola Chiave', 'Vieni invitato in una villa insieme ad un gruppo di amici. Una volta entrati nella villa le porte vengono blindate dall’esterno e rimanete tutti intrappolati per tutta la notte. In questo lasso di tempo tocca trovare una via di fuga. Ciò che fa più inquietudine è che per ogni ostacolo ci sarà una rivelazione… Sarai ancora in grado di fidarti dei tuoi amici e superare i vari traumi.', 60, 'ParolaChiave.jpeg', 'Drammatico'),
+('Come funzionano i motori di ricerca?', 'In questo sogno assisterai ad un corso universitario che ti insegnerà il funzionamento delle Tecnologie dietro i motori di ricerca più famosi.', 35, 'SEO.jpeg', 'Educativo'),
+('Ricomincia', 'Sei stato selezionato per un collaudo di un esperimento di Saudade. A quanto pare l’azienda ha inventato questo orologio che permette di tornare indietro nel tempo di 1 minuto. Riuscirai ad utilizzarlo correttamente senza rompere lo spazio tempo.', 55, 'Ricomincia.jpeg', 'Fantascienza'),
+('Simulatore di Magia', 'In questo sogno puoi sperimentare alcuni incantesimi proposti dal team saudade su ambienti reali e simulati. Inoltre è presente una modalità allenamento per diventare il miglior mago in circolazione.', 50, 'Magia.jpeg', 'Fantasia'),
+('Ci scommettiamo la vita', 'Hai trovato un vecchio dischetto nella cantina del nonno, inserendolo nel tuo pc prendi la scossa e ti risvegli in mondo digitale dove dei robot ti sfidano per ottenere la tua anima. Se vuoi sopravvivere allora inizia vincendo giochi di carte e la roulette russa contro robot assassini.', 65, 'Scommessa.jpeg', 'Horror'),
+('Iscrizione', 'Trovi su una parete delle cordinate che potrebbero rappresentare qualcosa di molto molto grande. Ad ogni nuova scoperta se ne sussegue un altra dilettati quindi a risolvere ogni singolo puzzle per giungere alla conclusione o alla torta… se esiste.', 45, 'Iscrizione.jpeg', 'Mistero'),
+('I treni per Vienna', 'In questo sogno incontri l’amore della tua vita nel vagone vicino al tuo, vivi un avventura di una settimana in un vecchio treno diretto per la meravigliosa città europea esplorando la bellissima nazione dell’austria insieme alla tua anima gemella.', 70, 'Treno.jpeg', 'Romantico'),
+('Vivi il medioevo', 'In questo sogno puoi simulare di essere un RE, un Nobile o un plebeo. Cammina per le nostre ricostruzione storiche di città medievale e sentiti come una persona che viveva nel 1300.', 60, 'Medioevo.jpeg', 'Storico'),
+('La caduta', 'In questo sogno immagini di cadere… Solo che la caduta è infinita e tanto lunga che prima di schiantarti a terra avrai tempo per riflettere sulle tue scelte di vita e riflettere sui tuoi errori. Infatti i nostri studi dimostrano che per una riflessione migliore c’è bisogno di un adrenalina molto molto alta.', 55, 'Caduta.jpeg', 'Surreale/Spirituale');
 
 
 
@@ -64,7 +69,7 @@ CREATE TABLE recensioni (
   id SERIAL PRIMARY KEY,
   user_name VARCHAR(20) NOT NULL,
   testo TEXT NOT NULL,
-  articolo VARCHAR(20),
+  articolo VARCHAR(50),
   stelle INT CHECK (stelle >= 1 AND stelle <= 5),
   data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
@@ -72,7 +77,34 @@ CREATE TABLE recensioni (
   FOREIGN KEY (articolo) REFERENCES sogni(titolo) ON DELETE CASCADE  ON UPDATE CASCADE
 );
 
--- INSERT INTO recensioni(user_name, testo, articolo, stelle) VALUES  ;
+INSERT INTO recensioni (user_name, testo, articolo, stelle) VALUES
+('user', 'Un’avventura emozionante, mi sono sentita come una vera esploratrice.', 'Il pazzo veliero del capitano', 5),
+('user', 'Le arti marziali sono davvero ben rappresentate, mi sono divertita molto.', 'Impara le arti marziali', 4),
+('user', 'Una bellissima esperienza di danza. Molto rilassante.', 'I valzer Viennesi', 4),
+('mario_rossi', 'È stato incredibile vedere il mondo dal punto di vista di un lamantino.', 'La vita di un Lamantino', 5),
+('luigi_verdi', 'Tensione costante e colpi di scena incredibili. Consigliato!', 'Parola Chiave', 5),
+('giulia_bianchi', 'Un sogno educativo e ben strutturato. Ho imparato molto.', 'Come funzionano i motori di ricerca?', 4),
+('anna_neri', 'Un viaggio nel tempo emozionante e pieno di adrenalina.', 'Ricomincia', 5),
+('marco_gialli', 'Magia e incantesimi ben realizzati. Un sogno davvero unico.', 'Simulatore di Magia', 4),
+('mario_rossi', 'Un’esperienza horror che mi ha tenuto con il fiato sospeso.', 'Ci scommettiamo la vita', 5),
+('luigi_verdi', 'Puzzle intriganti e ben progettati. Mi sono divertito molto.', 'Iscrizione', 4),
+('giulia_bianchi', 'Un sogno romantico che mi ha fatto innamorare della città.', 'I treni per Vienna', 5),
+('anna_neri', 'Una ricostruzione storica impeccabile. Mi sono sentita nel medioevo.', 'Vivi il medioevo', 5),
+('marco_gialli', 'Un’esperienza spirituale e riflessiva. Davvero unica.', 'La caduta', 4),
+('mario_rossi', 'Un’avventura mozzafiato sul veliero. Mi sono sentito un vero pirata.', 'Il pazzo veliero del capitano', 5),
+('luigi_verdi', 'Arti marziali ben rappresentate. Un allenamento davvero utile.', 'Impara le arti marziali', 4),
+('giulia_bianchi', 'Divertente e rilassante. Perfetto per una serata tranquilla.', 'I valzer Viennesi', 4),
+('anna_neri', 'Un documentario fantastico. Ho imparato molto sui lamantini.', 'La vita di un Lamantino', 5),
+('marco_gialli', 'Intrigante e pieno di colpi di scena. Consigliato!', 'Parola Chiave', 5),
+('mario_rossi', 'Un corso informativo e ben strutturato. Molto utile.', 'Come funzionano i motori di ricerca?', 4),
+('luigi_verdi', 'Un sogno fantascientifico che mi ha tenuto con il fiato sospeso.', 'Ricomincia', 5),
+('giulia_bianchi', 'Magia e incantesimi incredibili. Mi sono divertita molto.', 'Simulatore di Magia', 4),
+('anna_neri', 'Un’esperienza horror intensa e coinvolgente.', 'Ci scommettiamo la vita', 5),
+('marco_gialli', 'Puzzle ben fatti e divertenti. Ottimo mistero.', 'Iscrizione', 4),
+('mario_rossi', 'Un viaggio romantico indimenticabile. Mi è piaciuto molto.', 'I treni per Vienna', 5),
+('luigi_verdi', 'Ottima ricostruzione storica. Mi sono sentito nel medioevo.', 'Vivi il medioevo', 5),
+('giulia_bianchi', 'Un’esperienza riflessiva molto intensa. Davvero unica.', 'La caduta', 4);
+
 
 
 CREATE TABLE prenotazioni (
