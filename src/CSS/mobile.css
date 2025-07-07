@@ -2,8 +2,24 @@
     width: 50%;
 }
 
-.tornasu{
+
+.section{
+    width: 90%;
+}
+
+.tornasu > a{
     display:inline;
+    float: right;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.box{
+    margin-bottom: 1em;
+}
+
+.section > h2{
+    font-size: 1.75em;
 }
 
 .contatti{
@@ -16,11 +32,55 @@
     padding-right: 0%;
 }
 
+.cercaSogno{
+    display: inline-block;
+}
+
+.cercaSogno > label{
+    font-size: 1em;
+}
+
 .cercaSogno > input.barraRicerca{
-    margin:0.25em;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 0.25em;
 }
 .cercaSogno > input.bottoneCerca{
-    width: 90px;
+    margin: 0;
+    max-width: fit-content;
+    max-height: fit-content;
+    font-size: 1em;
+    padding: 0.25rem;
+}
+
+.filtraSogno{
+    display: block;
+    margin-top: 0.35em;
+}
+
+.filtraSogno > label{
+    font-size: 1em;
+}
+
+.filtraSogno > select.formListaSogni{
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    width: 52%;
+    max-height: fit-content;
+    padding: 0.25em;
+    padding-right: 1em;
+}
+
+.filtraSogno > input.bottoneFiltro{
+    margin: 0;
+    max-width: fit-content;
+    max-height: fit-content;
+    font-size: 1em;
+    padding: 0.25rem;
 }
 
 .elencoSogni{
@@ -34,10 +94,6 @@
 
 .slide-1{
     display: none;
-}
-
-.filtraSogno > label{
-    font-size: 1.5em;
 }
 
 select.formListaSogni{
@@ -82,8 +138,9 @@ form#nuovaRecensione > label{
 }
 
 .introduciElenco{
-    font-size: 1.75em;
+    font-size: 1.25em;
     text-align: center;
+    margin: 0;
     padding-bottom: 0.5em
 }
 
@@ -92,12 +149,25 @@ img.immagineAcquista{
     height: 90%;
 }
 
-.sognoContainer{
+div.sognoContainer{
+    width: 90%;
+}
+
+div.sectionDash{
     font-size: 1em;
 }
 
+.sectionDash > img{
+    width: 9em;
+    height: 9em;
+}
+
 div.sectionDash > p{
-    font-size: 1.25em;
+    font-size: 1em;
+}
+
+div.elencoRecensioni{
+    width: 90%;
 }
 
 .elencoRecensioni > p{
@@ -111,7 +181,7 @@ div.sectionDash > p{
 }
 
 #nuovoSognoForm > p{
-    line-height: 1.25em;
+    line-height: 1.1em;
 }
 
 input.casellaTesto{
@@ -133,4 +203,140 @@ input.casellaTesto{
     margin-right: 0;
     padding-left: 0;
     float: none;
+}
+
+div.thumbnail > img{
+    width: 13em;
+    height: 8em;
+}
+
+.emailForm{
+    margin: 0;
+    margin-top: 0.5em;
+    width: 100%;
+}
+
+.emailForm > label{
+    font-size: 1em;
+}
+
+.emailForm > input{
+    font-size: 0.75em;
+    max-width: fit-content;
+}
+
+.formContatta > h2.titolo{
+    font-size: 1.4em;
+}
+
+p.titoletto{
+    font-size: 1.15em;
+}
+
+div.radioButton > label{
+    font-size: 0.9em;
+    font-weight: lighter;
+}
+
+fieldset.messageForm > label{
+    font-size: 1.1em;
+}
+
+fieldset.messageForm > textarea{
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+}
+
+input.bottoneForm{
+    margin-top: 0.5rem;
+}
+
+.titoloSogno{
+    font-size: 1em;
+}
+
+.titoloSogno > span.full-description{
+    font-size: 1em;
+}
+
+span.full-description{
+    font-size: 1em;
+}
+
+input{
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 0.5em;
+}
+
+.loginTitle{
+    font-size: 2.5em;
+}
+
+.signupTitle{
+    font-size: 2.5em;
+    padding: 0;
+    padding-bottom: 0.5em;
+}
+
+fieldset > label{
+    font-size: 1.25em;
+}
+
+input.casellaTesto{
+    width: 90%;
+    font-size: 1em;
+}
+
+select.formListaRec{
+    width: 40%;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+fieldset > .selectForm{
+    width: 80%;
+    max-height: fit-content;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    margin: 0.25em;
+    font-size: 1em;
+}
+
+textarea.casellaTesto{
+    margin: 0;
+    width: 90%;
+    margin-top: 0.2em;
+}
+
+#button-lungo{
+    max-width: fit-content;
+    max-height: fit-content;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+}
+
+.slide-3 > p{
+    font-size: 0.85em;
+}
+
+.SuccessoGiorni > p{
+    font-size: 0.9em;
+}
+
+.Errore > p{
+    font-size: 0.8em;
+}
+
+div.containerRecensione{
+    font-size: 0.9em;
+}
+
+div.sectionDash > ul > li {
+    font-size: 0.9em;
+}
+
+div.sectionDash > ul > li > a {
+    font-size: 0.9em;
 }

@@ -912,6 +912,10 @@ textarea.casellaTesto{
 
 .sectionDash > ul > li {
     list-style: none;
+    margin: 0.5em;
+    background-color: var(--footerBgColor);
+    border-radius: 1em;
+    padding: 0.5em;
 }
 
 .sectionDash > ul > li > a {
@@ -1034,7 +1038,7 @@ div.containerRecensione{
 div.containerRecensione> p:nth-last-child(1){
     margin-top: 0.1em;
     padding-top: 5px;
-    border-top: 2px dotted var(--BgColor);
+    border-top: 2px dotted var(--colorSlide);
 }
 
 /*AGGIUNGI RECENSIONE*/
