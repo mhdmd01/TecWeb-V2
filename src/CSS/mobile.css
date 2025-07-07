@@ -3,7 +3,29 @@
 }
 
 
-.section{
+div.section{
+    width: 90%;
+    margin: 0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+div.homeSlide{
+    width: 90%;
+    margin: 0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+div.article{
+    width: 100%;
+}
+
+.slide-1{
+    width: 90%;
+}
+
+.slide-2{
     width: 90%;
 }
 
@@ -33,7 +55,7 @@
 }
 
 .cercaSogno{
-    display: inline-block;
+    display: block;
 }
 
 .cercaSogno > label{
@@ -44,10 +66,17 @@
     font-size: 1em;
     padding: 0;
     margin: 0;
-    max-width: fit-content;
+    width: 50%;
     max-height: fit-content;
-    padding: 0.25em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
+
+.cercaSogno > input.barraRicerca:focus{
+    background-color: var(--linkColor);
+    width: 50%;
+}
+
 .cercaSogno > input.bottoneCerca{
     margin: 0;
     max-width: fit-content;
@@ -260,8 +289,8 @@ input.bottoneForm{
     font-size: 1em;
 }
 
-span.full-description{
-    font-size: 1em;
+div.sognoDescrizione > p > span.full-description, div.sognoDescrizione > p > span.titoletto{
+    font-size: 0.8em;
 }
 
 input{
@@ -322,21 +351,31 @@ textarea.casellaTesto{
 }
 
 .SuccessoGiorni > p{
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .Errore > p{
-    font-size: 0.8em;
+    font-size: qem;
 }
 
 div.containerRecensione{
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 div.sectionDash > ul > li {
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 div.sectionDash > ul > li > a {
-    font-size: 0.9em;
+    font-size: 1em;
+}
+
+.formPrenotazione > form > input {
+    font-size: 1em;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+footer{
+    margin-top: 0;
 }
